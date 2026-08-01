@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hera23 — Zona de cobertura</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  html,body{height:100%;margin:0}
+  #map{height:100%;width:100%;background:#e8e8e2}
+  .leaflet-popup-content{font-family:'Lato','Helvetica Neue',sans-serif;font-weight:700;color:#202720}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+const q = new URLSearchParams(location.search);
+const map = L.map('map', { scrollWheelZoom: false });
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
+const gold = '#d5a447', dark = '#202720';
+if (q.get('lat')) {
+  const lat = +q.get('lat'), lng = +q.get('lng');
+  map.setView([lat, lng], +(q.get('zoom') || 14));
+  const c = L.circle([lat, lng], { radius: 600, color: gold, weight: 2, fillColor: gold, fillOpacity: 0.22 }).addTo(map);
+  if (q.get('label')) c.bindPopup(q.get('label')).openPopup();
+} else {
+  const zones = [
+    ['Medellín — Centro', 6.2442, -75.5812],
+    ['El Poblado', 6.2088, -75.5679],
+    ['Laureles – Estadio', 6.2456, -75.5906],
+    ['Envigado', 6.1759, -75.5919],
+    ['Sabaneta', 6.1516, -75.6166],
+    ['Itagüí', 6.1846, -75.6114],
+    ['Bello', 6.3373, -75.5579],
+    ['Rionegro · Llanogrande', 6.1536, -75.3743],
+    ['Santa Fe de Antioquia', 6.5563, -75.8276]
+  ];
+  zones.forEach(([name, lat, lng]) => {
+    L.circleMarker([lat, lng], { radius: 9, color: dark, weight: 2, fillColor: gold, fillOpacity: 0.9 })
+      .addTo(map).bindPopup(name);
+  });
+  map.fitBounds(L.latLngBounds(zones.map(z => [z[1], z[2]])), { padding: [36, 36] });
+}
+</script>
+</body>
+</html>

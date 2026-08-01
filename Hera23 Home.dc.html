@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/isotipo-trans.png">
+<script src="image-slot.js"></script>
+<style>
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Jost',sans-serif;background:#ffffff;color:#000000;-webkit-font-smoothing:antialiased}
+  a{color:#d5a447;text-decoration:none;transition:all .25s ease}
+  a:hover{color:#a8ac91}
+  button{transition:all .25s ease}
+  input::placeholder,textarea::placeholder{color:#8a8a82;font-family:'Jost',sans-serif}
+  ::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div data-screen-label="Home" style="min-width:320px;background:#ffffff;padding-bottom:{{ padBottom }}">
+
+<header style="position:fixed;top:12px;left:12px;right:12px;z-index:60;background:rgba(32,39,32,0.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 22px;border:1px solid rgba(213,164,71,0.3);border-radius:999px;box-shadow:0 10px 34px rgba(32,39,32,0.28)">
+  <a href="#inicio" aria-label="Hera23 — Inicio" style="display:flex;align-items:center;flex:0 0 auto"><img src="assets/logo-trans.png" alt="Hera23 — Inversiones &amp; Rentas" style="height:30px;display:block"></a>
+  <div style="display:flex;align-items:center;gap:10px">
+    <sc-if value="{{ desktop }}">
+      <nav style="display:flex;align-items:center;gap:24px;margin-right:10px">
+        <a href="#inicio" style="color:#ffffff;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;padding:10px 0" style-hover="color:#d5a447">{{ tInicio }}</a>
+        <a href="#propiedades" style="color:#ffffff;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;padding:10px 0" style-hover="color:#d5a447">{{ tProps }}</a>
+        <a href="#nosotros" style="color:#ffffff;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;padding:10px 0" style-hover="color:#d5a447">{{ tNosotros }}</a>
+        <a href="#contacto" style="color:#ffffff;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;padding:10px 0" style-hover="color:#d5a447">{{ tContacto }}</a>
+      </nav>
+    </sc-if>
+    <div role="group" aria-label="Idioma" style="display:flex;border:1px solid rgba(255,255,255,0.3);border-radius:999px;overflow:hidden">
+      <button onClick="{{ setEs }}" aria-label="Español" style="background:{{ esBg }};color:{{ esCo }};border:none;padding:11px 14px;min-height:44px;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:0.08em;cursor:pointer">ES</button>
+      <button onClick="{{ setEn }}" aria-label="English" style="background:{{ enBg }};color:{{ enCo }};border:none;padding:11px 14px;min-height:44px;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:0.08em;cursor:pointer">EN</button>
+    </div>
+    <sc-if value="{{ desktop }}">
+      <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;background:#d5a447;color:#202720;padding:12px 22px;min-height:44px;box-sizing:border-box;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border-radius:999px;white-space:nowrap" style-hover="background:#ffffff;color:#202720">WhatsApp</a>
+    </sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ true }}">
+      <button onClick="{{ toggleMenu }}" aria-label="Menú" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);background:transparent;color:#ffffff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px">
+        <span style="width:18px;height:2px;background:#d5a447;border-radius:2px;display:block"></span>
+        <span style="width:18px;height:2px;background:#d5a447;border-radius:2px;display:block"></span>
+        <span style="width:18px;height:2px;background:#d5a447;border-radius:2px;display:block"></span>
+      </button>
+    </sc-if>
+  </div>
+</header>
+
+<sc-if value="{{ menuOpen }}">
+  <div data-screen-label="Menú móvil" style="position:fixed;inset:0;z-index:70;background:rgba(32,39,32,0.97);backdrop-filter:blur(10px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center">
+    <button onClick="{{ toggleMenu }}" aria-label="Cerrar menú" style="position:absolute;top:20px;right:20px;width:48px;height:48px;border-radius:50%;border:1px solid rgba(213,164,71,0.5);background:transparent;color:#d5a447;font-size:22px;cursor:pointer">✕</button>
+    <img src="assets/isotipo-trans.png" alt="" style="height:72px;margin-bottom:18px">
+    <a href="#inicio" onClick="{{ closeMenu }}" style="color:#ffffff;font-family:'Cormorant Garamond',serif;font-size:34px;padding:10px 24px" style-hover="color:#d5a447">{{ tInicio }}</a>
+    <a href="#propiedades" onClick="{{ closeMenu }}" style="color:#ffffff;font-family:'Cormorant Garamond',serif;font-size:34px;padding:10px 24px" style-hover="color:#d5a447">{{ tProps }}</a>
+    <a href="#nosotros" onClick="{{ closeMenu }}" style="color:#ffffff;font-family:'Cormorant Garamond',serif;font-size:34px;padding:10px 24px" style-hover="color:#d5a447">{{ tNosotros }}</a>
+    <a href="#contacto" onClick="{{ closeMenu }}" style="color:#ffffff;font-family:'Cormorant Garamond',serif;font-size:34px;padding:10px 24px" style-hover="color:#d5a447">{{ tContacto }}</a>
+    <a href="{{ airbnb }}" target="_blank" rel="noopener" style="margin-top:14px;color:#a8ac91;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;border:1px solid rgba(168,172,145,0.5);border-radius:999px;padding:12px 26px" style-hover="color:#d5a447;border-color:#d5a447">{{ tVerificado }} ↗</a>
+  </div>
+</sc-if>
+
+<section id="inicio" data-screen-label="Hero" style="position:relative;padding:8px;background:#ffffff">
+  <div style="position:relative;min-height:calc(100svh - 16px);border-radius:30px;overflow:hidden;background:#202720;display:flex;align-items:flex-end">
+    <image-slot id="hero-bg" shape="rect" placeholder="Foto principal del inmueble — arrastra aquí (hero)" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(32,39,32,0.62) 0%, rgba(32,39,32,0.25) 42%, rgba(32,39,32,0.82) 100%);pointer-events:none"></div>
+    <div style="position:relative;z-index:2;width:100%;max-width:860px;margin:0 auto;text-align:center;padding:120px 22px clamp(36px,7vw,64px);pointer-events:none">
+      <img src="assets/isotipo-trans.png" alt="" style="height:clamp(58px,8vw,84px);margin-bottom:20px;opacity:0.95">
+      <div style="color:#d5a447;font-size:clamp(11px,1.5vw,14px);letter-spacing:0.32em;text-transform:uppercase;margin-bottom:16px">Inversiones &amp; Rentas · Medellín</div>
+      <sc-if value="{{ es }}" hint-placeholder-val="{{ true }}"><h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,7vw,64px);line-height:1.08;color:#ffffff;margin:0 0 16px">Arrendamos y administramos propiedades Airbnb en Medellín</h1></sc-if>
+      <sc-if value="{{ en }}"><h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,7vw,64px);line-height:1.08;color:#ffffff;margin:0 0 16px">We host and manage Airbnb properties in Medellín</h1></sc-if>
+      <sc-if value="{{ es }}" hint-placeholder-val="{{ true }}"><p style="color:#ffffff;font-weight:300;font-size:clamp(15px,2vw,18px);line-height:1.6;max-width:600px;margin:0 auto 28px">Operadores directos en Airbnb. Reserva por nuestro canal propio con la misma confianza: cada inmueble es verificable en nuestro perfil oficial.</p></sc-if>
+      <sc-if value="{{ en }}"><p style="color:#ffffff;font-weight:300;font-size:clamp(15px,2vw,18px);line-height:1.6;max-width:600px;margin:0 auto 28px">Direct Airbnb operators. Book through our own channel with the same confidence: every property can be verified on our official profile.</p></sc-if>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;pointer-events:auto">
+        <a href="#propiedades" style="display:inline-flex;align-items:center;justify-content:center;background:#d5a447;color:#202720;padding:16px 32px;min-height:52px;box-sizing:border-box;font-size:14px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border-radius:999px;flex:1 1 auto;max-width:320px" style-hover="background:#ffffff;color:#202720;transform:translateY(-2px)"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Ver propiedades</sc-if><sc-if value="{{ en }}">View properties</sc-if></a>
+        <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.7);color:#ffffff;padding:16px 32px;min-height:52px;box-sizing:border-box;font-size:14px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;border-radius:999px;flex:1 1 auto;max-width:320px" style-hover="border-color:#d5a447;color:#d5a447;transform:translateY(-2px)"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">WhatsApp directo</sc-if><sc-if value="{{ en }}">Direct WhatsApp</sc-if></a>
+      </div>
+      <a href="{{ airbnb }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;margin-top:30px;color:#ffffff;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;pointer-events:auto;border:1px solid rgba(255,255,255,0.25);border-radius:999px;padding:12px 22px;background:rgba(32,39,32,0.45)" style-hover="color:#d5a447;border-color:#d5a447"><span style="width:8px;height:8px;border-radius:50%;background:#d5a447;display:inline-block"></span>{{ tVerificado }} ↗</a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Cifras" style="background:#ffffff;padding:clamp(28px,5vw,56px) 16px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="3">
+      <div style="flex:1 1 200px;min-width:170px;border:1px solid #e6e4dc;border-radius:26px;padding:24px 16px">
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(32px,4vw,42px);color:#d5a447;line-height:1">{{ s.n }}</div>
+        <div style="font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:#202720;margin-top:10px">{{ s.l }}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="nosotros" data-screen-label="Quiénes somos" style="background:#ffffff;padding:clamp(48px,8vw,100px) 20px">
+  <div style="max-width:1160px;margin:0 auto;display:flex;gap:clamp(28px,5vw,64px);align-items:center;flex-wrap:wrap">
+    <div style="flex:1 1 440px;min-width:280px">
+      <div style="display:inline-block;color:#202720;font-size:12px;letter-spacing:0.26em;text-transform:uppercase;margin-bottom:18px;border:1px solid #d5a447;border-radius:999px;padding:9px 20px"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Quiénes somos</sc-if><sc-if value="{{ en }}">Who we are</sc-if></div>
+      <sc-if value="{{ es }}" hint-placeholder-val="{{ true }}"><h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4.5vw,46px);line-height:1.15;color:#202720;margin:0 0 20px">El mismo operador que ya conoces en Airbnb, ahora en su canal propio</h2></sc-if>
+      <sc-if value="{{ en }}"><h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4.5vw,46px);line-height:1.15;color:#202720;margin:0 0 20px">The same operator you already know on Airbnb, now on its own channel</h2></sc-if>
+      <sc-if value="{{ es }}" hint-placeholder-val="{{ true }}"><p style="font-size:16px;font-weight:300;line-height:1.75;color:#202720;margin:0 0 16px">Hera23 es un operador de propiedades Airbnb con sede en Medellín. Trabajamos de forma directa con Airbnb y administramos cada inmueble personalmente: recibimiento, limpieza, mantenimiento y atención al huésped.</p>
+      <p style="font-size:16px;font-weight:300;line-height:1.75;color:#202720;margin:0">Este sitio es nuestro canal propio de arrendamiento — no un intermediario. Cada propiedad que ves aquí es la misma que encuentras en nuestro perfil oficial de Airbnb, y siempre puedes verificarla antes de reservar.</p></sc-if>
+      <sc-if value="{{ en }}"><p style="font-size:16px;font-weight:300;line-height:1.75;color:#202720;margin:0 0 16px">Hera23 is an Airbnb property operator based in Medellín. We work directly with Airbnb and manage every property ourselves: check-in, cleaning, maintenance and guest care.</p>
+      <p style="font-size:16px;font-weight:300;line-height:1.75;color:#202720;margin:0">This site is our own booking channel — not a middleman. Every property you see here is the same one listed on our official Airbnb profile, and you can always verify it before booking.</p></sc-if>
+    </div>
+    <div style="flex:1 1 340px;min-width:280px;background:#202720;border-radius:34px;padding:clamp(30px,4vw,46px) clamp(24px,4vw,40px);text-align:center">
+      <img src="assets/isotipo-trans.png" alt="Isotipo Hera23" style="height:clamp(80px,9vw,104px);margin-bottom:22px">
+      <sc-if value="{{ es }}" hint-placeholder-val="{{ true }}"><p style="color:#ffffff;font-family:'Cormorant Garamond',serif;font-size:clamp(19px,2.4vw,23px);line-height:1.45;margin:0 0 24px">“Cada propiedad que ves aquí es la misma que encuentras en nuestro perfil oficial de Airbnb.”</p></sc-if>
+      <sc-if value="{{ en }}"><p style="color:#ffffff;font-family:'Cormorant Garamond',serif;font-size:clamp(19px,2.4vw,23px);line-height:1.45;margin:0 0 24px">“Every property you see here is the same one on our official Airbnb profile.”</p></sc-if>
+      <a href="{{ airbnb }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid #d5a447;color:#d5a447;padding:14px 28px;min-height:48px;box-sizing:border-box;font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;border-radius:999px" style-hover="background:#d5a447;color:#202720"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Ver perfil oficial en Airbnb ↗</sc-if><sc-if value="{{ en }}">See official Airbnb profile ↗</sc-if></a>
+    </div>
+  </div>
+</section>
+
+<section id="propiedades" data-screen-label="Propiedades" style="padding:0 8px">
+  <div style="background:#a8ac91;border-radius:36px;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,70px)">
+    <div style="text-align:center;margin-bottom:clamp(28px,4vw,48px);padding:0 20px">
+      <div style="display:inline-block;color:#202720;font-size:12px;letter-spacing:0.26em;text-transform:uppercase;margin-bottom:16px;border:1px solid #202720;border-radius:999px;padding:9px 20px"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Nuestras propiedades</sc-if><sc-if value="{{ en }}">Our properties</sc-if></div>
+      <sc-if value="{{ es }}" hint-placeholder-val="{{ true }}"><h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4.5vw,46px);color:#202720;margin:0">Cinco espacios, una misma operación</h2></sc-if>
+      <sc-if value="{{ en }}"><h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4.5vw,46px);color:#202720;margin:0">Five spaces, one operation</h2></sc-if>
+      <sc-if value="{{ es }}" hint-placeholder-val="{{ true }}"><p style="color:#202720;font-weight:300;font-size:14px;letter-spacing:0.08em;margin:14px 0 0">Desliza para explorar →</p></sc-if>
+      <sc-if value="{{ en }}"><p style="color:#202720;font-weight:300;font-size:14px;letter-spacing:0.08em;margin:14px 0 0">Swipe to explore →</p></sc-if>
+    </div>
+    <div style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px clamp(16px,5vw,48px) 12px;scrollbar-width:none">
+      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="5">
+        <article style="flex:0 0 auto;width:min(84vw,340px);scroll-snap-align:center;background:#ffffff;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 24px rgba(32,39,32,0.16)">
+          <div style="position:relative;height:210px;margin:10px;border-radius:20px;overflow:hidden"><image-slot id="{{ c.img }}" shape="rect" placeholder="{{ c.ph }}" style="position:absolute;inset:0;width:100%;height:100%"></image-slot></div>
+          <div style="padding:8px 22px 22px;display:flex;flex-direction:column;gap:7px;flex:1">
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;color:#202720;margin:0">{{ c.nombre }}</h3>
+            <div style="font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;color:#a8ac91">{{ c.zona }}</div>
+            <div style="font-size:14px;font-weight:300;color:#202720">{{ c.cap }}</div>
+            <div style="margin-top:4px;font-size:14px;color:#202720"><span style="font-weight:300">{{ c.desdeLabel }}</span> <span style="color:#d5a447;font-weight:600;font-size:16px">{{ c.desde }}</span> <span style="font-weight:300">{{ c.noche }}</span></div>
+            <a href="{{ c.href }}" style="margin-top:12px;display:flex;align-items:center;justify-content:center;background:#202720;color:#ffffff;padding:14px 0;min-height:48px;box-sizing:border-box;font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;border-radius:999px" style-hover="background:#d5a447;color:#202720">{{ c.cta }}</a>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Testimonios" style="background:#ffffff;padding:clamp(48px,8vw,100px) 0 clamp(40px,6vw,80px)">
+  <div style="text-align:center;margin-bottom:clamp(28px,4vw,44px);padding:0 20px">
+    <div style="display:inline-block;color:#202720;font-size:12px;letter-spacing:0.26em;text-transform:uppercase;margin-bottom:16px;border:1px solid #d5a447;border-radius:999px;padding:9px 20px"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Huéspedes que ya confiaron</sc-if><sc-if value="{{ en }}">Guests who already trusted us</sc-if></div>
+    <sc-if value="{{ es }}" hint-placeholder-val="{{ true }}"><h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4.5vw,42px);color:#202720;margin:0">Lo que dicen de quedarse con Hera23</h2></sc-if>
+    <sc-if value="{{ en }}"><h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4.5vw,42px);color:#202720;margin:0">What guests say about staying with Hera23</h2></sc-if>
+  </div>
+  <div style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px clamp(16px,5vw,48px) 12px;scrollbar-width:none;justify-content:flex-start">
+    <sc-for list="{{ tests }}" as="t" hint-placeholder-count="3">
+      <blockquote style="flex:0 0 auto;width:min(82vw,360px);scroll-snap-align:center;margin:0;border:1px solid #e6e4dc;border-radius:28px;padding:28px 26px;display:flex;flex-direction:column;gap:14px;box-sizing:border-box">
+        <div style="color:#d5a447;font-size:16px;letter-spacing:0.2em" aria-label="5 estrellas">★★★★★</div>
+        <p style="font-size:15px;font-weight:300;line-height:1.7;color:#202720;margin:0;flex:1">“{{ t.quote }}”</p>
+        <footer style="display:flex;align-items:center;gap:12px">
+          <span style="width:44px;height:44px;border-radius:50%;background:#202720;color:#d5a447;display:inline-flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600">{{ t.ini }}</span>
+          <span><span style="display:block;font-weight:500;color:#202720;font-size:14.5px">{{ t.name }}</span><span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#a8ac91">{{ t.prop }}</span></span>
+        </footer>
+      </blockquote>
+    </sc-for>
+  </div>
+</section>
+
+<section id="contacto" data-screen-label="Cobertura" style="padding:0 8px">
+  <div style="background:#202720;border-radius:36px;padding:clamp(48px,8vw,90px) clamp(18px,4vw,48px)">
+    <div style="max-width:1160px;margin:0 auto;text-align:center">
+      <div style="display:inline-block;color:#d5a447;font-size:12px;letter-spacing:0.26em;text-transform:uppercase;margin-bottom:16px;border:1px solid rgba(213,164,71,0.6);border-radius:999px;padding:9px 20px"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Zona de cobertura</sc-if><sc-if value="{{ en }}">Coverage area</sc-if></div>
+      <sc-if value="{{ es }}" hint-placeholder-val="{{ true }}"><h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4.5vw,42px);color:#ffffff;margin:0 0 28px">Medellín y municipios aledaños</h2></sc-if>
+      <sc-if value="{{ en }}"><h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4.5vw,42px);color:#ffffff;margin:0 0 28px">Medellín and nearby towns</h2></sc-if>
+      <iframe src="mapa.html" title="Zona de cobertura — Medellín y municipios aledaños" style="width:100%;height:min(52vh,440px);border:1px solid rgba(213,164,71,0.35);border-radius:28px;background:#e8e8e2"></iframe>
+      <div style="color:#a8ac91;font-size:13.5px;letter-spacing:0.08em;line-height:1.6;margin-top:16px"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Medellín, El Poblado, Laureles, Envigado, Sabaneta, Itagüí, Bello y Rionegro.</sc-if><sc-if value="{{ en }}">Medellín, El Poblado, Laureles, Envigado, Sabaneta, Itagüí, Bello and Rionegro.</sc-if></div>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer" style="background:#ffffff;padding:clamp(40px,6vw,64px) 24px 28px">
+  <div style="max-width:1160px;margin:0 auto;display:flex;gap:clamp(28px,5vw,48px);flex-wrap:wrap;justify-content:space-between">
+    <div style="max-width:320px">
+      <img src="assets/logo-dark.png" alt="Hera23 — Inversiones &amp; Rentas" style="height:44px;margin-bottom:16px;border-radius:8px">
+      <p style="color:#202720;font-weight:300;font-size:14.5px;line-height:1.7;margin:0"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Operador de propiedades Airbnb en Medellín y municipios aledaños. Canal propio de arriendo, verificable en Airbnb.</sc-if><sc-if value="{{ en }}">Airbnb property operator in Medellín and nearby towns. Own booking channel, verifiable on Airbnb.</sc-if></p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="color:#d5a447;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:2px"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Navegación</sc-if><sc-if value="{{ en }}">Navigation</sc-if></div>
+      <a href="#inicio" style="color:#202720;font-weight:300;font-size:15px;padding:2px 0" style-hover="color:#d5a447">{{ tInicio }}</a>
+      <a href="#propiedades" style="color:#202720;font-weight:300;font-size:15px;padding:2px 0" style-hover="color:#d5a447">{{ tProps }}</a>
+      <a href="#nosotros" style="color:#202720;font-weight:300;font-size:15px;padding:2px 0" style-hover="color:#d5a447">{{ tNosotros }}</a>
+      <a href="#contacto" style="color:#202720;font-weight:300;font-size:15px;padding:2px 0" style-hover="color:#d5a447">{{ tContacto }}</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="color:#d5a447;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:2px">Legal</div>
+      <a href="#" style="color:#202720;font-weight:300;font-size:15px;padding:2px 0" style-hover="color:#d5a447"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Términos y condiciones</sc-if><sc-if value="{{ en }}">Terms &amp; conditions</sc-if></a>
+      <a href="#" style="color:#202720;font-weight:300;font-size:15px;padding:2px 0" style-hover="color:#d5a447"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Política de privacidad</sc-if><sc-if value="{{ en }}">Privacy policy</sc-if></a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="color:#d5a447;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:2px"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Síguenos</sc-if><sc-if value="{{ en }}">Follow us</sc-if></div>
+      <a href="#" style="color:#202720;font-weight:300;font-size:15px;padding:2px 0" style-hover="color:#d5a447">Instagram</a>
+      <a href="#" style="color:#202720;font-weight:300;font-size:15px;padding:2px 0" style-hover="color:#d5a447">Facebook</a>
+      <a href="{{ airbnb }}" target="_blank" rel="noopener" style="color:#d5a447;font-weight:500;font-size:15px;padding:2px 0" style-hover="color:#202720"><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">Perfil oficial en Airbnb ↗</sc-if><sc-if value="{{ en }}">Official Airbnb profile ↗</sc-if></a>
+    </div>
+  </div>
+  <div style="max-width:1160px;margin:36px auto 0;border-top:1px solid #e6e4dc;padding-top:20px;color:#8a8a82;font-size:12.5px;letter-spacing:0.08em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <span>© 2026 Hera23 · Inversiones &amp; Rentas · Medellín, Colombia</span>
+    <span><sc-if value="{{ es }}" hint-placeholder-val="{{ true }}">La reserva se confirma vía WhatsApp o Airbnb — sin pagos en este sitio.</sc-if><sc-if value="{{ en }}">Bookings are confirmed via WhatsApp or Airbnb — no payments on this site.</sc-if></span>
+  </div>
+</footer>
+
+<div style="position:fixed;right:16px;bottom:16px;z-index:55;display:flex;flex-direction:column;gap:10px;align-items:flex-end">
+  <a href="{{ airbnb }}" target="_blank" rel="noopener" aria-label="Ver perfil oficial en Airbnb" style="display:flex;align-items:center;gap:10px;background:rgba(32,39,32,0.94);border:1px solid #d5a447;color:#d5a447;padding:14px 22px;min-height:52px;box-sizing:border-box;font-size:13px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:999px;box-shadow:0 10px 30px rgba(32,39,32,0.35)" style-hover="background:#d5a447;color:#202720;transform:translateY(-2px)"><span style="width:9px;height:9px;border-radius:50%;background:#d5a447;display:inline-block"></span>Airbnb ↗</a>
+  <a href="{{ waHref }}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="display:flex;align-items:center;gap:10px;background:#d5a447;color:#202720;padding:14px 22px;min-height:52px;box-sizing:border-box;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border-radius:999px;box-shadow:0 10px 30px rgba(32,39,32,0.35)" style-hover="background:#ffffff;transform:translateY(-2px)"><span style="width:9px;height:9px;border-radius:50%;background:#202720;display:inline-block"></span>WhatsApp</a>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;57 300 000 0000&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;airbnbProfileUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.airbnb.com.co/users/show/PERFIL-HERA23&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;es&quot;,&quot;en&quot;],&quot;default&quot;:&quot;es&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Idioma&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    let saved = null;
+    try { saved = localStorage.getItem('hera23_lang'); } catch (e) {}
+    this.state = { lang: saved, mobile: true, menuOpen: false, fNombre: '', fFecha: '', fProp: '', fMsg: '' };
+  }
+  componentDidMount() {
+    this.mq = window.matchMedia('(max-width: 900px)');
+    this.onMq = () => this.setState({ mobile: this.mq.matches });
+    this.mq.addEventListener('change', this.onMq);
+    this.onMq();
+  }
+  componentWillUnmount() { if (this.mq) this.mq.removeEventListener('change', this.onMq); }
+  get lang() { return this.state.lang || this.props.defaultLang || 'es'; }
+  setLang(l) { try { localStorage.setItem('hera23_lang', l); } catch (e) {} this.setState({ lang: l }); }
+  renderVals() {
+    const es = this.lang === 'es', en = !es;
+    const waNum = String(this.props.whatsappNumber ?? '57 300 000 0000').replace(/\D/g, '');
+    const baseMsg = es ? 'Hola Hera23, quiero consultar disponibilidad de sus propiedades.' : 'Hi Hera23, I would like to check availability for your properties.';
+    const waHref = 'https://wa.me/' + waNum + '?text=' + encodeURIComponent(baseMsg);
+    const s = this.state;
+    let formMsg = baseMsg;
+    if (s.fNombre || s.fProp || s.fFecha || s.fMsg) {
+      formMsg = (es ? 'Hola Hera23, soy ' : 'Hi Hera23, I am ') + (s.fNombre || '—') +
+        (s.fProp ? (es ? '. Me interesa: ' : '. Interested in: ') + s.fProp : '') +
+        (s.fFecha ? (es ? '. Fecha estimada: ' : '. Approximate date: ') + s.fFecha : '') +
+        (s.fMsg ? '. ' + s.fMsg : '');
+    }
+    const waFormHref = 'https://wa.me/' + waNum + '?text=' + encodeURIComponent(formMsg);
+    const airbnb = this.props.airbnbProfileUrl ?? 'https://www.airbnb.com.co/users/show/PERFIL-HERA23';
+    const propHref = 'Propiedad - Loft El Poblado.dc.html';
+    const desdeLabel = es ? 'Desde' : 'From', noche = es ? '/ noche' : '/ night', cta = es ? 'Ver propiedad' : 'View property';
+    const cap = (g, h, b) => es ? g + ' huéspedes · ' + h + ' hab · ' + b + ' baños' : g + ' guests · ' + h + ' BR · ' + b + ' BA';
+    const cards = [
+      { nombre: 'Loft El Poblado', zona: 'El Poblado · Provenza', cap: cap(4, 2, 2), desde: '$350.000 COP', img: 'prop-loft-poblado', ph: 'Foto — Loft El Poblado' },
+      { nombre: 'Apartamento Laureles', zona: 'Laureles · Estadio', cap: cap(6, 3, 2), desde: '$420.000 COP', img: 'prop-apto-laureles', ph: 'Foto — Apartamento Laureles' },
+      { nombre: 'Penthouse Envigado', zona: 'Envigado · Zona sur', cap: cap(5, 2, 3), desde: '$480.000 COP', img: 'prop-ph-envigado', ph: 'Foto — Penthouse Envigado' },
+      { nombre: 'Estudio Sabaneta', zona: 'Sabaneta · Centro', cap: cap(2, 1, 1), desde: '$220.000 COP', img: 'prop-estudio-sabaneta', ph: 'Foto — Estudio Sabaneta' },
+      { nombre: 'Casa Rionegro', zona: 'Rionegro · Llanogrande', cap: cap(8, 4, 3), desde: '$650.000 COP', img: 'prop-casa-rionegro', ph: 'Foto — Casa Rionegro' }
+    ].map(c => Object.assign(c, { desdeLabel, noche, cta, href: propHref }));
+    const tests = es ? [
+      { quote: 'Todo impecable y tal como en las fotos. La comunicación por WhatsApp fue inmediata.', name: 'Laura M.', ini: 'L', prop: 'Loft El Poblado' },
+      { quote: 'Verificamos el listado en Airbnb y era exactamente el mismo inmueble. Cero dudas.', name: 'Carlos R.', ini: 'C', prop: 'Apartamento Laureles' },
+      { quote: 'Se nota que es un operador profesional: llegada fácil, respuesta rápida, la casa perfecta.', name: 'Ana P.', ini: 'A', prop: 'Casa Rionegro' }
+    ] : [
+      { quote: 'Everything spotless and exactly like the photos. WhatsApp replies were immediate.', name: 'Laura M.', ini: 'L', prop: 'Loft El Poblado' },
+      { quote: 'We checked the Airbnb listing and it was exactly the same property. Zero doubts.', name: 'Carlos R.', ini: 'C', prop: 'Apartamento Laureles' },
+      { quote: 'Clearly a professional operator: easy check-in, fast replies, a perfect house.', name: 'Ana P.', ini: 'A', prop: 'Casa Rionegro' }
+    ];
+    const stats = es ? [
+      { n: '5', l: 'Propiedades gestionadas' },
+      { n: '8', l: 'Zonas cubiertas' },
+      { n: '100%', l: 'Operación directa Airbnb' }
+    ] : [
+      { n: '5', l: 'Managed properties' },
+      { n: '8', l: 'Areas covered' },
+      { n: '100%', l: 'Direct Airbnb operation' }
+    ];
+    return {
+      es, en, cards, tests, stats, waHref, waFormHref, airbnb,
+      mobile: s.mobile, desktop: !s.mobile, notMobile: !s.mobile,
+      menuOpen: s.menuOpen, toggleMenu: () => this.setState(p => ({ menuOpen: !p.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      padBottom: '0px',
+      tInicio: es ? 'Inicio' : 'Home', tProps: es ? 'Propiedades' : 'Properties',
+      tNosotros: es ? 'Nosotros' : 'About', tContacto: es ? 'Cobertura' : 'Coverage',
+      tVerificado: es ? 'Operador verificado en Airbnb' : 'Verified Airbnb operator',
+      setEs: () => this.setLang('es'), setEn: () => this.setLang('en'),
+      esBg: es ? '#d5a447' : 'transparent', esCo: es ? '#202720' : '#ffffff',
+      enBg: en ? '#d5a447' : 'transparent', enCo: en ? '#202720' : '#ffffff',
+      fNombre: s.fNombre, fFecha: s.fFecha, fProp: s.fProp, fMsg: s.fMsg,
+      onNombre: e => this.setState({ fNombre: e.target.value }),
+      onFecha: e => this.setState({ fFecha: e.target.value }),
+      onProp: e => this.setState({ fProp: e.target.value }),
+      onMsg: e => this.setState({ fMsg: e.target.value }),
+      phNombre: es ? 'Tu nombre' : 'Your name',
+      phMsg: es ? '¿Fechas, número de personas, dudas?' : 'Dates, party size, questions?'
+    };
+  }
+}
+</script>
+</body>
+</html>
