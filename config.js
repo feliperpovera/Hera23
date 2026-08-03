@@ -34,7 +34,7 @@ window.HERA23 = {
         es: ['Piscina', 'WiFi', 'Barbacoa', 'Bar', 'TV', 'Personal de servicio'],
         en: ['Pool', 'WiFi', 'BBQ', 'Bar', 'TV', 'Staff included']
       },
-      images: [],
+      images: ['fotos/villa-santa-fe/11.avif', 'fotos/villa-santa-fe/16.avif', 'fotos/villa-santa-fe/04.avif', 'fotos/villa-santa-fe/13.avif', 'fotos/villa-santa-fe/02.avif', 'fotos/villa-santa-fe/12.avif', 'fotos/villa-santa-fe/17.avif', 'fotos/villa-santa-fe/14.avif', 'fotos/villa-santa-fe/10.avif', 'fotos/villa-santa-fe/09.avif', 'fotos/villa-santa-fe/07.avif', 'fotos/villa-santa-fe/08.avif', 'fotos/villa-santa-fe/15.avif', 'fotos/villa-santa-fe/01.avif', 'fotos/villa-santa-fe/05.avif', 'fotos/villa-santa-fe/03.avif', 'fotos/villa-santa-fe/06.avif'],
       airbnbUrl: ''
     },
     {
