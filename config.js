@@ -9,7 +9,7 @@
 window.HERA23 = {
   config: {
     whatsappNumber: '573000000000',            // TODO: reemplazar por el número real
-    airbnbProfile: 'https://www.airbnb.com.co/users/show/PERFIL-HERA23',  // TODO: URL real del perfil
+    airbnbProfile: 'https://www.airbnb.com.co/users/profile/1467237529622528687',
     heroImage: 'fotos/villa-medellin/05.avif'
   },
   properties: [
