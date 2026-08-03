@@ -23,7 +23,7 @@ window.HERA23 = {
         en: ['Incredible views', 'Ping-pong table', 'Great for groups']
       },
       images: ['fotos/casa-grande-medellin/12.webp', 'fotos/casa-grande-medellin/02.webp', 'fotos/casa-grande-medellin/03.avif', 'fotos/casa-grande-medellin/07.avif', 'fotos/casa-grande-medellin/10.avif', 'fotos/casa-grande-medellin/14.avif', 'fotos/casa-grande-medellin/04.avif', 'fotos/casa-grande-medellin/05.avif', 'fotos/casa-grande-medellin/08.avif', 'fotos/casa-grande-medellin/09.avif', 'fotos/casa-grande-medellin/11.avif', 'fotos/casa-grande-medellin/13.avif', 'fotos/casa-grande-medellin/15.avif', 'fotos/casa-grande-medellin/06.webp', 'fotos/casa-grande-medellin/01.avif'],
-      airbnbUrl: ''          // TODO: URL del listado (vacío = usa el perfil)
+      airbnbUrl: 'https://www.airbnb.com.co/rooms/1532953690333502228'          // TODO: URL del listado (vacío = usa el perfil)
     },
     {
       id: 'villa-santa-fe',
@@ -35,7 +35,7 @@ window.HERA23 = {
         en: ['Pool', 'WiFi', 'BBQ', 'Bar', 'TV', 'Staff included']
       },
       images: ['fotos/villa-santa-fe/11.avif', 'fotos/villa-santa-fe/16.avif', 'fotos/villa-santa-fe/04.avif', 'fotos/villa-santa-fe/13.avif', 'fotos/villa-santa-fe/02.avif', 'fotos/villa-santa-fe/12.avif', 'fotos/villa-santa-fe/17.avif', 'fotos/villa-santa-fe/14.avif', 'fotos/villa-santa-fe/10.avif', 'fotos/villa-santa-fe/09.avif', 'fotos/villa-santa-fe/07.avif', 'fotos/villa-santa-fe/08.avif', 'fotos/villa-santa-fe/15.avif', 'fotos/villa-santa-fe/01.avif', 'fotos/villa-santa-fe/05.avif', 'fotos/villa-santa-fe/03.avif', 'fotos/villa-santa-fe/06.avif'],
-      airbnbUrl: ''
+      airbnbUrl: 'https://www.airbnb.com.co/rooms/15900275'
     },
     {
       id: 'villa-medellin',
@@ -47,7 +47,7 @@ window.HERA23 = {
         en: ['Pool', 'City views', 'Luxury']
       },
       images: ['fotos/villa-medellin/05.avif', 'fotos/villa-medellin/07.avif', 'fotos/villa-medellin/03.avif', 'fotos/villa-medellin/15.avif', 'fotos/villa-medellin/08.avif', 'fotos/villa-medellin/13.avif', 'fotos/villa-medellin/04.avif', 'fotos/villa-medellin/09.avif', 'fotos/villa-medellin/10.avif', 'fotos/villa-medellin/06.avif', 'fotos/villa-medellin/11.avif', 'fotos/villa-medellin/12.avif', 'fotos/villa-medellin/02.avif', 'fotos/villa-medellin/01.avif', 'fotos/villa-medellin/17.avif', 'fotos/villa-medellin/16.avif', 'fotos/villa-medellin/14.avif'],
-      airbnbUrl: ''
+      airbnbUrl: 'https://www.airbnb.com.co/rooms/1281079213215674888'
     }
   ]
 };
