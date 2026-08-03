@@ -22,7 +22,7 @@ window.HERA23 = {
         es: ['Vistas increíbles', 'Mesa de ping-pong', 'Ideal para grupos'],
         en: ['Incredible views', 'Ping-pong table', 'Great for groups']
       },
-      images: [],            // TODO: ['fotos/casa-grande-medellin/01.jpg', ...]
+      images: ['fotos/casa-grande-medellin/12.webp', 'fotos/casa-grande-medellin/02.webp', 'fotos/casa-grande-medellin/03.avif', 'fotos/casa-grande-medellin/07.avif', 'fotos/casa-grande-medellin/10.avif', 'fotos/casa-grande-medellin/14.avif', 'fotos/casa-grande-medellin/04.avif', 'fotos/casa-grande-medellin/05.avif', 'fotos/casa-grande-medellin/08.avif', 'fotos/casa-grande-medellin/09.avif', 'fotos/casa-grande-medellin/11.avif', 'fotos/casa-grande-medellin/13.avif', 'fotos/casa-grande-medellin/15.avif', 'fotos/casa-grande-medellin/06.webp', 'fotos/casa-grande-medellin/01.avif'],
       airbnbUrl: ''          // TODO: URL del listado (vacío = usa el perfil)
     },
     {
