@@ -83,8 +83,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .btn-wa:hover{background:var(--wa-dark);color:#fff}
 .btn-abnb{background:var(--abnb);color:#fff}
 .btn-abnb:hover{background:var(--abnb-dark);color:#fff}
-.chip-arrow{width:46px;height:46px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex:0 0 auto;transition:transform .25s}
-a:hover .chip-arrow,.chip-arrow:hover{transform:translate(2px,-2px)}
+.pcard{cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(29,34,29,.16)}
+.card-link{position:absolute;inset:0;z-index:3;border-radius:var(--r)}
+.pcard .foot .minis{position:relative;z-index:4}
 .mini{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
 .mini svg{width:19px;height:19px}
 .mini.wa{background:var(--wa)}.mini.wa:hover{background:var(--wa-dark)}
@@ -140,19 +142,16 @@ a:hover .chip-arrow,.chip-arrow:hover{transform:translate(2px,-2px)}
 .pc-dark .num{color:var(--oro);border-color:rgba(213,164,71,.4)}
 .pc-dark .place{color:var(--salvia)}
 .pc-dark .amen{color:rgba(243,239,230,.75)}
-.pc-dark .chip-arrow{background:var(--oro);color:var(--verde)}
 .pc-oro{background:var(--oro);color:var(--verde)}
 .pc-oro .num{color:var(--verde);border-color:rgba(32,39,32,.35)}
 .pc-oro .place{color:rgba(32,39,32,.65)}
 .pc-oro .amen{color:rgba(32,39,32,.8)}
-.pc-oro .chip-arrow{background:var(--verde);color:var(--crema)}
 .pc-photo{background-size:cover;background-position:center;color:var(--crema)}
 .pc-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,33,27,.18) 0%,rgba(27,33,27,.82) 100%)}
 .pc-photo>*{position:relative;z-index:2}
 .pc-photo .num{color:var(--oro);border-color:rgba(213,164,71,.5)}
 .pc-photo .place{color:var(--crema)}
 .pc-photo .amen{color:rgba(243,239,230,.85)}
-.pc-photo .chip-arrow{background:var(--oro);color:var(--verde)}
 .pcard h3 a:hover{color:inherit;opacity:.8}
 
 /* ---------- cinta de amenidades ---------- */
@@ -560,9 +559,10 @@ function render() {
     const style = hasFoto ? ` style="background-image:url('${esc(p.images[0])}')"` : '';
     const marca = i === 2 && !hasFoto ? `<img class="marca" src="assets/isotipo-trans.png" alt="">` : '';
     return `<article class="pcard ${cls} reveal"${style}>
+      <a class="card-link" href="${esc(p.id)}.html" aria-label="${esc(t.verFicha)} — ${esc(p.nombre)}"></a>
       ${marca}
       <div class="num">${num}.</div>
-      <h3><a href="${esc(p.id)}.html">${esc(p.corto[lang])}</a></h3>
+      <h3>${esc(p.corto[lang])}</h3>
       <div class="place">${esc(p.place[lang])}</div>
       <p class="amen">${p.chips[lang].slice(0, 3).map(esc).join(' · ')}</p>
       <div class="foot">
@@ -570,7 +570,6 @@ function render() {
           <a class="mini wa" href="${waHref(t.waMsgProp(p.nombre))}" target="_blank" rel="noopener" aria-label="WhatsApp — ${esc(p.corto[lang])}">${WA_ICON}</a>
           <a class="mini" href="${esc(abnbUrl)}" target="_blank" rel="noopener" aria-label="Airbnb — ${esc(p.corto[lang])}"><img src="assets/airbnb.svg" alt=""></a>
         </div>
-        <a class="chip-arrow" href="${esc(p.id)}.html" aria-label="${esc(t.verFicha)} — ${esc(p.corto[lang])}">↗</a>
       </div>
     </article>`;
   }).join('');
