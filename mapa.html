@@ -11,6 +11,9 @@
   #map{height:100%;width:100%;background:#e8e8e2}
   .leaflet-popup-content{font-family:'Jost','Helvetica Neue',sans-serif;color:#202720;font-size:13px;line-height:1.6}
   .leaflet-popup-content b{display:block;font-size:14px;letter-spacing:.04em}
+  .etq{background:#fdfcf9;border:1px solid #d5a447;border-radius:12px;color:#202720;font-family:'Jost','Helvetica Neue',sans-serif;font-size:12px;line-height:1.45;padding:7px 11px;box-shadow:0 4px 14px rgba(32,39,32,.18);white-space:nowrap}
+  .etq b{font-weight:500;letter-spacing:.05em}
+  .etq::before{border-right-color:#d5a447}
 </style>
 </head>
 <body>
@@ -33,11 +36,12 @@ if (q.get('lat')) {
     { nombre: 'Venecia', casas: 'Finca Campestre', lat: 5.9636, lng: -75.7370, radio: 4000 }
   ];
   destinos.forEach(d => {
-    L.circle([d.lat, d.lng], { radius: d.radio, color: gold, weight: 2, fillColor: gold, fillOpacity: 0.18 }).addTo(map);
-    L.circleMarker([d.lat, d.lng], { radius: 9, color: dark, weight: 2, fillColor: gold, fillOpacity: 0.95 })
-      .addTo(map).bindPopup('<b>' + d.nombre + '</b>' + d.casas);
+    L.circleMarker([d.lat, d.lng], { radius: 11, color: dark, weight: 2.5, fillColor: gold, fillOpacity: 0.95 })
+      .addTo(map)
+      .bindTooltip('<b>' + d.nombre + '</b><br>' + d.casas, { permanent: true, direction: 'right', offset: [14, 0], className: 'etq' })
+      .bindPopup('<b>' + d.nombre + '</b>' + d.casas);
   });
-  map.fitBounds(L.latLngBounds(destinos.map(d => [d.lat, d.lng])), { padding: [70, 70] });
+  map.fitBounds(L.latLngBounds(destinos.map(d => [d.lat, d.lng])), { padding: [46, 46], maxZoom: 10 });
 }
 </script>
 </body>

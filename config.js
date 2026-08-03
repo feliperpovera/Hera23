@@ -15,6 +15,7 @@ window.HERA23 = {
   properties: [
     {
       id: 'casa-grande-medellin',
+      heroImages: ['fotos/casa-grande-medellin/03.avif', 'fotos/casa-grande-medellin/10.avif'],
       rating: '5,0',
       reviewsCount: 27,
       nombre: 'Casa grande con vistas increíbles, ping-pong en Medellín',
@@ -29,6 +30,7 @@ window.HERA23 = {
     },
     {
       id: 'villa-santa-fe',
+      heroImages: ['fotos/villa-santa-fe/04.avif', 'fotos/villa-santa-fe/13.avif'],
       rating: '4,89',
       reviewsCount: 63,
       nombre: 'Villa de lujo + piscina + wifi + barbacoa + bar + TV + personal @Santa Fe',
@@ -43,6 +45,7 @@ window.HERA23 = {
     },
     {
       id: 'finca-campestre',
+      heroImages: ['fotos/finca-campestre/04.avif'],
       nombre: 'Finca campestre con piscina cerca a Medellín',
       corto: { es: 'Finca Campestre', en: 'Finca Campestre' },
       place: { es: 'Venecia, Antioquia · 1.350 m', en: 'Venecia, Antioquia · 1,350 m' },
@@ -55,6 +58,7 @@ window.HERA23 = {
     },
     {
       id: 'villa-medellin',
+      heroImages: ['fotos/villa-medellin/03.avif', 'fotos/villa-medellin/16.avif'],
       rating: '4,9',
       reviewsCount: 78,
       nombre: 'Villa de lujo en Medellín · Piscina y vistas a la ciudad',
