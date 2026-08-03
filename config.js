@@ -10,12 +10,12 @@ window.HERA23 = {
   config: {
     whatsappNumber: '573000000000',            // TODO: reemplazar por el número real
     airbnbProfile: 'https://www.airbnb.com.co/users/profile/1467237529622528687',
-    heroImage: 'fotos/villa-medellin/05.avif'
+    heroImage: ''
   },
   properties: [
     {
       id: 'casa-grande-medellin',
-      heroImages: ['fotos/casa-grande-medellin/03.avif', 'fotos/casa-grande-medellin/10.avif'],
+      heroImages: ['fotos/casa-grande-medellin/07.avif', 'fotos/casa-grande-medellin/12.webp'],
       rating: '5,0',
       reviewsCount: 27,
       nombre: 'Casa grande con vistas increíbles, ping-pong en Medellín',
@@ -30,7 +30,7 @@ window.HERA23 = {
     },
     {
       id: 'villa-santa-fe',
-      heroImages: ['fotos/villa-santa-fe/04.avif', 'fotos/villa-santa-fe/13.avif'],
+      heroImages: ['fotos/villa-santa-fe/04.avif', 'fotos/villa-santa-fe/12.avif'],
       rating: '4,89',
       reviewsCount: 63,
       nombre: 'Villa de lujo + piscina + wifi + barbacoa + bar + TV + personal @Santa Fe',
@@ -45,7 +45,7 @@ window.HERA23 = {
     },
     {
       id: 'finca-campestre',
-      heroImages: ['fotos/finca-campestre/04.avif'],
+      heroImages: ['fotos/finca-campestre/06.avif'],
       nombre: 'Finca campestre con piscina cerca a Medellín',
       corto: { es: 'Finca Campestre', en: 'Finca Campestre' },
       place: { es: 'Venecia, Antioquia · 1.350 m', en: 'Venecia, Antioquia · 1,350 m' },
@@ -58,7 +58,7 @@ window.HERA23 = {
     },
     {
       id: 'villa-medellin',
-      heroImages: ['fotos/villa-medellin/03.avif', 'fotos/villa-medellin/16.avif'],
+      heroImages: ['fotos/villa-medellin/08.avif', 'fotos/villa-medellin/15.avif'],
       rating: '4,9',
       reviewsCount: 78,
       nombre: 'Villa de lujo en Medellín · Piscina y vistas a la ciudad',
@@ -68,7 +68,7 @@ window.HERA23 = {
         es: ['Piscina', 'Vistas a la ciudad', 'Lujo'],
         en: ['Pool', 'City views', 'Luxury']
       },
-      images: ['fotos/villa-medellin/05.avif', 'fotos/villa-medellin/07.avif', 'fotos/villa-medellin/03.avif', 'fotos/villa-medellin/15.avif', 'fotos/villa-medellin/08.avif', 'fotos/villa-medellin/13.avif', 'fotos/villa-medellin/04.avif', 'fotos/villa-medellin/09.avif', 'fotos/villa-medellin/10.avif', 'fotos/villa-medellin/06.avif', 'fotos/villa-medellin/11.avif', 'fotos/villa-medellin/12.avif', 'fotos/villa-medellin/02.avif', 'fotos/villa-medellin/01.avif', 'fotos/villa-medellin/17.avif', 'fotos/villa-medellin/16.avif', 'fotos/villa-medellin/14.avif'],
+      images: ['fotos/villa-medellin/08.avif', 'fotos/villa-medellin/07.avif', 'fotos/villa-medellin/03.avif', 'fotos/villa-medellin/15.avif', 'fotos/villa-medellin/05.avif', 'fotos/villa-medellin/13.avif', 'fotos/villa-medellin/04.avif', 'fotos/villa-medellin/09.avif', 'fotos/villa-medellin/10.avif', 'fotos/villa-medellin/06.avif', 'fotos/villa-medellin/11.avif', 'fotos/villa-medellin/12.avif', 'fotos/villa-medellin/02.avif', 'fotos/villa-medellin/01.avif', 'fotos/villa-medellin/17.avif', 'fotos/villa-medellin/16.avif', 'fotos/villa-medellin/14.avif'],
       airbnbUrl: 'https://www.airbnb.com.co/rooms/1281079213215674888'
     }
   ],
