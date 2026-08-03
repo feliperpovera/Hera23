@@ -15,6 +15,8 @@ window.HERA23 = {
   properties: [
     {
       id: 'casa-grande-medellin',
+      rating: '5,0',
+      reviewsCount: 27,
       nombre: 'Casa grande con vistas increíbles, ping-pong en Medellín',
       corto: { es: 'Casa Grande', en: 'Casa Grande' },
       place: { es: 'Medellín · 1.495 m', en: 'Medellín · 1,495 m' },
@@ -27,6 +29,8 @@ window.HERA23 = {
     },
     {
       id: 'villa-santa-fe',
+      rating: '4,89',
+      reviewsCount: 63,
       nombre: 'Villa de lujo + piscina + wifi + barbacoa + bar + TV + personal @Santa Fe',
       corto: { es: 'Villa Santa Fe', en: 'Villa Santa Fe' },
       place: { es: 'Santa Fe de Antioquia · 550 m', en: 'Santa Fe de Antioquia · 550 m' },
@@ -39,6 +43,8 @@ window.HERA23 = {
     },
     {
       id: 'villa-medellin',
+      rating: '4,9',
+      reviewsCount: 78,
       nombre: 'Villa de lujo en Medellín · Piscina y vistas a la ciudad',
       corto: { es: 'Villa Medellín', en: 'Villa Medellín' },
       place: { es: 'Medellín · 1.495 m', en: 'Medellín · 1,495 m' },
