@@ -248,13 +248,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 </style>
 </head>
 <body>
-<a class="skip-link" href="#casas" data-i18n="skip">Ir a las casas</a>
+<a class="skip-link" href="#casas" data-i18n="skip">Ir a nuestras propiedades</a>
 
 <header class="topbar" id="topbar">
   <a href="#inicio" class="logo" aria-label="Hera23 — Inicio"><img src="assets/logo-trans.png" alt="Hera23 — Inversiones &amp; Rentas"></a>
   <div class="topbar-right">
     <nav class="topnav" aria-label="Principal">
-      <a href="#casas" data-i18n="navProps">Las casas</a>
+      <a href="#casas" data-i18n="navProps">Nuestras propiedades</a>
       <a href="#manifiesto" data-i18n="navNosotros">Manifiesto</a>
       <a href="#cobertura" data-i18n="navContacto">Destinos</a>
     </nav>
@@ -271,7 +271,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 
 <div class="menu" id="menu">
   <button class="close" id="menu-close" aria-label="Cerrar menú">✕</button>
-  <a class="item" href="#casas" data-menu-link><span data-i18n="navProps">Las casas</span><span class="tag">03</span></a>
+  <a class="item" href="#casas" data-menu-link><span data-i18n="navProps">Nuestras propiedades</span><span class="tag">03</span></a>
   <a class="item" href="#manifiesto" data-menu-link><span data-i18n="navNosotros">Manifiesto</span></a>
   <a class="item" href="#cobertura" data-menu-link><span data-i18n="navContacto">Destinos</span></a>
   <div class="menu-foot">
@@ -298,7 +298,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
   </div>
   <nav class="index rise" style="animation-delay:.5s" aria-label="Índice de casas">
     <div class="index-inner index-pad">
-      <span class="tag head" data-i18n="indexHead">Índice — Las casas</span>
+      <span class="tag head" data-i18n="indexHead">Índice — Nuestras propiedades</span>
       <div id="index-rows"></div>
     </div>
   </nav>
@@ -331,7 +331,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 
 <!-- LAS CASAS -->
 <section id="casas" class="sec" style="padding-top:0">
-  <div class="sec-head reveal"><span class="tag" data-i18n="casasTag">Las casas</span></div>
+  <div class="sec-head reveal"><span class="tag" data-i18n="casasTag">Nuestras propiedades</span></div>
   <div id="casas-list"></div>
 </section>
 
@@ -368,7 +368,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
       </div>
       <div class="pie-col">
         <span class="tag" data-i18n="footNav">Navegación</span>
-        <a href="#casas" data-i18n="navProps">Las casas</a>
+        <a href="#casas" data-i18n="navProps">Nuestras propiedades</a>
         <a href="#manifiesto" data-i18n="navNosotros">Manifiesto</a>
         <a href="#cobertura" data-i18n="navContacto">Destinos</a>
       </div>
@@ -407,21 +407,21 @@ const PROPERTIES = window.HERA23.properties;
 
 const I18N = {
   es: {
-    skip: 'Ir a las casas',
-    navProps: 'Las casas', navNosotros: 'Manifiesto', navContacto: 'Destinos',
+    skip: 'Ir a nuestras propiedades',
+    navProps: 'Nuestras propiedades', navNosotros: 'Manifiesto', navContacto: 'Destinos',
     verificado: 'Perfil verificado en Airbnb',
     kicker: 'Operador directo en Airbnb · Antioquia, Colombia',
     coverTitle: 'Reserva <em>en minutos</em> tu propiedad en Medellín.',
     heroSub: 'Reserva directa por WhatsApp. Verificación abierta en Airbnb.',
     heroCta2: 'WhatsApp directo',
-    indexHead: 'Índice — Las casas',
+    indexHead: 'Índice — Nuestras propiedades',
     indexGo: 'Ver ficha',
     colofonOp: '3 casas · operación directa',
     colofonAb: 'Verificable en Airbnb',
     maniTag: 'Manifiesto',
     maniQuote: 'La persona que responde tu WhatsApp es <em>la misma que te entrega las llaves.</em>',
     maniP1: 'Administramos cada casa personalmente. Lo que ves aquí es lo mismo que aparece en nuestro perfil oficial de Airbnb.',
-    casasTag: 'Las casas',
+    casasTag: 'Nuestras propiedades',
     photosSoon: 'Fotos muy pronto',
     laminaPie: 'Lámina', laminaDe: 'de 03',
     btnWa: 'Reservar por WhatsApp', btnAb: 'Ver en Airbnb',
@@ -434,7 +434,7 @@ const I18N = {
     footNav: 'Navegación', footTerms: 'Términos y condiciones', footPrivacy: 'Política de privacidad',
     footFollow: 'Síguenos', footAbnb: 'Perfil oficial en Airbnb',
     footNote: 'La reserva se confirma vía WhatsApp o Airbnb — sin pagos en este sitio.',
-    waMsg: 'Hola Hera23, quiero consultar disponibilidad de sus casas.',
+    waMsg: 'Hola Hera23, quiero consultar disponibilidad de sus propiedades.',
     waMsgProp: n => `Hola Hera23, me interesa "${n}". ¿Me comparten disponibilidad y tarifas?`,
     tests: [
       { quote: 'Todo impecable y tal como en las fotos.', name: 'Laura M.', prop: 'Villa Medellín' },
@@ -443,21 +443,21 @@ const I18N = {
     ]
   },
   en: {
-    skip: 'Skip to the houses',
-    navProps: 'The houses', navNosotros: 'Manifesto', navContacto: 'Destinations',
+    skip: 'Skip to our properties',
+    navProps: 'Our properties', navNosotros: 'Manifesto', navContacto: 'Destinations',
     verificado: 'Verified Airbnb profile',
     kicker: 'Direct Airbnb operator · Antioquia, Colombia',
     coverTitle: 'Book your Medellín property <em>in minutes.</em>',
     heroSub: 'Book directly via WhatsApp. Verify us on Airbnb.',
     heroCta2: 'Direct WhatsApp',
-    indexHead: 'Index — The houses',
+    indexHead: 'Index — Our properties',
     indexGo: 'View house',
     colofonOp: '3 houses · direct operation',
     colofonAb: 'Verifiable on Airbnb',
     maniTag: 'Manifesto',
     maniQuote: 'The person who answers your WhatsApp is <em>the same one who hands you the keys.</em>',
     maniP1: 'We manage every house ourselves. What you see here is exactly what is listed on our official Airbnb profile.',
-    casasTag: 'The houses',
+    casasTag: 'Our properties',
     photosSoon: 'Photos coming soon',
     laminaPie: 'Plate', laminaDe: 'of 03',
     btnWa: 'Book via WhatsApp', btnAb: 'View on Airbnb',
@@ -470,7 +470,7 @@ const I18N = {
     footNav: 'Navigation', footTerms: 'Terms & conditions', footPrivacy: 'Privacy policy',
     footFollow: 'Follow us', footAbnb: 'Official Airbnb profile',
     footNote: 'Bookings are confirmed via WhatsApp or Airbnb — no payments on this site.',
-    waMsg: 'Hi Hera23, I would like to check availability for your houses.',
+    waMsg: 'Hi Hera23, I would like to check availability for your properties.',
     waMsgProp: n => `Hi Hera23, I'm interested in "${n}". Could you share availability and rates?`,
     tests: [
       { quote: 'Everything spotless, exactly like the photos.', name: 'Laura M.', prop: 'Villa Medellín' },
