@@ -3,237 +3,211 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hera23 — Inversiones &amp; Rentas | Casas y villas en Medellín y Santa Fe de Antioquia</title>
-<meta name="description" content="Operador directo de propiedades Airbnb en Medellín y Santa Fe de Antioquia. Tres casas administradas personalmente: reserva por WhatsApp, verificación abierta en Airbnb.">
+<title>Hera23 — Inversiones &amp; Rentas | Propiedades en Medellín y Santa Fe de Antioquia</title>
+<meta name="description" content="Operador directo de propiedades Airbnb en Medellín y Santa Fe de Antioquia. Reserva en minutos por WhatsApp; verificación abierta en Airbnb.">
 <meta property="og:title" content="Hera23 — Inversiones &amp; Rentas">
-<meta property="og:description" content="Tres casas en Antioquia, administradas personalmente. Operador verificable en Airbnb.">
+<meta property="og:description" content="Reserva en minutos tu propiedad en Medellín. Operador verificable en Airbnb.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/logo-dark.png">
-<meta name="theme-color" content="#1b211b">
+<meta property="og:image" content="assets/logo-negro.png">
+<meta name="theme-color" content="#f3efe6">
 <link rel="icon" href="assets/isotipo-trans.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --selva:#1b211b;          /* portada y contraportada */
-  --verde:#202720;          /* paneles de marca */
+  --crema:#f3efe6;
+  --blanco:#fdfcf9;
+  --verde:#202720;
+  --selva:#1b211b;
+  --tinta:#1d221d;
+  --tinta-suave:#6a6f63;
   --oro:#d5a447;
-  --oro-palido:#e8cd9a;
-  --oro-linea:rgba(213,164,71,.45);
-  --marfil:#f3efe6;         /* papel */
-  --marfil-2:#ece7da;
+  --oro-hover:#c2913a;
   --salvia:#a8ac91;
-  --tinta:#2a2f28;          /* texto sobre papel */
-  --tinta-suave:#5c6156;
+  --linea:rgba(29,34,29,.14);
+  --linea-clara:rgba(243,239,230,.16);
   --wa:#25d366; --wa-dark:#128c44;
   --abnb:#ff385c; --abnb-dark:#d31d43;
-  --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost',system-ui,sans-serif;
+  --r:28px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--sans);font-weight:300;background:var(--marfil);color:var(--tinta);-webkit-font-smoothing:antialiased;min-width:320px}
-/* grano de papel, casi imperceptible */
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.035;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+body{margin:0;font-family:var(--sans);font-weight:300;background:var(--crema);color:var(--tinta);-webkit-font-smoothing:antialiased;min-width:320px}
 img{max-width:100%}
-a{color:inherit;text-decoration:none;transition:color .25s ease,border-color .25s ease,background .25s ease,transform .25s ease}
-h1,h2,h3,blockquote{font-family:var(--serif);font-weight:500;margin:0}
-em{font-style:italic}
-.skip-link{position:absolute;left:-9999px;top:0;background:var(--oro);color:var(--selva);padding:12px 20px;z-index:100;font-weight:500}
+a{color:inherit;text-decoration:none;transition:color .25s,border-color .25s,background .25s,transform .25s,box-shadow .25s}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.02em;line-height:1.05}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--oro);color:var(--verde);padding:12px 20px;z-index:100;font-weight:500}
 .skip-link:focus{left:0}
-a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset:4px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+.tag{font-weight:400;font-size:11px;letter-spacing:.26em;text-transform:uppercase}
+.shell{max-width:1240px;margin:0 auto;padding-left:clamp(16px,3.5vw,40px);padding-right:clamp(16px,3.5vw,40px)}
 
-/* ---------- etiquetas versalitas ---------- */
-.tag{font-family:var(--sans);font-weight:400;font-size:11px;letter-spacing:.28em;text-transform:uppercase}
-
-/* ---------- barra superior ---------- */
-.topbar{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px clamp(18px,4vw,44px);transition:background .35s ease,border-color .35s ease,padding .35s ease;border-bottom:1px solid transparent}
-.topbar.scrolled{background:rgba(27,33,27,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom-color:var(--oro-linea);padding-top:12px;padding-bottom:12px}
+/* ---------- header ---------- */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(243,239,230,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.topbar.scrolled{border-bottom-color:var(--linea);box-shadow:0 8px 30px rgba(29,34,29,.06)}
+.topbar-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px clamp(16px,3.5vw,40px)}
 .topbar .logo img{height:26px;display:block}
-.topbar-right{display:flex;align-items:center;gap:18px}
-.topnav{display:none;gap:26px;margin-right:8px}
-.topnav a{color:#efece2;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:400;padding:8px 0;border-bottom:1px solid transparent}
-.topnav a:hover{color:var(--oro);border-bottom-color:var(--oro)}
+.topbar-right{display:flex;align-items:center;gap:16px}
+.topnav{display:none;gap:26px;margin-right:6px}
+.topnav a{font-size:13px;font-weight:400;letter-spacing:.08em;padding:8px 0;border-bottom:1px solid transparent}
+.topnav a:hover{color:var(--oro-hover);border-bottom-color:var(--oro)}
 .lang{display:flex;align-items:center;gap:2px}
-.lang button{background:none;border:none;color:#efece2;font-family:var(--sans);font-weight:400;font-size:11.5px;letter-spacing:.18em;padding:10px 7px;min-height:44px;cursor:pointer;border-bottom:1px solid transparent;transition:all .25s}
-.lang button[aria-pressed="true"]{color:var(--oro);border-bottom-color:var(--oro)}
-.lang span{color:rgba(239,236,226,.35)}
-.top-wa{display:none;align-items:center;gap:9px;background:var(--wa);color:#fff;font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:12px 22px;min-height:44px;border-radius:999px}
+.lang button{background:none;border:none;color:var(--tinta);font-family:var(--sans);font-weight:400;font-size:12px;letter-spacing:.14em;padding:10px 6px;min-height:44px;cursor:pointer;border-bottom:1px solid transparent}
+.lang button[aria-pressed="true"]{color:var(--oro-hover);border-bottom-color:var(--oro)}
+.lang span{color:var(--tinta-suave);opacity:.5}
+.top-wa{display:none;align-items:center;gap:9px;background:var(--wa);color:#fff;font-weight:500;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:12px 22px;min-height:44px;border-radius:999px}
 .top-wa:hover{background:var(--wa-dark);color:#fff}
-.burger{width:44px;height:44px;border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:0}
-.burger span{width:24px;height:1.5px;background:var(--oro);display:block;transition:transform .3s}
+.burger{width:44px;height:44px;border:1px solid var(--linea);border-radius:50%;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.burger span{width:18px;height:1.5px;background:var(--tinta);display:block}
 @media (min-width:960px){.topnav{display:flex}.top-wa{display:inline-flex}.burger{display:none}}
 
 /* ---------- menú móvil ---------- */
-.menu{position:fixed;inset:0;z-index:80;background:var(--selva);display:none;flex-direction:column;justify-content:center;padding:0 clamp(26px,8vw,80px)}
+.menu{position:fixed;inset:0;z-index:80;background:var(--selva);color:var(--crema);display:none;flex-direction:column;justify-content:center;padding:0 clamp(26px,8vw,80px)}
 .menu.open{display:flex}
-.menu .close{position:absolute;top:16px;right:18px;width:48px;height:48px;background:none;border:1px solid var(--oro-linea);border-radius:50%;color:var(--oro);font-size:20px;cursor:pointer}
-.menu a.item{color:var(--marfil);font-family:var(--serif);font-size:clamp(34px,9vw,54px);line-height:1.35;border-bottom:1px solid rgba(213,164,71,.18);padding:14px 0;display:flex;justify-content:space-between;align-items:baseline}
+.menu .close{position:absolute;top:16px;right:18px;width:48px;height:48px;background:none;border:1px solid rgba(213,164,71,.45);border-radius:50%;color:var(--oro);font-size:20px;cursor:pointer}
+.menu a.item{font-size:clamp(28px,7.5vw,44px);font-weight:500;letter-spacing:-.01em;border-bottom:1px solid var(--linea-clara);padding:16px 0}
 .menu a.item:hover{color:var(--oro)}
-.menu a.item .tag{color:var(--salvia)}
-.menu .menu-foot{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+.menu a.sub{font-size:15px;font-weight:300;padding:9px 0;color:var(--salvia)}
+.menu a.sub:hover{color:var(--oro)}
+.menu .menu-foot{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
 
-/* ---------- botones de marca ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:14px 28px;border-radius:999px;font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;border:none;cursor:pointer;text-align:center}
+/* ---------- botones ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:15px 30px;border-radius:999px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;text-align:center}
 .btn:hover{transform:translateY(-2px)}
 .btn svg{flex:0 0 auto}
+.btn-dark{background:var(--verde);color:var(--crema)}
+.btn-dark:hover{background:var(--selva);color:#fff}
 .btn-wa{background:var(--wa);color:#fff}
 .btn-wa:hover{background:var(--wa-dark);color:#fff}
 .btn-abnb{background:var(--abnb);color:#fff}
 .btn-abnb:hover{background:var(--abnb-dark);color:#fff}
-.btn-linea{border:1px solid var(--oro-linea);color:var(--oro);background:transparent}
-.btn-linea:hover{border-color:var(--oro);background:rgba(213,164,71,.08);color:var(--oro)}
+.chip-arrow{width:46px;height:46px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex:0 0 auto;transition:transform .25s}
+a:hover .chip-arrow,.chip-arrow:hover{transform:translate(2px,-2px)}
+.mini{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.mini svg{width:19px;height:19px}
+.mini.wa{background:var(--wa)}.mini.wa:hover{background:var(--wa-dark)}
+.mini img{width:100%;height:100%;display:block;border-radius:50%}
+.mini:hover{transform:translateY(-2px)}
 
-/* ---------- portada ---------- */
-.cover{position:relative;min-height:100svh;background:
-  radial-gradient(1100px 480px at 85% -8%, rgba(213,164,71,.14), transparent 60%),
-  radial-gradient(800px 420px at 0% 108%, rgba(168,172,145,.12), transparent 55%),
-  var(--selva);
-  color:var(--marfil);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
-.cover-mark{position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);height:min(74vh,620px);opacity:.05;pointer-events:none}
-.cover-body{position:relative;z-index:2;padding:120px clamp(18px,4vw,44px) 0;max-width:1280px;width:100%;margin:0 auto}
-.cover-kicker{color:var(--oro);margin-bottom:26px;display:flex;align-items:center;gap:14px}
-.cover-kicker::before{content:"";width:44px;height:1px;background:var(--oro)}
-.cover h1{font-size:clamp(42px,8.2vw,104px);line-height:1.02;letter-spacing:-.01em;max-width:12em}
-.cover h1 em{color:var(--oro-palido)}
-.cover-sub{max-width:520px;font-size:clamp(15px,1.6vw,17px);line-height:1.75;color:rgba(243,239,230,.82);margin:26px 0 34px}
-.cover-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:clamp(44px,7vh,80px)}
-/* índice de casas dentro de la portada */
-.index{position:relative;z-index:2;border-top:1px solid var(--oro-linea);background:rgba(27,33,27,.6);backdrop-filter:blur(6px)}
-.index-inner{max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
-.index .tag.head{display:block;color:var(--salvia);padding:16px 0 4px}
-.index a.row{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:10px;padding:15px 0;border-top:1px solid rgba(213,164,71,.16);color:var(--marfil)}
-.index a.row:first-of-type{border-top:none}
-.index .row .name{font-family:var(--serif);font-size:clamp(20px,3vw,30px);line-height:1.2;transition:color .25s}
-.index .row .place{color:var(--salvia);font-size:11px;letter-spacing:.26em;text-transform:uppercase;display:block;margin-bottom:3px}
-.index .row .go{color:var(--oro);font-size:12px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
-.index a.row:hover .name{color:var(--oro)}
-@media (min-width:760px){
-  .index a.row{grid-template-columns:210px 1fr auto;gap:26px}
-  .index .row .place{margin:0}
-}
-@media (max-width:759px){
-  .index a.row{grid-template-areas:"name name" "place go";grid-template-columns:1fr auto;gap:4px 12px}
-  .index .row .name{grid-area:name}
-  .index .row .place{grid-area:place;margin:0;align-self:center}
-  .index .row .go{grid-area:go}
-}
-.index-pad{padding-bottom:14px}
+/* ---------- hero ---------- */
+.hero{padding:118px 0 clamp(30px,4vw,56px)}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(18px,2.5vw,28px);align-items:stretch}
+@media (min-width:920px){.hero-grid{grid-template-columns:1.04fr .96fr}}
+.hero-card{position:relative;border-radius:var(--r);overflow:hidden;background:
+  radial-gradient(640px 320px at 80% 0%, rgba(213,164,71,.16), transparent 55%),
+  linear-gradient(160deg,#28312a 0%,#1b211b 100%);min-height:340px}
+@media (min-width:920px){.hero-card{min-height:520px}}
+.hero-card .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.hero-card .ph img{height:76px;opacity:.55}
+.hero-card .ph .tag{color:var(--salvia)}
+.hero-card>img.foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-copy{background:var(--blanco);border-radius:var(--r);padding:clamp(26px,4vw,52px);display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,2.4vw,26px)}
+.hero-copy h1{font-size:clamp(38px,5.6vw,68px)}
+.hero-copy h1 em{font-style:normal;color:var(--oro-hover)}
+.hero-copy .sub{color:var(--tinta-suave);font-size:clamp(15px,1.6vw,17px);line-height:1.7;max-width:44ch;margin:0}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px}
+.badge-circ{width:112px;height:112px;border-radius:50%;background:var(--oro);color:var(--verde);display:flex;flex-direction:column;align-items:center;justify-content:center;flex:0 0 auto}
+.badge-circ b{font-size:40px;font-weight:600;line-height:1}
+.badge-circ span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:4px}
+.hero-meta .meta-txt{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta-suave);max-width:200px;line-height:1.8}
+.hero-meta a.verif{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--linea);border-radius:999px;padding:12px 20px}
+.hero-meta a.verif:hover{border-color:var(--abnb);color:var(--abnb)}
+.ab-mini{width:16px;height:16px;border-radius:50%;display:block}
 
-/* ---------- colofón ---------- */
-.colofon{border-bottom:1px solid rgba(42,47,40,.18);background:var(--marfil)}
-.colofon-inner{max-width:1280px;margin:0 auto;padding:20px clamp(18px,4vw,44px);display:flex;flex-wrap:wrap;gap:10px 0;align-items:center}
-.colofon .dato{color:var(--tinta-suave);padding-right:22px;margin-right:22px;border-right:1px solid rgba(42,47,40,.18);white-space:nowrap}
-.colofon .dato:last-child{border-right:none;margin-right:0;padding-right:0}
-.colofon .dato b{color:var(--tinta);font-weight:400}
-.colofon a.dato{color:var(--tinta)}
-.colofon a.dato:hover{color:var(--abnb)}
-.colofon a .pto{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--abnb);margin-right:8px}
+/* ---------- sección propiedades ---------- */
+.sec{padding:clamp(50px,7vw,100px) 0}
+.sec-head{text-align:center;margin-bottom:clamp(28px,4.5vw,54px)}
+.sec-head .tag{color:var(--tinta-suave);display:inline-block;margin-bottom:14px}
+.sec-head h2{font-size:clamp(30px,4.6vw,54px)}
+.cards3{display:grid;grid-template-columns:1fr;gap:clamp(14px,2vw,22px)}
+@media (min-width:700px){.cards3{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1020px){.cards3{grid-template-columns:repeat(3,1fr)}}
+.pcard{border-radius:var(--r);padding:clamp(22px,3vw,32px);min-height:380px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.pcard .num{font-size:12px;letter-spacing:.2em;padding-bottom:14px;margin-bottom:auto;border-bottom:1px solid}
+.pcard h3{font-size:clamp(26px,2.6vw,32px);margin:22px 0 6px;font-weight:500}
+.pcard .place{font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:10px}
+.pcard .amen{font-size:14px;line-height:1.7;margin:0 0 20px}
+.pcard .foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}
+.pcard .foot .minis{display:flex;gap:8px}
+.pcard .marca{position:absolute;right:-14%;bottom:-16%;height:64%;opacity:.07;pointer-events:none}
+.pc-dark{background:var(--verde);color:var(--crema)}
+.pc-dark .num{color:var(--oro);border-color:rgba(213,164,71,.4)}
+.pc-dark .place{color:var(--salvia)}
+.pc-dark .amen{color:rgba(243,239,230,.75)}
+.pc-dark .chip-arrow{background:var(--oro);color:var(--verde)}
+.pc-oro{background:var(--oro);color:var(--verde)}
+.pc-oro .num{color:var(--verde);border-color:rgba(32,39,32,.35)}
+.pc-oro .place{color:rgba(32,39,32,.65)}
+.pc-oro .amen{color:rgba(32,39,32,.8)}
+.pc-oro .chip-arrow{background:var(--verde);color:var(--crema)}
+.pcard h3 a:hover{color:inherit;opacity:.8}
 
-/* ---------- secciones sobre papel ---------- */
-.sec{max-width:1280px;margin:0 auto;padding:clamp(64px,10vw,130px) clamp(18px,4vw,44px)}
-.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:clamp(34px,5vw,60px)}
-.sec-head .tag{color:var(--tinta-suave)}
-.sec-head::after{content:"";flex:1;height:1px;background:rgba(42,47,40,.18)}
+/* ---------- cinta de amenidades ---------- */
+.strip{overflow:hidden;padding:clamp(8px,1.6vw,16px) 0 clamp(40px,6vw,70px)}
+.strip-track{display:flex;gap:12px;width:max-content;animation:marq 32s linear infinite}
+.strip:hover .strip-track{animation-play-state:paused}
+.pill{display:inline-flex;align-items:center;gap:10px;background:var(--blanco);border:1px solid var(--linea);border-radius:999px;padding:13px 24px;font-size:14px;font-weight:400;white-space:nowrap}
+.pill::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--oro);flex:0 0 auto}
+@keyframes marq{to{transform:translateX(-50%)}}
 
-/* manifiesto */
-.mani{display:grid;grid-template-columns:1fr;gap:clamp(30px,5vw,70px)}
-@media (min-width:960px){.mani{grid-template-columns:1.15fr .85fr}}
-.mani blockquote{font-size:clamp(27px,3.6vw,44px);line-height:1.28;letter-spacing:-.005em}
-.mani blockquote em{color:#8c6a1f}
-.mani-text p{font-size:16px;line-height:1.85;margin:0 0 18px;max-width:52ch}
-.mani-firma{display:flex;align-items:center;gap:14px;margin-top:26px}
-.mani-firma img{height:44px}
-.mani-firma .tag{color:var(--tinta-suave)}
+/* ---------- cifras ---------- */
+.stats{background:var(--verde);color:var(--crema);border-radius:var(--r);position:relative;overflow:hidden;padding:clamp(40px,6vw,70px) clamp(22px,4vw,56px)}
+.stats .marca{position:absolute;right:-6%;top:-30%;height:160%;opacity:.05;pointer-events:none}
+.stats-grid{display:grid;grid-template-columns:1fr;gap:26px;position:relative;z-index:2}
+@media (min-width:760px){.stats-grid{grid-template-columns:repeat(3,1fr)}}
+.stat b{font-size:clamp(46px,6.5vw,84px);font-weight:600;line-height:1;color:var(--crema);display:block}
+.stat b i{font-style:normal;color:var(--oro)}
+.stat span{display:block;margin-top:10px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--salvia)}
 
-/* ---------- láminas de las casas ---------- */
-.casa{display:grid;grid-template-columns:1fr;gap:clamp(22px,3.5vw,60px);align-items:center;padding:clamp(40px,6vw,80px) 0;border-top:1px solid rgba(42,47,40,.16)}
-.casa:first-of-type{border-top:none;padding-top:0}
-@media (min-width:960px){
-  .casa{grid-template-columns:1.05fr .95fr}
-  .casa.alt .lamina{order:2}
-}
-/* marco tipo passe-partout */
-.lamina{position:relative;background:var(--verde);border:1px solid var(--oro-linea);padding:10px}
-.lamina::before{content:"";position:absolute;inset:18px;border:1px solid rgba(213,164,71,.35);pointer-events:none;z-index:3;transition:inset .35s ease}
-.casa:hover .lamina::before{inset:13px}
-.lamina-media{position:relative;aspect-ratio:4/5;overflow:hidden;background:
-  radial-gradient(620px 300px at 78% 0%, rgba(213,164,71,.12), transparent 55%),
-  linear-gradient(160deg,#252c25 0%,#1b211b 100%)}
-@media (max-width:600px){.lamina-media{aspect-ratio:4/4.4}}
-.lamina-media .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
-.lamina-media .ph img{height:64px;opacity:.5}
-.lamina-media .ph .tag{color:var(--salvia)}
-.lamina-media .gallery{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-.lamina-media .gallery::-webkit-scrollbar{display:none}
-.lamina-media .gallery img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:center}
-.lamina-pie{display:flex;justify-content:space-between;gap:10px;padding:12px 8px 4px}
-.lamina-pie .tag{color:var(--salvia);font-size:10px}
-.casa-info .place{color:#8c6a1f;display:block;margin-bottom:14px}
-.casa-info h3{font-size:clamp(27px,3.4vw,40px);line-height:1.18;letter-spacing:-.005em;max-width:16em}
-.especimen{margin:20px 0 30px;padding:14px 0;border-top:1px solid rgba(42,47,40,.16);border-bottom:1px solid rgba(42,47,40,.16);font-size:13.5px;letter-spacing:.06em;line-height:2;color:var(--tinta-suave)}
-.especimen b{color:#8c6a1f;font-weight:400;padding:0 9px}
-.casa-ctas{display:flex;gap:12px;flex-wrap:wrap}
-.casa-ctas .btn{flex:1 1 auto;min-width:200px;max-width:290px}
-@media (max-width:600px){.casa-ctas .btn{max-width:none;width:100%}}
+/* ---------- testimonios ---------- */
+.tests{display:grid;grid-template-columns:1fr;gap:clamp(14px,2vw,22px)}
+@media (min-width:860px){.tests{grid-template-columns:repeat(3,1fr)}}
+.test{background:var(--blanco);border:1px solid var(--linea);border-radius:var(--r);padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:16px;margin:0}
+.test .stars{color:var(--oro-hover);letter-spacing:.26em;font-size:13px}
+.test p{font-size:16px;font-weight:400;line-height:1.65;margin:0;flex:1}
+.test .who{display:flex;align-items:baseline;gap:10px}
+.test .who b{font-weight:500;font-size:14px;letter-spacing:.04em}
+.test .who span{color:var(--tinta-suave);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
 
-/* ---------- voces ---------- */
-.voces{display:grid;grid-template-columns:1fr;gap:0}
-@media (min-width:860px){.voces{grid-template-columns:repeat(3,1fr)}}
-.voz{padding:clamp(26px,3vw,42px) clamp(0px,2.4vw,36px);border-top:1px solid rgba(42,47,40,.16)}
-@media (min-width:860px){
-  .voz{border-top:none;border-left:1px solid rgba(42,47,40,.16)}
-  .voz:first-child{border-left:none;padding-left:0}
-  .voz:last-child{padding-right:0}
-}
-.voz p{font-family:var(--serif);font-size:clamp(19px,2vw,23px);line-height:1.5;margin:0 0 20px}
-.voz .who{display:flex;align-items:baseline;gap:10px}
-.voz .who b{font-weight:400;font-size:13.5px;letter-spacing:.08em}
-.voz .who span{color:var(--tinta-suave);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
-.voz .stars{color:#8c6a1f;letter-spacing:.28em;font-size:12px;margin-bottom:14px}
+/* ---------- destinos ---------- */
+.mapa-card{border-radius:var(--r);overflow:hidden;border:1px solid var(--linea);background:#e8e8e2}
+.mapa-card iframe{display:block;width:100%;height:min(54vh,460px);border:none}
+.zonas{color:var(--tinta-suave);font-size:13px;letter-spacing:.1em;line-height:1.9;margin-top:16px;text-align:center}
 
-/* ---------- contraportada ---------- */
-.backcover{background:
-  radial-gradient(900px 420px at 12% -6%, rgba(213,164,71,.12), transparent 60%),
-  var(--selva);color:var(--marfil)}
-.backcover .sec-head .tag{color:var(--salvia)}
-.backcover .sec-head::after{background:var(--oro-linea)}
-.cober h2{font-size:clamp(30px,4.6vw,58px);line-height:1.1;max-width:14em;margin-bottom:clamp(28px,4vw,44px)}
-.cober h2 em{color:var(--oro-palido)}
-.marco-mapa{border:1px solid var(--oro-linea);padding:10px;position:relative}
-.marco-mapa::before{content:"";position:absolute;inset:18px;border:1px solid rgba(213,164,71,.3);pointer-events:none;z-index:3}
-.marco-mapa iframe{display:block;width:100%;height:min(56vh,470px);border:none;background:#e8e8e2;filter:sepia(.14) saturate(.92)}
-.zonas{color:var(--salvia);font-size:13px;letter-spacing:.1em;line-height:1.9;margin-top:18px}
-.cober-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(30px,4vw,46px)}
-.cober-ctas .btn{flex:1 1 auto;max-width:330px}
-@media (max-width:600px){.cober-ctas .btn{max-width:none;width:100%}}
+/* ---------- CTA final ---------- */
+.cta-band{background:var(--selva);color:var(--crema);border-radius:var(--r);padding:clamp(40px,6vw,80px) clamp(22px,4vw,64px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px;position:relative;overflow:hidden}
+.cta-band .marca{position:absolute;right:-8%;bottom:-40%;height:180%;opacity:.06;pointer-events:none}
+.cta-band h2{font-size:clamp(30px,4.6vw,54px);max-width:14em;position:relative;z-index:2}
+.cta-band h2 em{font-style:normal;color:var(--oro)}
+.cta-band .ctas{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+@media (max-width:600px){.cta-band .ctas{width:100%}.cta-band .ctas .btn{width:100%}}
+.cta-band .nota{width:100%;color:var(--salvia);font-size:12px;letter-spacing:.08em;position:relative;z-index:2;margin:0}
 
-/* footer */
-.pie{border-top:1px solid var(--oro-linea)}
-.pie-inner{max-width:1280px;margin:0 auto;padding:clamp(40px,6vw,64px) clamp(18px,4vw,44px) 30px;display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,54px);justify-content:space-between}
-.pie .brand{max-width:330px}
-.pie .brand img{height:40px;margin-bottom:18px}
-.pie .brand p{color:rgba(243,239,230,.72);font-size:14px;line-height:1.8;margin:0}
-.pie-col{display:flex;flex-direction:column;gap:11px}
-.pie-col .tag{color:var(--oro);margin-bottom:6px}
-.pie-col a{color:rgba(243,239,230,.82);font-size:14.5px;padding:2px 0}
-.pie-col a:hover{color:var(--oro)}
-.pie-col a.ab{color:var(--abnb)}
-.pie-col a.ab:hover{color:#ff7a92}
-.pie-bottom{max-width:1280px;margin:0 auto;padding:22px clamp(18px,4vw,44px) 30px;border-top:1px solid rgba(213,164,71,.18);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--salvia);font-size:12px;letter-spacing:.08em}
+/* ---------- footer ---------- */
+.pie{padding:clamp(36px,5vw,56px) 0 26px;border-top:1px solid var(--linea);margin-top:clamp(50px,7vw,90px)}
+.pie-grid{display:flex;flex-wrap:wrap;gap:clamp(26px,5vw,54px);justify-content:space-between}
+.pie .brand img{height:38px;margin-bottom:14px}
+.pie .brand p{color:var(--tinta-suave);font-size:14px;margin:0;max-width:300px;line-height:1.7}
+.pie-col{display:flex;flex-direction:column;gap:10px}
+.pie-col .tag{color:var(--oro-hover);margin-bottom:4px}
+.pie-col a{color:var(--tinta);font-size:14.5px;font-weight:300;padding:2px 0}
+.pie-col a:hover{color:var(--oro-hover)}
+.pie-col a.ab{color:var(--abnb);font-weight:400}
+.pie-col a.ab:hover{color:var(--abnb-dark)}
+.pie-bottom{margin-top:34px;border-top:1px solid var(--linea);padding-top:18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--tinta-suave);font-size:12px;letter-spacing:.06em}
 
 /* ---------- flotantes ---------- */
-.fabs{position:fixed;right:16px;bottom:16px;z-index:55;display:flex;flex-direction:column;gap:11px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .4s ease,transform .4s ease}
+.fabs{position:fixed;right:16px;bottom:16px;z-index:55;display:flex;flex-direction:column;gap:11px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .4s,transform .4s}
 .fabs.show{opacity:1;transform:none;pointer-events:auto}
-.fab{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;box-shadow:0 10px 28px rgba(15,19,15,.4)}
+.fab{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;box-shadow:0 10px 28px rgba(15,19,15,.35)}
 .fab:hover{transform:translateY(-3px)}
-.fab-wa{background:var(--wa)} .fab-wa:hover{background:var(--wa-dark)}
+.fab-wa{background:var(--wa)}.fab-wa:hover{background:var(--wa-dark)}
 .fab-abnb{background:none;padding:0}
 .fab-abnb img{width:100%;height:100%;display:block;border-radius:50%}
 .fab svg{width:26px;height:26px}
-.ab-mini{width:15px;height:15px;vertical-align:-3px;margin-right:8px;border-radius:50%}
 
 /* ---------- movimiento ---------- */
 .rise{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.65,.25,1) forwards}
@@ -243,158 +217,165 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .rise,.reveal{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+  .strip-track{animation:none!important;flex-wrap:wrap;width:auto}
   *,*::before,*::after{transition:none!important;animation:none!important}
 }
 </style>
 </head>
 <body>
-<a class="skip-link" href="#casas" data-i18n="skip">Ir a nuestras propiedades</a>
+<a class="skip-link" href="#propiedades" data-i18n="skip">Ir a nuestras propiedades</a>
 
 <header class="topbar" id="topbar">
-  <a href="#inicio" class="logo" aria-label="Hera23 — Inicio"><img src="assets/logo-trans.png" alt="Hera23 — Inversiones &amp; Rentas"></a>
-  <div class="topbar-right">
-    <nav class="topnav" aria-label="Principal">
-      <a href="#casas" data-i18n="navProps">Nuestras propiedades</a>
-      <a href="#manifiesto" data-i18n="navNosotros">Manifiesto</a>
-      <a href="#cobertura" data-i18n="navContacto">Destinos</a>
-    </nav>
-    <div class="lang" role="group" aria-label="Idioma / Language">
-      <button id="btn-es" aria-pressed="true" aria-label="Español">ES</button><span>/</span><button id="btn-en" aria-pressed="false" aria-label="English">EN</button>
+  <div class="topbar-inner">
+    <a href="index.html" class="logo" aria-label="Hera23 — Inicio"><img src="assets/logo-negro.png" alt="Hera23 — Inversiones &amp; Rentas"></a>
+    <div class="topbar-right">
+      <nav class="topnav" aria-label="Principal">
+        <a href="#propiedades" data-i18n="navProps">Nuestras propiedades</a>
+        <a href="#destinos" data-i18n="navContacto">Destinos</a>
+        <a href="#opiniones" data-i18n="navVoces">Opiniones</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button id="btn-es" aria-pressed="true" aria-label="Español">ES</button><span>/</span><button id="btn-en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
+      <a class="top-wa" data-wa href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        WhatsApp
+      </a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     </div>
-    <a class="top-wa" data-wa href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-      WhatsApp
-    </a>
-    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
 </header>
 
 <div class="menu" id="menu">
   <button class="close" id="menu-close" aria-label="Cerrar menú">✕</button>
-  <a class="item" href="#casas" data-menu-link><span data-i18n="navProps">Nuestras propiedades</span><span class="tag">03</span></a>
-  <a class="item" href="#manifiesto" data-menu-link><span data-i18n="navNosotros">Manifiesto</span></a>
-  <a class="item" href="#cobertura" data-menu-link><span data-i18n="navContacto">Destinos</span></a>
+  <a class="item" href="#propiedades" data-menu-link data-i18n="navProps">Nuestras propiedades</a>
+  <a class="item" href="#destinos" data-menu-link data-i18n="navContacto">Destinos</a>
+  <a class="item" href="#opiniones" data-menu-link data-i18n="navVoces">Opiniones</a>
+  <div id="menu-props" style="margin-top:22px;display:flex;flex-direction:column"></div>
   <div class="menu-foot">
     <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener" data-i18n="heroCta2">WhatsApp directo</a>
-    <a class="btn btn-linea" data-abnb href="#" target="_blank" rel="noopener"><img class="ab-mini" src="assets/airbnb.svg" alt=""><span data-i18n="verificado">Perfil verificado en Airbnb</span> ↗</a>
   </div>
 </div>
 
 <main>
-<!-- PORTADA -->
-<section id="inicio" class="cover">
-  <img class="cover-mark" src="assets/isotipo-trans.png" alt="">
-  <div class="cover-body">
-    <p class="tag cover-kicker rise" style="animation-delay:.05s" data-i18n="kicker">Operador directo en Airbnb · Antioquia, Colombia</p>
-    <h1 class="rise" style="animation-delay:.15s" id="cover-title">Reserva <em>en minutos</em> tu propiedad en Medellín.</h1>
-    <p class="cover-sub rise" style="animation-delay:.28s" data-i18n="heroSub">Reserva directa por WhatsApp. Verificación abierta en Airbnb.</p>
-    <div class="cover-ctas rise" style="animation-delay:.4s">
-      <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-        <span data-i18n="heroCta2">WhatsApp directo</span>
-      </a>
-      <a class="btn btn-linea" data-abnb href="#" target="_blank" rel="noopener"><img class="ab-mini" src="assets/airbnb.svg" alt=""><span data-i18n="verificado">Perfil verificado en Airbnb</span> ↗</a>
+<!-- HERO -->
+<section class="hero shell" id="inicio">
+  <div class="hero-grid">
+    <div class="hero-card rise" id="hero-card" style="animation-delay:.1s">
+      <div class="ph"><img src="assets/isotipo-trans.png" alt=""><span class="tag" data-i18n="photosSoon">Fotos muy pronto</span></div>
     </div>
-  </div>
-  <nav class="index rise" style="animation-delay:.5s" aria-label="Índice de casas">
-    <div class="index-inner index-pad">
-      <span class="tag head" data-i18n="indexHead">Índice — Nuestras propiedades</span>
-      <div id="index-rows"></div>
-    </div>
-  </nav>
-</section>
-
-<!-- COLOFÓN -->
-<div class="colofon">
-  <div class="colofon-inner tag">
-    <span class="dato"><b>Medellín</b> · 1.495 m s. n. m.</span>
-    <span class="dato"><b>Santa Fe de Antioquia</b> · 550 m s. n. m.</span>
-    <span class="dato" data-i18n="colofonOp"><b>3</b> casas · operación directa</span>
-    <a class="dato" data-abnb href="#" target="_blank" rel="noopener"><img class="ab-mini" src="assets/airbnb.svg" alt=""><span data-i18n="colofonAb">Verificable en Airbnb</span> ↗</a>
-  </div>
-</div>
-
-<!-- MANIFIESTO -->
-<section id="manifiesto" class="sec">
-  <div class="sec-head reveal"><span class="tag" data-i18n="maniTag">Manifiesto</span></div>
-  <div class="mani">
-    <blockquote class="reveal" id="mani-quote">La persona que responde tu WhatsApp es <em>la misma que te entrega las llaves.</em></blockquote>
-    <div class="mani-text reveal">
-      <p data-i18n="maniP1">Administramos cada casa personalmente. Lo que ves aquí es lo mismo que aparece en nuestro perfil oficial de Airbnb.</p>
-      <div class="mani-firma">
-        <img src="assets/isotipo-trans.png" alt="" style="filter:brightness(.55) sepia(.4)">
-        <span class="tag">Hera23 · Inversiones &amp; Rentas</span>
+    <div class="hero-copy rise" style="animation-delay:.2s">
+      <h1 id="hero-title">Reserva <em>en minutos</em> tu propiedad en Medellín.</h1>
+      <p class="sub" data-i18n="heroSub">Reserva directa por WhatsApp. Verificación abierta en Airbnb.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-dark" href="#propiedades" data-i18n="heroCta1">Ver propiedades</a>
+        <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          <span data-i18n="heroCta2">WhatsApp directo</span>
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div class="badge-circ"><b>03</b><span data-i18n="badgeLbl">propiedades</span></div>
+        <span class="meta-txt" data-i18n="badgeTxt">Operación directa en Medellín y Santa Fe de Antioquia</span>
+        <a class="verif" data-abnb href="#" target="_blank" rel="noopener"><img class="ab-mini" src="assets/airbnb.svg" alt=""><span data-i18n="verificado">Verificado en Airbnb</span> ↗</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LAS CASAS -->
-<section id="casas" class="sec" style="padding-top:0">
-  <div class="sec-head reveal"><span class="tag" data-i18n="casasTag">Nuestras propiedades</span></div>
-  <div id="casas-list"></div>
+<!-- PROPIEDADES -->
+<section id="propiedades" class="sec shell">
+  <div class="sec-head reveal">
+    <span class="tag">Hera23 · Inversiones &amp; Rentas</span>
+    <h2 data-i18n="propsTitle">Nuestras propiedades</h2>
+  </div>
+  <div class="cards3" id="cards3"></div>
 </section>
 
-<!-- VOCES -->
-<section class="sec" style="padding-top:0">
-  <div class="sec-head reveal"><span class="tag" data-i18n="vocesTag">Voces de huéspedes</span></div>
-  <div class="voces" id="voces"></div>
-</section>
-</main>
+<!-- CINTA DE AMENIDADES -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track" id="strip-track"></div>
+</div>
 
-<!-- CONTRAPORTADA -->
-<div class="backcover">
-  <section id="cobertura" class="sec cober">
-    <div class="sec-head reveal"><span class="tag" data-i18n="coberTag">Destinos</span></div>
-    <h2 class="reveal" id="cober-title">De la montaña de Medellín, <em>al sol de Santa Fe.</em></h2>
-    <div class="marco-mapa reveal">
-      <iframe src="mapa.html" title="Dónde están las casas — Medellín y Santa Fe de Antioquia" loading="lazy"></iframe>
-    </div>
-    <p class="zonas reveal" data-i18n="coverZones">Medellín — Casa Grande y Villa Medellín · Santa Fe de Antioquia — Villa Santa Fe</p>
-    <div class="cober-ctas reveal">
+<!-- CIFRAS -->
+<section class="shell reveal">
+  <div class="stats">
+    <img class="marca" src="assets/isotipo-trans.png" alt="">
+    <div class="stats-grid" id="stats-grid"></div>
+  </div>
+</section>
+
+<!-- OPINIONES -->
+<section id="opiniones" class="sec shell">
+  <div class="sec-head reveal">
+    <span class="tag" data-i18n="testTag">Opiniones</span>
+    <h2 data-i18n="testTitle">Huéspedes que ya confiaron</h2>
+  </div>
+  <div class="tests" id="tests"></div>
+</section>
+
+<!-- DESTINOS -->
+<section id="destinos" class="sec shell" style="padding-top:0">
+  <div class="sec-head reveal">
+    <span class="tag" data-i18n="coberTag">Destinos</span>
+    <h2 id="cober-title">De la montaña de Medellín, al sol de Santa Fe.</h2>
+  </div>
+  <div class="mapa-card reveal">
+    <iframe src="mapa.html" title="Dónde están las propiedades — Medellín y Santa Fe de Antioquia" loading="lazy"></iframe>
+  </div>
+  <p class="zonas reveal" data-i18n="coverZones">Medellín — Casa Grande y Villa Medellín · Santa Fe de Antioquia — Villa Santa Fe</p>
+</section>
+
+<!-- CTA FINAL -->
+<section class="shell reveal">
+  <div class="cta-band">
+    <img class="marca" src="assets/isotipo-trans.png" alt="">
+    <h2 id="cta-title">Tu próxima estadía <em>te espera.</em></h2>
+    <div class="ctas">
       <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
         <span data-i18n="coverCtaWa">Escríbenos por WhatsApp</span>
       </a>
-      <a class="btn btn-abnb" data-abnb href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.001 18.275c-1.353-1.697-2.148-3.184-2.413-4.457-.263-1.027-.16-1.848.291-2.465.477-.71 1.188-1.056 2.121-1.056s1.643.345 2.12 1.063c.446.61.558 1.432.286 2.465-.291 1.298-1.085 2.785-2.412 4.458zm9.601 1.14c-.185 1.246-1.034 2.28-2.2 2.783-2.253.98-4.483-.583-6.392-2.704 3.157-3.951 3.74-7.028 2.385-9.018-.795-1.14-1.933-1.695-3.394-1.695-2.944 0-4.563 2.49-3.927 5.382.37 1.565 1.352 3.343 2.917 5.332-.98 1.085-1.91 1.856-2.732 2.333-.636.344-1.245.558-1.828.609-2.679.399-4.778-2.2-3.825-4.88.132-.345.395-.98.845-1.961l.025-.053c1.464-3.178 3.242-6.79 5.285-10.795l.053-.132.58-1.116c.45-.822.635-1.19 1.351-1.643.346-.21.77-.315 1.246-.315.954 0 1.698.558 2.016 1.007.158.239.345.557.582.953l.558 1.089.08.159c2.041 4.004 3.821 7.608 5.279 10.794l.026.025.533 1.22.318.764c.243.613.294 1.222.213 1.858zm1.22-2.39c-.186-.583-.505-1.271-.9-2.094v-.03c-1.889-4.006-3.642-7.608-5.307-10.844l-.111-.163C15.317 1.461 14.468 0 12.001 0c-2.44 0-3.476 1.695-4.535 3.898l-.081.16c-1.669 3.236-3.421 6.843-5.303 10.847v.053l-.559 1.22c-.21.504-.317.768-.345.847C-.172 20.74 2.611 24 5.98 24c.027 0 .132 0 .265-.027h.372c1.75-.213 3.554-1.325 5.384-3.317 1.829 1.989 3.635 3.104 5.382 3.317h.372c.133.027.239.027.265.027 3.37.003 6.152-3.261 4.802-6.975z"/></svg><span data-i18n="coverCtaAb">Ver perfil en Airbnb</span> ↗</a>
+      <a class="btn btn-abnb" data-abnb href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.001 18.275c-1.353-1.697-2.148-3.184-2.413-4.457-.263-1.027-.16-1.848.291-2.465.477-.71 1.188-1.056 2.121-1.056s1.643.345 2.12 1.063c.446.61.558 1.432.286 2.465-.291 1.298-1.085 2.785-2.412 4.458zm9.601 1.14c-.185 1.246-1.034 2.28-2.2 2.783-2.253.98-4.483-.583-6.392-2.704 3.157-3.951 3.74-7.028 2.385-9.018-.795-1.14-1.933-1.695-3.394-1.695-2.944 0-4.563 2.49-3.927 5.382.37 1.565 1.352 3.343 2.917 5.332-.98 1.085-1.91 1.856-2.732 2.333-.636.344-1.245.558-1.828.609-2.679.399-4.778-2.2-3.825-4.88.132-.345.395-.98.845-1.961l.025-.053c1.464-3.178 3.242-6.79 5.285-10.795l.053-.132.58-1.116c.45-.822.635-1.19 1.351-1.643.346-.21.77-.315 1.246-.315.954 0 1.698.558 2.016 1.007.158.239.345.557.582.953l.558 1.089.08.159c2.041 4.004 3.821 7.608 5.279 10.794l.026.025.533 1.22.318.764c.243.613.294 1.222.213 1.858zm1.22-2.39c-.186-.583-.505-1.271-.9-2.094v-.03c-1.889-4.006-3.642-7.608-5.307-10.844l-.111-.163C15.317 1.461 14.468 0 12.001 0c-2.44 0-3.476 1.695-4.535 3.898l-.081.16c-1.669 3.236-3.421 6.843-5.303 10.847v.053l-.559 1.22c-.21.504-.317.768-.345.847C-.172 20.74 2.611 24 5.98 24c.027 0 .132 0 .265-.027h.372c1.75-.213 3.554-1.325 5.384-3.317 1.829 1.989 3.635 3.104 5.382 3.317h.372c.133.027.239.027.265.027 3.37.003 6.152-3.261 4.802-6.975z"/></svg>
+        <span data-i18n="coverCtaAb">Ver perfil en Airbnb</span> ↗
+      </a>
     </div>
-  </section>
+    <p class="nota" data-i18n="footNote">La reserva se confirma vía WhatsApp o Airbnb — sin pagos en este sitio.</p>
+  </div>
+</section>
+</main>
 
-  <footer class="pie">
-    <div class="pie-inner">
-      <div class="brand">
-        <img src="assets/logo-trans.png" alt="Hera23 — Inversiones &amp; Rentas">
-        <p data-i18n="footBrand">Operador Airbnb en Medellín y Santa Fe de Antioquia.</p>
-      </div>
-      <div class="pie-col">
-        <span class="tag" data-i18n="footNav">Navegación</span>
-        <a href="#casas" data-i18n="navProps">Nuestras propiedades</a>
-        <a href="#manifiesto" data-i18n="navNosotros">Manifiesto</a>
-        <a href="#cobertura" data-i18n="navContacto">Destinos</a>
-      </div>
-      <div class="pie-col">
-        <span class="tag">Legal</span>
-        <a href="#" data-i18n="footTerms">Términos y condiciones</a>
-        <a href="#" data-i18n="footPrivacy">Política de privacidad</a>
-      </div>
-      <div class="pie-col">
-        <span class="tag" data-i18n="footFollow">Síguenos</span>
-        <a href="#" rel="noopener">Instagram</a>
-        <a href="#" rel="noopener">Facebook</a>
-        <a class="ab" data-abnb href="#" target="_blank" rel="noopener"><span data-i18n="footAbnb">Perfil oficial en Airbnb</span> ↗</a>
-      </div>
+<!-- FOOTER -->
+<footer class="pie shell">
+  <div class="pie-grid">
+    <div class="brand">
+      <img src="assets/logo-negro.png" alt="Hera23 — Inversiones &amp; Rentas">
+      <p data-i18n="footBrand">Operador Airbnb en Medellín y Santa Fe de Antioquia.</p>
     </div>
-    <div class="pie-bottom">
-      <span>© <span id="year">2026</span> Hera23 · Inversiones &amp; Rentas · Medellín, Colombia</span>
-      <span data-i18n="footNote">La reserva se confirma vía WhatsApp o Airbnb — sin pagos en este sitio.</span>
+    <div class="pie-col" id="foot-props">
+      <span class="tag" data-i18n="navProps">Nuestras propiedades</span>
     </div>
-  </footer>
-</div>
+    <div class="pie-col">
+      <span class="tag">Legal</span>
+      <a href="#" data-i18n="footTerms">Términos y condiciones</a>
+      <a href="#" data-i18n="footPrivacy">Política de privacidad</a>
+    </div>
+    <div class="pie-col">
+      <span class="tag" data-i18n="footFollow">Síguenos</span>
+      <a href="#" rel="noopener">Instagram</a>
+      <a href="#" rel="noopener">Facebook</a>
+      <a class="ab" data-abnb href="#" target="_blank" rel="noopener"><span data-i18n="footAbnb">Perfil oficial en Airbnb</span> ↗</a>
+    </div>
+  </div>
+  <div class="pie-bottom">
+    <span>© <span id="year">2026</span> Hera23 · Inversiones &amp; Rentas · Medellín, Colombia</span>
+    <span data-i18n="footNote">La reserva se confirma vía WhatsApp o Airbnb — sin pagos en este sitio.</span>
+  </div>
+</footer>
 
 <div class="fabs" id="fabs">
-  <a class="fab fab-abnb" data-abnb href="#" target="_blank" rel="noopener" aria-label="Ver perfil oficial en Airbnb" title="Airbnb">
-    <img src="assets/airbnb.svg" alt="">
-  </a>
+  <a class="fab fab-abnb" data-abnb href="#" target="_blank" rel="noopener" aria-label="Ver perfil oficial en Airbnb" title="Airbnb"><img src="assets/airbnb.svg" alt=""></a>
   <a class="fab fab-wa" data-wa href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" title="WhatsApp">
     <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
   </a>
@@ -408,32 +389,30 @@ const PROPERTIES = window.HERA23.properties;
 const I18N = {
   es: {
     skip: 'Ir a nuestras propiedades',
-    navProps: 'Nuestras propiedades', navNosotros: 'Manifiesto', navContacto: 'Destinos',
-    verificado: 'Perfil verificado en Airbnb',
-    kicker: 'Operador directo en Airbnb · Antioquia, Colombia',
-    coverTitle: 'Reserva <em>en minutos</em> tu propiedad en Medellín.',
+    navProps: 'Nuestras propiedades', navContacto: 'Destinos', navVoces: 'Opiniones',
+    verificado: 'Verificado en Airbnb',
+    heroTitle: 'Reserva <em>en minutos</em> tu propiedad en Medellín.',
     heroSub: 'Reserva directa por WhatsApp. Verificación abierta en Airbnb.',
-    heroCta2: 'WhatsApp directo',
-    indexHead: 'Índice — Nuestras propiedades',
-    indexGo: 'Ver ficha',
-    colofonOp: '3 casas · operación directa',
-    colofonAb: 'Verificable en Airbnb',
-    maniTag: 'Manifiesto',
-    maniQuote: 'La persona que responde tu WhatsApp es <em>la misma que te entrega las llaves.</em>',
-    maniP1: 'Administramos cada casa personalmente. Lo que ves aquí es lo mismo que aparece en nuestro perfil oficial de Airbnb.',
-    casasTag: 'Nuestras propiedades',
+    heroCta1: 'Ver propiedades', heroCta2: 'WhatsApp directo',
+    badgeLbl: 'propiedades', badgeTxt: 'Operación directa en Medellín y Santa Fe de Antioquia',
     photosSoon: 'Fotos muy pronto',
-    laminaPie: 'Lámina', laminaDe: 'de 03',
-    btnWa: 'Reservar por WhatsApp', btnAb: 'Ver en Airbnb',
-    vocesTag: 'Voces de huéspedes',
+    propsTitle: 'Nuestras propiedades',
+    verFicha: 'Ver propiedad',
+    testTag: 'Opiniones', testTitle: 'Huéspedes que ya confiaron',
     coberTag: 'Destinos',
-    coberTitle: 'De la montaña de Medellín, <em>al sol de Santa Fe.</em>',
+    coberTitle: 'De la montaña de Medellín, al sol de Santa Fe.',
     coverZones: 'Medellín — Casa Grande y Villa Medellín · Santa Fe de Antioquia — Villa Santa Fe',
     coverCtaWa: 'Escríbenos por WhatsApp', coverCtaAb: 'Ver perfil en Airbnb',
+    ctaTitle: 'Tu próxima estadía <em>te espera.</em>',
     footBrand: 'Operador Airbnb en Medellín y Santa Fe de Antioquia.',
-    footNav: 'Navegación', footTerms: 'Términos y condiciones', footPrivacy: 'Política de privacidad',
+    footTerms: 'Términos y condiciones', footPrivacy: 'Política de privacidad',
     footFollow: 'Síguenos', footAbnb: 'Perfil oficial en Airbnb',
     footNote: 'La reserva se confirma vía WhatsApp o Airbnb — sin pagos en este sitio.',
+    stats: [
+      { n: '03', l: 'Propiedades premium' },
+      { n: '02', l: 'Destinos en Antioquia' },
+      { n: '100<i>%</i>', l: 'Operación directa Airbnb' }
+    ],
     waMsg: 'Hola Hera23, quiero consultar disponibilidad de sus propiedades.',
     waMsgProp: n => `Hola Hera23, me interesa "${n}". ¿Me comparten disponibilidad y tarifas?`,
     tests: [
@@ -444,32 +423,30 @@ const I18N = {
   },
   en: {
     skip: 'Skip to our properties',
-    navProps: 'Our properties', navNosotros: 'Manifesto', navContacto: 'Destinations',
-    verificado: 'Verified Airbnb profile',
-    kicker: 'Direct Airbnb operator · Antioquia, Colombia',
-    coverTitle: 'Book your Medellín property <em>in minutes.</em>',
+    navProps: 'Our properties', navContacto: 'Destinations', navVoces: 'Reviews',
+    verificado: 'Verified on Airbnb',
+    heroTitle: 'Book your Medellín property <em>in minutes.</em>',
     heroSub: 'Book directly via WhatsApp. Verify us on Airbnb.',
-    heroCta2: 'Direct WhatsApp',
-    indexHead: 'Index — Our properties',
-    indexGo: 'View house',
-    colofonOp: '3 houses · direct operation',
-    colofonAb: 'Verifiable on Airbnb',
-    maniTag: 'Manifesto',
-    maniQuote: 'The person who answers your WhatsApp is <em>the same one who hands you the keys.</em>',
-    maniP1: 'We manage every house ourselves. What you see here is exactly what is listed on our official Airbnb profile.',
-    casasTag: 'Our properties',
+    heroCta1: 'View properties', heroCta2: 'Direct WhatsApp',
+    badgeLbl: 'properties', badgeTxt: 'Direct operation in Medellín and Santa Fe de Antioquia',
     photosSoon: 'Photos coming soon',
-    laminaPie: 'Plate', laminaDe: 'of 03',
-    btnWa: 'Book via WhatsApp', btnAb: 'View on Airbnb',
-    vocesTag: 'Guest voices',
+    propsTitle: 'Our properties',
+    verFicha: 'View property',
+    testTag: 'Reviews', testTitle: 'Guests who already trusted us',
     coberTag: 'Destinations',
-    coberTitle: 'From the mountains of Medellín <em>to the sun of Santa Fe.</em>',
+    coberTitle: 'From the mountains of Medellín to the sun of Santa Fe.',
     coverZones: 'Medellín — Casa Grande & Villa Medellín · Santa Fe de Antioquia — Villa Santa Fe',
     coverCtaWa: 'Message us on WhatsApp', coverCtaAb: 'View Airbnb profile',
+    ctaTitle: 'Your next stay <em>awaits.</em>',
     footBrand: 'Airbnb operator in Medellín and Santa Fe de Antioquia.',
-    footNav: 'Navigation', footTerms: 'Terms & conditions', footPrivacy: 'Privacy policy',
+    footTerms: 'Terms & conditions', footPrivacy: 'Privacy policy',
     footFollow: 'Follow us', footAbnb: 'Official Airbnb profile',
     footNote: 'Bookings are confirmed via WhatsApp or Airbnb — no payments on this site.',
+    stats: [
+      { n: '03', l: 'Premium properties' },
+      { n: '02', l: 'Destinations in Antioquia' },
+      { n: '100<i>%</i>', l: 'Direct Airbnb operation' }
+    ],
     waMsg: 'Hi Hera23, I would like to check availability for your properties.',
     waMsgProp: n => `Hi Hera23, I'm interested in "${n}". Could you share availability and rates?`,
     tests: [
@@ -480,8 +457,6 @@ const I18N = {
   }
 };
 
-const HERO_IMAGE = CONFIG.heroImage || '';
-
 let lang = 'es';
 try { lang = localStorage.getItem('hera23_lang') || 'es'; } catch (e) {}
 if (lang !== 'es' && lang !== 'en') lang = 'es';
@@ -489,59 +464,67 @@ if (lang !== 'es' && lang !== 'en') lang = 'es';
 const $ = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);
 const waHref = msg => 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(msg);
-const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const AB_ICON = '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.001 18.275c-1.353-1.697-2.148-3.184-2.413-4.457-.263-1.027-.16-1.848.291-2.465.477-.71 1.188-1.056 2.121-1.056s1.643.345 2.12 1.063c.446.61.558 1.432.286 2.465-.291 1.298-1.085 2.785-2.412 4.458zm9.601 1.14c-.185 1.246-1.034 2.28-2.2 2.783-2.253.98-4.483-.583-6.392-2.704 3.157-3.951 3.74-7.028 2.385-9.018-.795-1.14-1.933-1.695-3.394-1.695-2.944 0-4.563 2.49-3.927 5.382.37 1.565 1.352 3.343 2.917 5.332-.98 1.085-1.91 1.856-2.732 2.333-.636.344-1.245.558-1.828.609-2.679.399-4.778-2.2-3.825-4.88.132-.345.395-.98.845-1.961l.025-.053c1.464-3.178 3.242-6.79 5.285-10.795l.053-.132.58-1.116c.45-.822.635-1.19 1.351-1.643.346-.21.77-.315 1.246-.315.954 0 1.698.558 2.016 1.007.158.239.345.557.582.953l.558 1.089.08.159c2.041 4.004 3.821 7.608 5.279 10.794l.026.025.533 1.22.318.764c.243.613.294 1.222.213 1.858zm1.22-2.39c-.186-.583-.505-1.271-.9-2.094v-.03c-1.889-4.006-3.642-7.608-5.307-10.844l-.111-.163C15.317 1.461 14.468 0 12.001 0c-2.44 0-3.476 1.695-4.535 3.898l-.081.16c-1.669 3.236-3.421 6.843-5.303 10.847v.053l-.559 1.22c-.21.504-.317.768-.345.847C-.172 20.74 2.611 24 5.98 24c.027 0 .132 0 .265-.027h.372c1.75-.213 3.554-1.325 5.384-3.317 1.829 1.989 3.635 3.104 5.382 3.317h.372c.133.027.239.027.265.027 3.37.003 6.152-3.261 4.802-6.975z"/></svg>';
-const WA_ICON = '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>';
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const WA_ICON = '<svg viewBox="0 0 24 24" width="19" height="19" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>';
 
 function render() {
   const t = I18N[lang];
   document.documentElement.lang = lang;
   $$('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if (t[k]) el.textContent = t[k]; });
-  $('#cover-title').innerHTML = t.coverTitle;
-  $('#mani-quote').innerHTML = t.maniQuote;
-  $('#cober-title').innerHTML = t.coberTitle;
+  $('#hero-title').innerHTML = t.heroTitle;
+  $('#cober-title').textContent = t.coberTitle;
+  $('#cta-title').innerHTML = t.ctaTitle;
   $$('[data-wa]').forEach(el => { el.href = waHref(t.waMsg); });
   $$('[data-abnb]').forEach(el => { el.href = CONFIG.airbnbProfile; });
   $('#btn-es').setAttribute('aria-pressed', String(lang === 'es'));
   $('#btn-en').setAttribute('aria-pressed', String(lang === 'en'));
 
-  $('#index-rows').innerHTML = PROPERTIES.map(p =>
-    `<a class="row" href="${esc(p.id)}.html">
-      <span class="place">${esc(p.place[lang])}</span>
-      <span class="name">${esc(p.corto[lang])}</span>
-      <span class="go">${esc(t.indexGo)} →</span>
-    </a>`).join('');
+  // hero: foto si existe
+  if (CONFIG.heroImage) $('#hero-card').innerHTML = `<img class="foto" src="${esc(CONFIG.heroImage)}" alt="">`;
 
-  $('#casas-list').innerHTML = PROPERTIES.map((p, i) => {
-    const media = p.images.length
-      ? `<div class="gallery">${p.images.map((src, j) =>
-          `<img src="${esc(src)}" alt="${esc(p.nombre)} — foto ${j + 1}" loading="lazy">`).join('')}</div>`
-      : `<div class="ph"><img src="assets/isotipo-trans.png" alt=""><span class="tag">${esc(t.photosSoon)}</span></div>`;
-    const abnbUrl = p.airbnbUrl || CONFIG.airbnbProfile;
+  // tarjetas de propiedades (01 / 02 / 03)
+  const variants = ['pc-dark', 'pc-oro', 'pc-dark'];
+  $('#cards3').innerHTML = PROPERTIES.map((p, i) => {
     const num = String(i + 1).padStart(2, '0');
-    return `<article class="casa${i % 2 ? ' alt' : ''} reveal" id="${esc(p.id)}">
-      <div class="lamina">
-        <div class="lamina-media">${media}</div>
-        <div class="lamina-pie"><span class="tag">${esc(p.corto[lang])}</span><span class="tag">${esc(t.laminaPie)} ${num} ${esc(t.laminaDe)}</span></div>
-      </div>
-      <div class="casa-info">
-        <span class="tag place">${esc(p.place[lang])}</span>
-        <h3><a href="${esc(p.id)}.html" style="border-bottom:1px solid transparent" onmouseover="this.style.borderColor='#8c6a1f'" onmouseout="this.style.borderColor='transparent'">${esc(p.nombre)}</a></h3>
-        <p class="especimen">${p.chips[lang].map(esc).join('<b>·</b>')}</p>
-        <div class="casa-ctas">
-          <a class="btn btn-wa" href="${waHref(t.waMsgProp(p.nombre))}" target="_blank" rel="noopener">${WA_ICON}${esc(t.btnWa)}</a>
-          <a class="btn btn-abnb" href="${esc(abnbUrl)}" target="_blank" rel="noopener">${AB_ICON}${esc(t.btnAb)} ↗</a>
+    const abnbUrl = p.airbnbUrl || CONFIG.airbnbProfile;
+    const marca = i === 2 ? `<img class="marca" src="assets/isotipo-trans.png" alt="">` : '';
+    return `<article class="pcard ${variants[i]} reveal">
+      ${marca}
+      <div class="num">${num}.</div>
+      <h3><a href="${esc(p.id)}.html">${esc(p.corto[lang])}</a></h3>
+      <div class="place">${esc(p.place[lang])}</div>
+      <p class="amen">${p.chips[lang].slice(0, 3).map(esc).join(' · ')}</p>
+      <div class="foot">
+        <div class="minis">
+          <a class="mini wa" href="${waHref(t.waMsgProp(p.nombre))}" target="_blank" rel="noopener" aria-label="WhatsApp — ${esc(p.corto[lang])}">${WA_ICON}</a>
+          <a class="mini" href="${esc(abnbUrl)}" target="_blank" rel="noopener" aria-label="Airbnb — ${esc(p.corto[lang])}"><img src="assets/airbnb.svg" alt=""></a>
         </div>
+        <a class="chip-arrow" href="${esc(p.id)}.html" aria-label="${esc(t.verFicha)} — ${esc(p.corto[lang])}">↗</a>
       </div>
     </article>`;
   }).join('');
 
-  $('#voces').innerHTML = t.tests.map(x =>
-    `<blockquote class="voz reveal">
+  // cinta de amenidades (duplicada para el bucle)
+  const pills = [...new Set(PROPERTIES.flatMap(p => p.chips[lang]))];
+  const seq = pills.map(c => `<span class="pill">${esc(c)}</span>`).join('');
+  $('#strip-track').innerHTML = seq + seq;
+
+  // cifras
+  $('#stats-grid').innerHTML = t.stats.map(s =>
+    `<div class="stat"><b>${s.n}<i>+</i></b><span>${esc(s.l)}</span></div>`).join('');
+
+  // opiniones
+  $('#tests').innerHTML = t.tests.map(x =>
+    `<blockquote class="test reveal">
       <div class="stars" aria-label="5 ${lang === 'es' ? 'estrellas' : 'stars'}">★★★★★</div>
       <p>“${esc(x.quote)}”</p>
       <footer class="who"><b>${esc(x.name)}</b><span>${esc(x.prop)}</span></footer>
     </blockquote>`).join('');
+
+  // menú y footer: enlaces a fichas
+  $('#menu-props').innerHTML = PROPERTIES.map(p => `<a class="sub" href="${esc(p.id)}.html">${esc(p.corto[lang])} — ${esc(p.place[lang])}</a>`).join('');
+  $('#foot-props').innerHTML = `<span class="tag">${esc(t.navProps)}</span>` +
+    PROPERTIES.map(p => `<a href="${esc(p.id)}.html">${esc(p.corto[lang])}</a>`).join('');
 
   observeReveals();
 }
@@ -568,8 +551,8 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(f
 const topbar = $('#topbar'), fabs = $('#fabs');
 function onScroll() {
   const y = window.scrollY;
-  topbar.classList.toggle('scrolled', y > 40);
-  fabs.classList.toggle('show', y > window.innerHeight * .55);
+  topbar.classList.toggle('scrolled', y > 20);
+  fabs.classList.toggle('show', y > window.innerHeight * .5);
 }
 window.addEventListener('scroll', onScroll, { passive: true });
 
