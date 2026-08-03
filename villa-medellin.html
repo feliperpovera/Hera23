@@ -64,6 +64,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .hero-copy .num{font-size:12px;letter-spacing:.2em;color:var(--oro-hover)}
 .hero-copy h1{font-size:clamp(28px,3.8vw,46px)}
 .hero-copy .place{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--tinta-suave)}
+.gf-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.gf-top{display:flex;align-items:center;gap:6px;color:var(--tinta)}
+.gf-top b{font-size:36px;font-weight:600;letter-spacing:-.02em;line-height:1}
+.gf-top svg{height:44px;width:auto}
+.gf-top svg.esp{transform:scaleX(-1)}
+.gf-info{display:flex;flex-direction:column;gap:2px}
+.gf-info b{font-size:14px;font-weight:500}
+.gf-info a{font-size:12.5px;color:var(--tinta-suave);text-decoration:underline}
+.gf-info a:hover{color:var(--abnb)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips span{border:1px solid var(--linea);background:var(--crema);border-radius:999px;padding:9px 18px;font-size:13.5px;font-weight:400}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
@@ -74,21 +83,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .datos b{color:var(--tinta);font-weight:400}
 .datos a:hover{color:var(--abnb)}
 .ab-mini{width:15px;height:15px;vertical-align:-3px;margin-right:7px;border-radius:50%}
-.gf-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.gf-top{display:flex;align-items:center;gap:6px;color:var(--tinta)}
-.gf-top b{font-size:36px;font-weight:600;letter-spacing:-.02em;line-height:1}
-.gf-top svg{height:44px;width:auto}
-.gf-top svg.esp{transform:scaleX(-1)}
-.gf-info{display:flex;flex-direction:column;gap:2px}
-.gf-info b{font-size:14px;font-weight:500}
-.gf-info a{font-size:12.5px;color:var(--tinta-suave);text-decoration:underline}
-.gf-info a:hover{color:var(--abnb)}
-.voz{padding:clamp(36px,5vw,64px) 0}
-.voz-card{background:var(--blanco);border:1px solid var(--linea);border-radius:var(--r);padding:clamp(26px,4vw,44px)}
-.voz-card .stars{color:var(--oro-hover);letter-spacing:.26em;font-size:13px;margin-bottom:14px}
-.voz-card p{font-size:clamp(18px,2.2vw,24px);font-weight:400;line-height:1.55;margin:0 0 16px;max-width:30em}
-.voz-card .who{display:flex;align-items:baseline;gap:10px}
-.voz-card .who b{font-weight:500;font-size:14px}
+.sec-res{padding:clamp(40px,6vw,80px) 0}
+.sec-res .head{display:flex;align-items:center;gap:16px;margin-bottom:clamp(26px,4vw,40px)}
+.sec-res .head .tag{color:var(--tinta-suave)}
+.sec-res .head::after{content:"";flex:1;height:1px;background:var(--linea)}
+.resenas{display:grid;grid-template-columns:1fr;gap:34px clamp(40px,5vw,72px)}
+@media (min-width:860px){.resenas{grid-template-columns:repeat(2,1fr)}}
+.resena{margin:0}
+.r-head{display:flex;align-items:center;gap:13px;margin-bottom:12px}
+.r-avatar{width:48px;height:48px;border-radius:50%;background:var(--verde);color:var(--crema);display:flex;align-items:center;justify-content:center;font-weight:500;font-size:19px;flex:0 0 auto;overflow:hidden}
+.r-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.r-name{font-weight:500;font-size:15.5px;display:block;line-height:1.3}
+.r-sub{color:var(--tinta-suave);font-size:13.5px;display:block}
+.r-meta{display:flex;align-items:center;flex-wrap:wrap;gap:7px;font-size:13.5px;margin-bottom:9px;font-weight:400}
+.r-meta .stars{font-size:10px;letter-spacing:1.5px;color:var(--tinta)}
+.r-meta .sep,.r-meta .lbl{color:var(--tinta-suave)}
+.r-text{font-size:15.5px;line-height:1.65;font-weight:300;margin:0}
 .cta-band{background:var(--selva);color:var(--crema);border-radius:var(--r);padding:clamp(36px,5vw,70px) clamp(22px,4vw,60px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden}
 .cta-band .marca{position:absolute;right:-8%;bottom:-40%;height:180%;opacity:.06;pointer-events:none}
 .cta-band h2{font-size:clamp(26px,4vw,46px);max-width:14em;position:relative;z-index:2}
@@ -129,8 +139,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
       <span class="num">03.</span>
       <h1 id="p-nombre"></h1>
       <span class="place" id="p-place"></span>
-      <div class="chips" id="chips"></div>
       <div class="gf-row" id="gf-row"></div>
+      <div class="chips" id="chips"></div>
       <div class="hero-ctas">
         <a class="btn btn-wa" id="cta-wa-1" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span data-i18n="btnWa">Reservar por WhatsApp</span></a>
         <a class="btn btn-abnb" id="cta-ab-1" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.001 18.275c-1.353-1.697-2.148-3.184-2.413-4.457-.263-1.027-.16-1.848.291-2.465.477-.71 1.188-1.056 2.121-1.056s1.643.345 2.12 1.063c.446.61.558 1.432.286 2.465-.291 1.298-1.085 2.785-2.412 4.458zm9.601 1.14c-.185 1.246-1.034 2.28-2.2 2.783-2.253.98-4.483-.583-6.392-2.704 3.157-3.951 3.74-7.028 2.385-9.018-.795-1.14-1.933-1.695-3.394-1.695-2.944 0-4.563 2.49-3.927 5.382.37 1.565 1.352 3.343 2.917 5.332-.98 1.085-1.91 1.856-2.732 2.333-.636.344-1.245.558-1.828.609-2.679.399-4.778-2.2-3.825-4.88.132-.345.395-.98.845-1.961l.025-.053c1.464-3.178 3.242-6.79 5.285-10.795l.053-.132.58-1.116c.45-.822.635-1.19 1.351-1.643.346-.21.77-.315 1.246-.315.954 0 1.698.558 2.016 1.007.158.239.345.557.582.953l.558 1.089.08.159c2.041 4.004 3.821 7.608 5.279 10.794l.026.025.533 1.22.318.764c.243.613.294 1.222.213 1.858zm1.22-2.39c-.186-.583-.505-1.271-.9-2.094v-.03c-1.889-4.006-3.642-7.608-5.307-10.844l-.111-.163C15.317 1.461 14.468 0 12.001 0c-2.44 0-3.476 1.695-4.535 3.898l-.081.16c-1.669 3.236-3.421 6.843-5.303 10.847v.053l-.559 1.22c-.21.504-.317.768-.345.847C-.172 20.74 2.611 24 5.98 24c.027 0 .132 0 .265-.027h.372c1.75-.213 3.554-1.325 5.384-3.317 1.829 1.989 3.635 3.104 5.382 3.317h.372c.133.027.239.027.265.027 3.37.003 6.152-3.261 4.802-6.975z"/></svg><span data-i18n="btnAb">Ver en Airbnb</span> ↗</a>
@@ -143,12 +153,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
   </div>
 </section>
 
-<section class="voz shell">
-  <div class="voz-card">
-    <div class="stars" aria-hidden="true">★★★★★</div>
-    <p id="voz-quote"></p>
-    <div class="who"><b id="voz-name"></b></div>
-  </div>
+<section class="sec-res shell">
+  <div class="head"><span class="tag" data-i18n="resTag">Opiniones de huéspedes</span></div>
+  <div class="resenas" id="resenas"></div>
 </section>
 
 <section class="shell">
@@ -173,9 +180,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 
 <div class="fabs">
   <a class="fab fab-abnb" id="fab-ab" href="#" target="_blank" rel="noopener" aria-label="Ver este alojamiento en Airbnb" title="Airbnb"><img src="assets/airbnb.svg" alt=""></a>
-  <a class="fab fab-wa" id="fab-wa" href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" title="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-  </a>
+  <a class="fab fab-wa" id="fab-wa" href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
 </div>
 
 <script src="config.js"></script>
@@ -183,6 +188,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 const PROP_ID = 'villa-medellin';
 const P = window.HERA23.properties.find(p => p.id === PROP_ID);
 const CONFIG = window.HERA23.config;
+const REVIEWS = (window.HERA23.reviews || []).slice(0, 5);
+const LAUREL = '<svg viewBox="0 0 24 60" aria-hidden="true"><g fill="currentColor"><ellipse cx="13" cy="9" rx="4" ry="7.4" transform="rotate(16 13 9)"/><ellipse cx="16.5" cy="23" rx="4.2" ry="7.6" transform="rotate(30 16.5 23)"/><ellipse cx="17.5" cy="37" rx="4.4" ry="7.8" transform="rotate(46 17.5 37)"/><ellipse cx="14" cy="50" rx="4.3" ry="7.4" transform="rotate(68 14 50)"/><path d="M3,59 q9,-7 11,-19" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></g></svg>';
 const I18N = {
   es: {
     back: '← Nuestras propiedades',
@@ -190,10 +197,11 @@ const I18N = {
     photosSoon: 'Fotos muy pronto',
     dOperacion: 'Operación', dDirecta: 'directa, sin intermediarios',
     dVerificar: 'Verificar en Airbnb',
+    resTag: 'Opiniones de huéspedes',
+    gfLbl: 'Favorito entre huéspedes',
     cierre: '¿Fechas en mente? <em>Escríbenos.</em>',
     nota: 'La reserva se confirma vía WhatsApp o Airbnb — sin pagos en este sitio.',
-    waMsg: n => `Hola Hera23, me interesa "${n}". ¿Me comparten disponibilidad y tarifas?`,
-    voz: {"quote": "Muy linda casa, y muy grande. Zona muy tranquila, hermosa vista de Medellín, un paisaje muy lindo. Entran cómodas muchas personas.", "name": "Soledad · 6 años en Airbnb"}
+    waMsg: n => `Hola Hera23, me interesa "${n}". ¿Me comparten disponibilidad y tarifas?`
   },
   en: {
     back: '← Our properties',
@@ -201,10 +209,11 @@ const I18N = {
     photosSoon: 'Photos coming soon',
     dOperacion: 'Operation', dDirecta: 'direct, no middlemen',
     dVerificar: 'Verify on Airbnb',
+    resTag: 'Guest reviews',
+    gfLbl: 'Guest favourite',
     cierre: 'Dates in mind? <em>Message us.</em>',
     nota: 'Bookings are confirmed via WhatsApp or Airbnb — no payments on this site.',
-    waMsg: n => `Hi Hera23, I'm interested in "${n}". Could you share availability and rates?`,
-    voz: {"quote": "Very pretty house, and very big. Very quiet area, beautiful view of Medellín, a lovely landscape. It comfortably fits many people.", "name": "Soledad · 6 years on Airbnb"}
+    waMsg: n => `Hi Hera23, I'm interested in "${n}". Could you share availability and rates?`
   }
 };
 let lang = 'es';
@@ -220,8 +229,16 @@ function render() {
   $('#p-place').textContent = P.place[lang];
   $('#chips').innerHTML = P.chips[lang].map(c => `<span>${esc(c)}</span>`).join('');
   $('#cierre-title').innerHTML = t.cierre;
-  $('#voz-quote').textContent = '“' + t.voz.quote + '”';
-  $('#voz-name').textContent = t.voz.name;
+  const ab = P.airbnbUrl || CONFIG.airbnbProfile;
+  // emblema solo si el listado tiene calificación
+  if (P.rating) {
+    const numRes = lang === 'es' ? P.reviewsCount + ' reseñas en Airbnb' : P.reviewsCount + ' reviews on Airbnb';
+    const ratingTxt = lang === 'es' ? P.rating : P.rating.replace(',', '.');
+    $('#gf-row').innerHTML =
+      `<div class="gf-top">${LAUREL.replace('<svg ', '<svg class="esp" ')}<b>${ratingTxt}</b>${LAUREL}</div>
+       <div class="gf-info"><b>${esc(t.gfLbl)}</b>
+       <a href="${esc(ab)}" target="_blank" rel="noopener">${numRes} ↗</a></div>`;
+  } else { $('#gf-row').innerHTML = ''; }
   $('#media').innerHTML = P.images.length
     ? `<div class="gallery" id="gal">${P.images.map((src,i)=>`<img src="${esc(src)}" alt="${esc(P.nombre)} — foto ${i+1}" loading="lazy">`).join('')}</div>
        <button class="gal-btn prev" type="button" aria-label="Anterior">‹</button>
@@ -238,15 +255,21 @@ function render() {
       document.getElementById('gal-count').textContent = i + ' / ' + P.images.length;
     }, { passive: true });
   }
-  const LAUREL = '<svg viewBox="0 0 24 60" aria-hidden="true"><g fill="currentColor"><ellipse cx="13" cy="9" rx="4" ry="7.4" transform="rotate(16 13 9)"/><ellipse cx="16.5" cy="23" rx="4.2" ry="7.6" transform="rotate(30 16.5 23)"/><ellipse cx="17.5" cy="37" rx="4.4" ry="7.8" transform="rotate(46 17.5 37)"/><ellipse cx="14" cy="50" rx="4.3" ry="7.4" transform="rotate(68 14 50)"/><path d="M3,59 q9,-7 11,-19" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></g></svg>';
-  const numRes = lang === 'es' ? P.reviewsCount + ' reseñas en Airbnb' : P.reviewsCount + ' reviews on Airbnb';
-  const ratingTxt = lang === 'es' ? P.rating : P.rating.replace(',', '.');
-  document.getElementById('gf-row').innerHTML =
-    `<div class="gf-top">${LAUREL.replace('<svg ', '<svg class="esp" ')}<b>${ratingTxt}</b>${LAUREL}</div>
-     <div class="gf-info"><b>${lang === 'es' ? 'Favorito entre huéspedes' : 'Guest favourite'}</b>
-     <a href="${P.airbnbUrl || CONFIG.airbnbProfile}" target="_blank" rel="noopener">${numRes} ↗</a></div>`;
+  // reseñas estilo Airbnb (5, compartidas con la página principal)
+  $('#resenas').innerHTML = REVIEWS.map(r =>
+    `<article class="resena">
+      <div class="r-head">
+        <span class="r-avatar" aria-hidden="true">${r.img ? `<img src="${esc(r.img)}" alt="" loading="lazy">` : esc(r.ini)}</span>
+        <span><span class="r-name">${esc(r.name)}</span><span class="r-sub">${esc(r.sub[lang])}</span></span>
+      </div>
+      <div class="r-meta">
+        <span class="stars" aria-label="5 ${lang === 'es' ? 'estrellas' : 'stars'}">★★★★★</span>
+        <span class="sep">·</span><span class="lbl">${esc(r.meta[lang][0])}</span>
+        ${r.meta[lang][1] ? `<span class="sep">·</span><span class="lbl">${esc(r.meta[lang][1])}</span>` : ''}
+      </div>
+      <p class="r-text">${esc(r.text[lang])}</p>
+    </article>`).join('');
   const wa = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(t.waMsg(P.nombre));
-  const ab = P.airbnbUrl || CONFIG.airbnbProfile;
   ['#cta-wa-1','#cta-wa-2','#fab-wa'].forEach(s => $(s).href = wa);
   ['#cta-ab-1','#cta-ab-2','#cta-ab-3','#fab-ab'].forEach(s => $(s).href = ab);
   $('#btn-es').setAttribute('aria-pressed', String(lang==='es'));
