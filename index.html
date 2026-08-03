@@ -291,8 +291,8 @@ a:hover .chip-arrow,.chip-arrow:hover{transform:translate(2px,-2px)}
         </a>
       </div>
       <div class="hero-meta">
-        <div class="badge-circ"><b>03</b><span data-i18n="badgeLbl">propiedades</span></div>
-        <span class="meta-txt" data-i18n="badgeTxt">Operación directa en Medellín y Santa Fe de Antioquia</span>
+        <div class="badge-circ"><b>10</b><span data-i18n="badgeLbl">años anfitrión</span></div>
+        <span class="meta-txt" data-i18n="badgeTxt">Superanfitrión · 258 reseñas · 4.82★ en Airbnb</span>
         <a class="verif" data-abnb href="#" target="_blank" rel="noopener"><img class="ab-mini" src="assets/airbnb.svg" alt=""><span data-i18n="verificado">Verificado en Airbnb</span> ↗</a>
       </div>
     </div>
@@ -410,7 +410,7 @@ const I18N = {
     heroTitle: 'Reserva <em>en minutos</em> tu propiedad en Medellín.',
     heroSub: 'Reserva directa por WhatsApp. Verificación abierta en Airbnb.',
     heroCta1: 'Ver propiedades', heroCta2: 'WhatsApp directo',
-    badgeLbl: 'propiedades', badgeTxt: 'Operación directa en Medellín y Santa Fe de Antioquia',
+    badgeLbl: 'años anfitrión', badgeTxt: 'Superanfitrión · 258 reseñas · 4.82★ en Airbnb',
     photosSoon: 'Fotos muy pronto',
     propsTitle: 'Nuestras propiedades',
     verFicha: 'Ver propiedad',
@@ -425,9 +425,9 @@ const I18N = {
     footFollow: 'Síguenos', footAbnb: 'Perfil oficial en Airbnb',
     footNote: 'La reserva se confirma vía WhatsApp o Airbnb — sin pagos en este sitio.',
     stats: [
-      { n: '03', l: 'Propiedades premium' },
-      { n: '02', l: 'Destinos en Antioquia' },
-      { n: '100<i>%</i>', l: 'Operación directa Airbnb' }
+      { n: '258', l: 'Reseñas en Airbnb' },
+      { n: '4.82<i>★</i>', l: 'Calificación promedio' },
+      { n: '10', l: 'Años como anfitrión' }
     ],
     waMsg: 'Hola Hera23, quiero consultar disponibilidad de sus propiedades.',
     waMsgProp: n => `Hola Hera23, me interesa "${n}". ¿Me comparten disponibilidad y tarifas?`
@@ -439,7 +439,7 @@ const I18N = {
     heroTitle: 'Book your Medellín property <em>in minutes.</em>',
     heroSub: 'Book directly via WhatsApp. Verify us on Airbnb.',
     heroCta1: 'View properties', heroCta2: 'Direct WhatsApp',
-    badgeLbl: 'properties', badgeTxt: 'Direct operation in Medellín and Santa Fe de Antioquia',
+    badgeLbl: 'years hosting', badgeTxt: 'Superhost · 258 reviews · 4.82★ on Airbnb',
     photosSoon: 'Photos coming soon',
     propsTitle: 'Our properties',
     verFicha: 'View property',
@@ -454,9 +454,9 @@ const I18N = {
     footFollow: 'Follow us', footAbnb: 'Official Airbnb profile',
     footNote: 'Bookings are confirmed via WhatsApp or Airbnb — no payments on this site.',
     stats: [
-      { n: '03', l: 'Premium properties' },
-      { n: '02', l: 'Destinations in Antioquia' },
-      { n: '100<i>%</i>', l: 'Direct Airbnb operation' }
+      { n: '258', l: 'Airbnb reviews' },
+      { n: '4.82<i>★</i>', l: 'Average rating' },
+      { n: '10', l: 'Years as a host' }
     ],
     waMsg: 'Hi Hera23, I would like to check availability for your properties.',
     waMsgProp: n => `Hi Hera23, I'm interested in "${n}". Could you share availability and rates?`
@@ -578,7 +578,7 @@ function render() {
 
   // cifras
   $('#stats-grid').innerHTML = t.stats.map(s =>
-    `<div class="stat"><b>${s.n}<i>+</i></b><span>${esc(s.l)}</span></div>`).join('');
+    `<div class="stat"><b>${s.n}</b><span>${esc(s.l)}</span></div>`).join('');
 
   // reseñas estilo Airbnb
   const masLbl = lang === 'es' ? 'Mostrar más' : 'Show more';
