@@ -162,15 +162,24 @@ a:hover .chip-arrow,.chip-arrow:hover{transform:translate(2px,-2px)}
 .stat b i{font-style:normal;color:var(--oro)}
 .stat span{display:block;margin-top:10px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--salvia)}
 
-/* ---------- testimonios ---------- */
-.tests{display:grid;grid-template-columns:1fr;gap:clamp(14px,2vw,22px)}
-@media (min-width:860px){.tests{grid-template-columns:repeat(3,1fr)}}
-.test{background:var(--blanco);border:1px solid var(--linea);border-radius:var(--r);padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:16px;margin:0}
-.test .stars{color:var(--oro-hover);letter-spacing:.26em;font-size:13px}
-.test p{font-size:16px;font-weight:400;line-height:1.65;margin:0;flex:1}
-.test .who{display:flex;align-items:baseline;gap:10px}
-.test .who b{font-weight:500;font-size:14px;letter-spacing:.04em}
-.test .who span{color:var(--tinta-suave);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+/* ---------- reseñas (estilo Airbnb) ---------- */
+.resenas{display:grid;grid-template-columns:1fr;gap:38px clamp(40px,5vw,72px);max-width:1180px}
+@media (min-width:860px){.resenas{grid-template-columns:repeat(2,1fr)}}
+.resena{margin:0}
+.r-head{display:flex;align-items:center;gap:13px;margin-bottom:12px}
+.r-avatar{width:48px;height:48px;border-radius:50%;background:var(--verde);color:var(--crema);display:flex;align-items:center;justify-content:center;font-weight:500;font-size:19px;flex:0 0 auto}
+.resena:nth-child(3n+2) .r-avatar{background:var(--oro);color:var(--verde)}
+.resena:nth-child(3n) .r-avatar{background:var(--salvia);color:var(--verde)}
+.r-name{font-weight:500;font-size:15.5px;display:block;line-height:1.3}
+.r-sub{color:var(--tinta-suave);font-size:13.5px;display:block}
+.r-meta{display:flex;align-items:center;flex-wrap:wrap;gap:7px;font-size:13.5px;margin-bottom:9px;font-weight:400}
+.r-meta .stars{font-size:10px;letter-spacing:1.5px;color:var(--tinta)}
+.r-meta .sep{color:var(--tinta-suave)}
+.r-meta .lbl{color:var(--tinta-suave)}
+.r-text{font-size:15.5px;line-height:1.65;font-weight:300;margin:0}
+.r-text.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.r-more{background:none;border:none;padding:0;margin-top:7px;font-family:var(--sans);font-size:15px;font-weight:500;color:var(--tinta);text-decoration:underline;cursor:pointer;display:none}
+.r-more.show{display:inline-block}
 
 /* ---------- destinos ---------- */
 .mapa-card{border-radius:var(--r);overflow:hidden;border:1px solid var(--linea);background:#e8e8e2}
@@ -311,7 +320,7 @@ a:hover .chip-arrow,.chip-arrow:hover{transform:translate(2px,-2px)}
     <span class="tag" data-i18n="testTag">Opiniones</span>
     <h2 data-i18n="testTitle">Huéspedes que ya confiaron</h2>
   </div>
-  <div class="tests" id="tests"></div>
+  <div class="resenas" id="resenas"></div>
 </section>
 
 <!-- DESTINOS -->
@@ -414,12 +423,7 @@ const I18N = {
       { n: '100<i>%</i>', l: 'Operación directa Airbnb' }
     ],
     waMsg: 'Hola Hera23, quiero consultar disponibilidad de sus propiedades.',
-    waMsgProp: n => `Hola Hera23, me interesa "${n}". ¿Me comparten disponibilidad y tarifas?`,
-    tests: [
-      { quote: 'Todo impecable y tal como en las fotos.', name: 'Laura M.', prop: 'Villa Medellín' },
-      { quote: 'El mismo inmueble del listado de Airbnb. Cero dudas.', name: 'Carlos R.', prop: 'Casa Grande' },
-      { quote: 'Llegada fácil, respuesta rápida, la casa perfecta.', name: 'Ana P.', prop: 'Villa Santa Fe' }
-    ]
+    waMsgProp: n => `Hola Hera23, me interesa "${n}". ¿Me comparten disponibilidad y tarifas?`
   },
   en: {
     skip: 'Skip to our properties',
@@ -448,14 +452,67 @@ const I18N = {
       { n: '100<i>%</i>', l: 'Direct Airbnb operation' }
     ],
     waMsg: 'Hi Hera23, I would like to check availability for your properties.',
-    waMsgProp: n => `Hi Hera23, I'm interested in "${n}". Could you share availability and rates?`,
-    tests: [
-      { quote: 'Everything spotless, exactly like the photos.', name: 'Laura M.', prop: 'Villa Medellín' },
-      { quote: 'The exact same property as the Airbnb listing.', name: 'Carlos R.', prop: 'Casa Grande' },
-      { quote: 'Easy check-in, fast replies, a perfect house.', name: 'Ana P.', prop: 'Villa Santa Fe' }
-    ]
+    waMsgProp: n => `Hi Hera23, I'm interested in "${n}". Could you share availability and rates?`
   }
 };
+
+/* Reseñas reales del perfil de Airbnb */
+const REVIEWS = [
+  {
+    name: 'Jose', ini: 'J',
+    sub: { es: 'Armenia, Colombia', en: 'Armenia, Colombia' },
+    meta: { es: ['junio de 2026', 'En grupo'], en: ['June 2026', 'Group trip'] },
+    text: {
+      es: 'Felipe nos hice un trabajo fuera de este mundo, no hay palabras para explicar tan humilde tan responsible tan amable nos ayudar atender un dia de 60+ personas con comida…',
+      en: 'Felipe did an out-of-this-world job for us, there are no words to describe how humble, responsible and kind he was, helping us host a day of 60+ people with food…'
+    }
+  },
+  {
+    name: 'Rafael', ini: 'R',
+    sub: { es: '4 años en Airbnb', en: '4 years on Airbnb' },
+    meta: { es: ['Hace 1 semana', 'Con mascota'], en: ['1 week ago', 'With pet'] },
+    text: {
+      es: 'Lugar hermoso y espacioso tiene de todo para hacer, vistas increíbles habitaciones cómodas volvería a alojarme 10/10',
+      en: 'Beautiful and spacious place, it has everything to do, incredible views, comfortable rooms, I would stay again 10/10'
+    }
+  },
+  {
+    name: 'Nelson', ini: 'N',
+    sub: { es: 'Maracay, Venezuela', en: 'Maracay, Venezuela' },
+    meta: { es: ['agosto de 2025', 'En grupo'], en: ['August 2025', 'Group trip'] },
+    text: {
+      es: 'En verdad que la pasamos genial en la casa, Felipe fue un excelente host y la sra Esther una excelente cocinera. La casa está ubicada algo retirada pero vale la pena al 100%…',
+      en: 'We truly had a great time at the house, Felipe was an excellent host and Mrs. Esther an excellent cook. The house is a bit remote but it is 100% worth it…'
+    }
+  },
+  {
+    name: 'Maria Alejandra', ini: 'M',
+    sub: { es: 'Medellín, Colombia', en: 'Medellín, Colombia' },
+    meta: { es: ['marzo de 2026', 'En grupo'], en: ['March 2026', 'Group trip'] },
+    text: {
+      es: 'Fue una excelente estadía, demasiado cómoda y tal cual como en las fotos mis amigos y familiares la pasamos increíble!',
+      en: 'It was an excellent stay, extremely comfortable and exactly like the photos, my friends and family had an incredible time!'
+    }
+  },
+  {
+    name: 'Soledad', ini: 'S',
+    sub: { es: '6 años en Airbnb', en: '6 years on Airbnb' },
+    meta: { es: ['enero de 2026', 'Con niños'], en: ['January 2026', 'With kids'] },
+    text: {
+      es: 'Muy linda casa, y muy grande. Se encuentra en una zona muy tranquila, hermosa vista de Medellín, un paisaje muy lindo. Entran cómodas muchas personas. Está equipada para la…',
+      en: 'Very pretty house, and very big. It is in a very quiet area, beautiful view of Medellín, a lovely landscape. It comfortably fits many people. It is equipped for the…'
+    }
+  },
+  {
+    name: 'Francisco', ini: 'F',
+    sub: { es: 'Ciudad de México, México', en: 'Mexico City, Mexico' },
+    meta: { es: ['octubre de 2025', 'En grupo'], en: ['October 2025', 'Group trip'] },
+    text: {
+      es: 'La casa esta enorme, tiene una excelente vista y esta a 18 min de Provenza. La atención de Felipe es excelente, siempre estuvo al pendiente de nostros aunque no estuvieramos en l…',
+      en: 'The house is huge, it has an excellent view and is 18 min from Provenza. Felipe\'s attention is excellent, he was always looking out for us even when we were not at t…'
+    }
+  }
+];
 
 let lang = 'es';
 try { lang = localStorage.getItem('hera23_lang') || 'es'; } catch (e) {}
@@ -513,13 +570,27 @@ function render() {
   $('#stats-grid').innerHTML = t.stats.map(s =>
     `<div class="stat"><b>${s.n}<i>+</i></b><span>${esc(s.l)}</span></div>`).join('');
 
-  // opiniones
-  $('#tests').innerHTML = t.tests.map(x =>
-    `<blockquote class="test reveal">
-      <div class="stars" aria-label="5 ${lang === 'es' ? 'estrellas' : 'stars'}">★★★★★</div>
-      <p>“${esc(x.quote)}”</p>
-      <footer class="who"><b>${esc(x.name)}</b><span>${esc(x.prop)}</span></footer>
-    </blockquote>`).join('');
+  // reseñas estilo Airbnb
+  const masLbl = lang === 'es' ? 'Mostrar más' : 'Show more';
+  $('#resenas').innerHTML = REVIEWS.map(r =>
+    `<article class="resena reveal">
+      <div class="r-head">
+        <span class="r-avatar" aria-hidden="true">${esc(r.ini)}</span>
+        <span><span class="r-name">${esc(r.name)}</span><span class="r-sub">${esc(r.sub[lang])}</span></span>
+      </div>
+      <div class="r-meta">
+        <span class="stars" aria-label="5 ${lang === 'es' ? 'estrellas' : 'stars'}">★★★★★</span>
+        <span class="sep">·</span><span class="lbl">${esc(r.meta[lang][0])}</span>
+        ${r.meta[lang][1] ? `<span class="sep">·</span><span class="lbl">${esc(r.meta[lang][1])}</span>` : ''}
+      </div>
+      <p class="r-text clamp">${esc(r.text[lang])}</p>
+      <button class="r-more" type="button">${masLbl}</button>
+    </article>`).join('');
+  $$('#resenas .resena').forEach(el => {
+    const txt = el.querySelector('.r-text'), btn = el.querySelector('.r-more');
+    if (txt.scrollHeight > txt.clientHeight + 2) btn.classList.add('show');
+    btn.addEventListener('click', () => { txt.classList.remove('clamp'); btn.classList.remove('show'); });
+  });
 
   // menú y footer: enlaces a fichas
   $('#menu-props').innerHTML = PROPERTIES.map(p => `<a class="sub" href="${esc(p.id)}.html">${esc(p.corto[lang])} — ${esc(p.place[lang])}</a>`).join('');
