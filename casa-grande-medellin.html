@@ -56,6 +56,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .hero-card .gallery{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .hero-card .gallery::-webkit-scrollbar{display:none}
 .hero-card .gallery img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:center}
+.gal-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:rgba(243,239,230,.92);color:var(--verde);font-size:22px;cursor:pointer;z-index:4;display:flex;align-items:center;justify-content:center;transition:background .25s}
+.gal-btn:hover{background:#fff}
+.gal-btn.prev{left:14px}.gal-btn.next{right:14px}
+.gal-count{position:absolute;bottom:14px;right:16px;z-index:4;background:rgba(27,33,27,.72);color:var(--crema);font-size:12px;letter-spacing:.08em;border-radius:999px;padding:6px 13px}
 .hero-copy{background:var(--blanco);border-radius:var(--r);padding:clamp(26px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:clamp(16px,2.2vw,22px)}
 .hero-copy .num{font-size:12px;letter-spacing:.2em;color:var(--oro-hover)}
 .hero-copy h1{font-size:clamp(28px,3.8vw,46px)}
@@ -195,8 +199,21 @@ function render() {
   $('#voz-quote').textContent = '“' + t.voz.quote + '”';
   $('#voz-name').textContent = t.voz.name;
   $('#media').innerHTML = P.images.length
-    ? `<div class="gallery">${P.images.map((src,i)=>`<img src="${esc(src)}" alt="${esc(P.nombre)} — foto ${i+1}" loading="lazy">`).join('')}</div>`
+    ? `<div class="gallery" id="gal">${P.images.map((src,i)=>`<img src="${esc(src)}" alt="${esc(P.nombre)} — foto ${i+1}" loading="lazy">`).join('')}</div>
+       <button class="gal-btn prev" type="button" aria-label="Anterior">‹</button>
+       <button class="gal-btn next" type="button" aria-label="Siguiente">›</button>
+       <span class="gal-count" id="gal-count">1 / ${P.images.length}</span>`
     : `<div class="ph"><img src="assets/isotipo-trans.png" alt=""><span class="tag">${esc(t.photosSoon)}</span></div>`;
+  const gal = document.getElementById('gal');
+  if (gal) {
+    const paso = () => gal.clientWidth;
+    document.querySelector('.gal-btn.prev').onclick = () => gal.scrollBy({ left: -paso(), behavior: 'smooth' });
+    document.querySelector('.gal-btn.next').onclick = () => gal.scrollBy({ left: paso(), behavior: 'smooth' });
+    gal.addEventListener('scroll', () => {
+      const i = Math.round(gal.scrollLeft / paso()) + 1;
+      document.getElementById('gal-count').textContent = i + ' / ' + P.images.length;
+    }, { passive: true });
+  }
   const wa = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(t.waMsg(P.nombre));
   const ab = P.airbnbUrl || CONFIG.airbnbProfile;
   ['#cta-wa-1','#cta-wa-2'].forEach(s => $(s).href = wa);

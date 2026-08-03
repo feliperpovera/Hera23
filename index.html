@@ -143,6 +143,13 @@ a:hover .chip-arrow,.chip-arrow:hover{transform:translate(2px,-2px)}
 .pc-oro .place{color:rgba(32,39,32,.65)}
 .pc-oro .amen{color:rgba(32,39,32,.8)}
 .pc-oro .chip-arrow{background:var(--verde);color:var(--crema)}
+.pc-photo{background-size:cover;background-position:center;color:var(--crema)}
+.pc-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,33,27,.18) 0%,rgba(27,33,27,.82) 100%)}
+.pc-photo>*{position:relative;z-index:2}
+.pc-photo .num{color:var(--oro);border-color:rgba(213,164,71,.5)}
+.pc-photo .place{color:var(--crema)}
+.pc-photo .amen{color:rgba(243,239,230,.85)}
+.pc-photo .chip-arrow{background:var(--oro);color:var(--verde)}
 .pcard h3 a:hover{color:inherit;opacity:.8}
 
 /* ---------- cinta de amenidades ---------- */
@@ -544,8 +551,11 @@ function render() {
   $('#cards3').innerHTML = PROPERTIES.map((p, i) => {
     const num = String(i + 1).padStart(2, '0');
     const abnbUrl = p.airbnbUrl || CONFIG.airbnbProfile;
-    const marca = i === 2 ? `<img class="marca" src="assets/isotipo-trans.png" alt="">` : '';
-    return `<article class="pcard ${variants[i]} reveal">
+    const hasFoto = p.images.length > 0;
+    const cls = hasFoto ? 'pc-dark pc-photo' : variants[i];
+    const style = hasFoto ? ` style="background-image:url('${esc(p.images[0])}')"` : '';
+    const marca = i === 2 && !hasFoto ? `<img class="marca" src="assets/isotipo-trans.png" alt="">` : '';
+    return `<article class="pcard ${cls} reveal"${style}>
       ${marca}
       <div class="num">${num}.</div>
       <h3><a href="${esc(p.id)}.html">${esc(p.corto[lang])}</a></h3>

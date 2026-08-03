@@ -10,7 +10,7 @@ window.HERA23 = {
   config: {
     whatsappNumber: '573000000000',            // TODO: reemplazar por el número real
     airbnbProfile: 'https://www.airbnb.com.co/users/show/PERFIL-HERA23',  // TODO: URL real del perfil
-    heroImage: ''                              // TODO: p. ej. 'fotos/villa-medellin/01.jpg'
+    heroImage: 'fotos/villa-medellin/05.avif'
   },
   properties: [
     {
@@ -46,7 +46,7 @@ window.HERA23 = {
         es: ['Piscina', 'Vistas a la ciudad', 'Lujo'],
         en: ['Pool', 'City views', 'Luxury']
       },
-      images: [],
+      images: ['fotos/villa-medellin/05.avif', 'fotos/villa-medellin/07.avif', 'fotos/villa-medellin/03.avif', 'fotos/villa-medellin/15.avif', 'fotos/villa-medellin/08.avif', 'fotos/villa-medellin/13.avif', 'fotos/villa-medellin/04.avif', 'fotos/villa-medellin/09.avif', 'fotos/villa-medellin/10.avif', 'fotos/villa-medellin/06.avif', 'fotos/villa-medellin/11.avif', 'fotos/villa-medellin/12.avif', 'fotos/villa-medellin/02.avif', 'fotos/villa-medellin/01.avif', 'fotos/villa-medellin/17.avif', 'fotos/villa-medellin/16.avif', 'fotos/villa-medellin/14.avif'],
       airbnbUrl: ''
     }
   ]
