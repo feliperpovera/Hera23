@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -127,7 +127,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
     <div class="topbar-right">
       <a class="back" href="index.html#propiedades" data-i18n="back">← Nuestras propiedades</a>
       <div class="lang" role="group" aria-label="Idioma / Language">
-        <button id="btn-es" aria-pressed="true" aria-label="Español">ES</button><span>/</span><button id="btn-en" aria-pressed="false" aria-label="English">EN</button>
+        <button id="btn-en" aria-pressed="true" aria-label="English">EN</button><span>/</span><button id="btn-es" aria-pressed="false" aria-label="Español">ES</button>
       </div>
     </div>
   </div>
@@ -220,8 +220,8 @@ const I18N = {
     waMsg: n => `Hi Hera23, I'm interested in "${n}". Could you share availability and rates?`
   }
 };
-let lang = 'es';
-try { lang = localStorage.getItem('hera23_lang') || 'es'; } catch (e) {}
+let lang = 'en';
+try { lang = localStorage.getItem('hera23_lang') || 'en'; } catch (e) {}
 if (lang !== 'es' && lang !== 'en') lang = 'es';
 const $ = s => document.querySelector(s);
 const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
