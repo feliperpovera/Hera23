@@ -556,7 +556,7 @@ function render() {
       <div class="num">${num}.</div>
       <h3>${esc(nomVilla(p))}</h3>
       ${p.tagline ? `<div class="vtag">${esc(p.tagline)}</div>` : ''}
-      <div class="place">${esc(p.place[lang])}</div>
+      <div class="place">${esc(p.villa ? p.corto[lang] + ' · ' + p.place[lang] : p.place[lang])}</div>
       <p class="amen">${p.chips[lang].slice(0, 3).map(esc).join(' · ')}</p>
       <div class="foot">
         <div class="minis">
