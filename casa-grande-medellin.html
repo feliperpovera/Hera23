@@ -110,6 +110,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .cta-band .nota{width:100%;color:var(--salvia);font-size:12px;letter-spacing:.08em;position:relative;z-index:2;margin:0}
 .pie-bottom{margin-top:clamp(36px,5vw,60px);border-top:1px solid var(--linea);padding:18px 0 26px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--tinta-suave);font-size:12px;letter-spacing:.06em}
 .pie-bottom a:hover{color:var(--oro-hover)}
+.credito{color:var(--tinta-suave)}
+.credito:hover{color:var(--oro)}
 .fabs{position:fixed;right:16px;bottom:16px;z-index:55;display:flex;flex-direction:column;gap:11px}
 .fab{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;box-shadow:0 10px 28px rgba(15,19,15,.35)}
 .fab:hover{transform:translateY(-3px)}
@@ -179,6 +181,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
   <div class="pie-bottom">
     <span>© <span id="year">2026</span> Hera23 · Inversiones &amp; Rentas</span>
     <a href="index.html#propiedades" data-i18n="back">← Nuestras propiedades</a>
+    <a class="credito" href="https://revupagencygroup.com" target="_blank" rel="noopener"><span data-i18n="credit">Hecho por</span> RevUp Agency Group LLC</a>
   </div>
 </footer>
 
@@ -205,6 +208,7 @@ const I18N = {
     gfLbl: 'Favorito entre huéspedes',
     cierre: '¿Fechas en mente? <em>Escríbenos.</em>',
     nota: 'La reserva se confirma vía WhatsApp o Airbnb — sin pagos en este sitio.',
+    credit: 'Hecho por',
     waMsg: n => `Hola Hera23, me interesa "${n}". ¿Me comparten disponibilidad y tarifas?`
   },
   en: {
@@ -217,6 +221,7 @@ const I18N = {
     gfLbl: 'Guest favourite',
     cierre: 'Dates in mind? <em>Message us.</em>',
     nota: 'Bookings are confirmed via WhatsApp or Airbnb — no payments on this site.',
+    credit: 'Made by',
     waMsg: n => `Hi Hera23, I'm interested in "${n}". Could you share availability and rates?`
   }
 };
