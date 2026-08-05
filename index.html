@@ -8,28 +8,28 @@
 <meta property="og:title" content="Hera23 — Inversiones &amp; Rentas">
 <meta property="og:description" content="Reserva en minutos tu propiedad en Medellín. Operador verificable en Airbnb.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/logo-negro.png">
-<meta name="theme-color" content="#f3efe6">
+<meta property="og:image" content="assets/logo-trans.png">
+<meta name="theme-color" content="#1e251e">
 <link rel="icon" href="assets/isotipo-trans.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..900&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --crema:#f3efe6;
-  --blanco:#fdfcf9;
-  --verde:#202720;
-  --selva:#1b211b;
-  --tinta:#1d221d;
-  --tinta-suave:#6a6f63;
+  --crema:#1e251e;
+  --blanco:#273027;
+  --verde:#2a332a;
+  --selva:#151b15;
+  --tinta:#efe9da;
+  --tinta-suave:#a9b3a2;
   --oro:#d5a447;
-  --oro-hover:#c2913a;
+  --oro-hover:#e3bc6b;
   --salvia:#a8ac91;
-  --linea:rgba(29,34,29,.14);
+  --linea:rgba(213,164,71,.30);
   --linea-clara:rgba(243,239,230,.16);
   --wa:#25d366; --wa-dark:#128c44;
   --abnb:#ff385c; --abnb-dark:#d31d43;
-  --sans:'Jost',system-ui,sans-serif;--display:'Bodoni Moda',serif;
+  --sans:'Manrope',system-ui,sans-serif;--display:'Cormorant Garamond',serif;
   --r:28px;
 }
 *{box-sizing:border-box}
@@ -45,8 +45,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .shell{max-width:1240px;margin:0 auto;padding-left:clamp(16px,3.5vw,40px);padding-right:clamp(16px,3.5vw,40px)}
 
 /* ---------- header ---------- */
-.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(243,239,230,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
-.topbar.scrolled{border-bottom-color:var(--linea);box-shadow:0 8px 30px rgba(29,34,29,.06)}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(24,29,23,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.topbar.scrolled{border-bottom-color:var(--linea);box-shadow:0 8px 30px rgba(0,0,0,.35)}
 .topbar-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px clamp(16px,3.5vw,40px)}
 .topbar .logo img{height:26px;display:block}
 .topbar-right{display:flex;align-items:center;gap:16px}
@@ -64,10 +64,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 @media (min-width:960px){.topnav{display:flex}.top-wa{display:inline-flex}.burger{display:none}}
 
 /* ---------- menú móvil ---------- */
-.menu{position:fixed;inset:0;z-index:80;background:var(--selva);color:var(--crema);display:none;flex-direction:column;justify-content:center;padding:0 clamp(26px,8vw,80px)}
+.menu{position:fixed;inset:0;z-index:80;background:var(--selva);color:var(--tinta);display:none;flex-direction:column;justify-content:center;padding:0 clamp(26px,8vw,80px)}
 .menu.open{display:flex}
 .menu .close{position:absolute;top:16px;right:18px;width:48px;height:48px;background:none;border:1px solid rgba(213,164,71,.45);border-radius:50%;color:var(--oro);font-size:20px;cursor:pointer}
-.menu a.item{font-size:clamp(28px,7.5vw,44px);font-weight:500;letter-spacing:-.01em;border-bottom:1px solid var(--linea-clara);padding:16px 0}
+.menu a.item{font-family:var(--display);font-size:clamp(30px,8vw,48px);font-weight:600;letter-spacing:.01em;border-bottom:1px solid var(--linea-clara);padding:16px 0}
 .menu a.item:hover{color:var(--oro)}
 .menu a.sub{font-size:15px;font-weight:300;padding:9px 0;color:var(--salvia)}
 .menu a.sub:hover{color:var(--oro)}
@@ -77,14 +77,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:15px 30px;border-radius:999px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;text-align:center}
 .btn:hover{transform:translateY(-2px)}
 .btn svg{flex:0 0 auto}
-.btn-dark{background:var(--verde);color:var(--crema)}
-.btn-dark:hover{background:var(--selva);color:#fff}
+.btn-dark{background:var(--oro);color:#1e251e}
+.btn-dark:hover{background:var(--oro-hover);color:#1e251e}
 .btn-wa{background:var(--wa);color:#fff}
 .btn-wa:hover{background:var(--wa-dark);color:#fff}
 .btn-abnb{background:var(--abnb);color:#fff}
 .btn-abnb:hover{background:var(--abnb-dark);color:#fff}
-.pcard{cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
-.pcard:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(29,34,29,.16)}
+.pcard{cursor:pointer;border:1px solid var(--linea);transition:transform .3s ease,box-shadow .3s ease}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(0,0,0,.4);border-color:var(--oro)}
 .pcard a.card-link{position:absolute;inset:0;z-index:3;border-radius:var(--r)}
 .pcard .foot{z-index:4}
 .pcard .foot .minis{position:relative;z-index:4}
@@ -107,19 +107,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .hero-card .ph .tag{color:var(--salvia)}
 .hero-card .slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.1s ease}
 .hero-card .slide.on{opacity:1}
-.hero-chip{position:absolute;left:16px;bottom:16px;z-index:3;background:rgba(27,33,27,.75);color:var(--crema);border-radius:999px;padding:10px 18px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;backdrop-filter:blur(6px)}
+.hero-chip{position:absolute;left:16px;bottom:16px;z-index:3;background:rgba(21,27,21,.8);color:var(--tinta);border-radius:999px;padding:10px 18px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;backdrop-filter:blur(6px)}
 .hero-chip:hover{background:var(--selva);color:var(--oro)}
 .hero-dots{position:absolute;right:18px;bottom:22px;z-index:3;display:flex;gap:7px}
 .hero-dots button{width:9px;height:9px;border-radius:50%;border:none;background:rgba(253,252,249,.45);cursor:pointer;padding:0;transition:background .3s,transform .3s}
 .hero-dots button[aria-current="true"]{background:#fff;transform:scale(1.25)}
-.hero-copy{background:var(--blanco);border-radius:var(--r);padding:clamp(26px,4vw,52px);display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,2.4vw,26px)}
-.hero-copy h1{font-size:clamp(38px,5.6vw,68px)}
+.hero-copy{background:var(--blanco);border:1px solid var(--linea);border-radius:var(--r);padding:clamp(26px,4vw,52px);display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,2.4vw,26px)}
+.hero-copy h1{font-size:clamp(36px,5vw,72px);line-height:1.05}
 .hero-copy h1 em{font-style:normal;color:var(--oro-hover)}
-.hero-copy .sub{color:var(--tinta-suave);font-size:clamp(15px,1.6vw,17px);line-height:1.7;max-width:44ch;margin:0}
+.hero-copy .sub{color:#e8cd9a;font-size:clamp(17px,1.9vw,22px);font-weight:500;line-height:1.5;max-width:44ch;margin:0}
+.hero-copy .tagline{color:var(--tinta-suave);font-size:clamp(15px,1.6vw,19px);font-weight:400;margin:0;letter-spacing:.02em}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
 .hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px}
 .gf{display:flex;flex-direction:column;align-items:center;gap:3px;flex:0 0 auto}
-.gf-top{display:flex;align-items:center;gap:7px;color:var(--tinta)}
+.gf-top{display:flex;align-items:center;gap:7px;color:var(--oro)}
 .gf-top b{font-size:42px;font-weight:600;letter-spacing:-.02em;line-height:1}
 .gf-top svg{height:50px;width:auto}
 .gf-top svg.esp{transform:scaleX(-1)}
@@ -132,14 +133,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 /* ---------- sección propiedades ---------- */
 .sec{padding:clamp(50px,7vw,100px) 0}
 .sec-head{text-align:center;margin-bottom:clamp(28px,4.5vw,54px)}
-.sec-head .tag{color:var(--tinta-suave);display:inline-block;margin-bottom:14px}
-.sec-head h2{font-size:clamp(30px,4.6vw,54px)}
+.sec-head .tag{color:var(--oro);display:inline-block;margin-bottom:14px}
+.sec-head h2{font-size:clamp(30px,3.8vw,48px)}
+.col-line{color:var(--tinta-suave);font-size:15px;font-weight:300;margin:14px 0 0;letter-spacing:.04em}
 .cards3{display:grid;grid-template-columns:1fr;gap:clamp(14px,2vw,22px)}
 @media (min-width:700px){.cards3{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1020px){.cards3{grid-template-columns:repeat(2,1fr)}}
 .pcard{border-radius:var(--r);padding:clamp(22px,3vw,32px);min-height:380px;display:flex;flex-direction:column;position:relative;overflow:hidden}
 .pcard .num{font-size:12px;letter-spacing:.2em;padding-bottom:14px;margin-bottom:auto;border-bottom:1px solid}
-.pcard h3{font-size:clamp(26px,2.6vw,32px);margin:22px 0 6px;font-weight:500}
+.pcard h3{font-size:clamp(24px,2.3vw,30px);margin:22px 0 4px;font-weight:600}
+.pcard .vtag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin:6px 0 4px;font-weight:400}
 .pcard .place{font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:10px}
 .pcard .amen{font-size:14px;line-height:1.7;margin:0 0 20px}
 .pcard .foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}
@@ -170,11 +173,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 @keyframes marq{to{transform:translateX(-50%)}}
 
 /* ---------- cifras ---------- */
-.stats{background:var(--verde);color:var(--crema);border-radius:var(--r);position:relative;overflow:hidden;padding:clamp(40px,6vw,70px) clamp(22px,4vw,56px)}
+.stats{background:var(--verde);color:var(--tinta);border:1px solid var(--linea);border-radius:var(--r);position:relative;overflow:hidden;padding:clamp(40px,6vw,70px) clamp(22px,4vw,56px)}
 .stats .marca{position:absolute;right:-6%;top:-30%;height:160%;opacity:.05;pointer-events:none}
 .stats-grid{display:grid;grid-template-columns:1fr;gap:26px;position:relative;z-index:2}
 @media (min-width:760px){.stats-grid{grid-template-columns:repeat(3,1fr)}}
-.stat b{font-size:clamp(46px,6.5vw,84px);font-weight:600;line-height:1;color:var(--crema);display:block}
+.stat b{font-size:clamp(46px,6.5vw,84px);font-weight:600;line-height:1;color:var(--tinta);display:block}
 .stat b i{font-style:normal;color:var(--oro)}
 .stat span{display:block;margin-top:10px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--salvia)}
 
@@ -183,14 +186,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 @media (min-width:860px){.resenas{grid-template-columns:repeat(2,1fr)}}
 .resena{margin:0}
 .r-head{display:flex;align-items:center;gap:13px;margin-bottom:12px}
-.r-avatar{width:48px;height:48px;border-radius:50%;background:var(--verde);color:var(--crema);display:flex;align-items:center;justify-content:center;font-weight:500;font-size:19px;flex:0 0 auto;overflow:hidden}
+.r-avatar{width:48px;height:48px;border-radius:50%;background:var(--verde);color:var(--tinta);display:flex;align-items:center;justify-content:center;font-weight:500;font-size:19px;flex:0 0 auto;overflow:hidden}
 .r-avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .resena:nth-child(3n+2) .r-avatar{background:var(--oro);color:var(--verde)}
 .resena:nth-child(3n) .r-avatar{background:var(--salvia);color:var(--verde)}
 .r-name{font-weight:500;font-size:15.5px;display:block;line-height:1.3}
 .r-sub{color:var(--tinta-suave);font-size:13.5px;display:block}
 .r-meta{display:flex;align-items:center;flex-wrap:wrap;gap:7px;font-size:13.5px;margin-bottom:9px;font-weight:400}
-.r-meta .stars{font-size:10px;letter-spacing:1.5px;color:var(--tinta)}
+.r-meta .stars{font-size:10px;letter-spacing:1.5px;color:var(--oro)}
 .r-meta .sep{color:var(--tinta-suave)}
 .r-meta .lbl{color:var(--tinta-suave)}
 .r-text{font-size:15.5px;line-height:1.65;font-weight:300;margin:0}
@@ -204,9 +207,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .zonas{color:var(--tinta-suave);font-size:13px;letter-spacing:.1em;line-height:1.9;margin-top:16px;text-align:center}
 
 /* ---------- CTA final ---------- */
-.cta-band{background:var(--selva);color:var(--crema);border-radius:var(--r);padding:clamp(40px,6vw,80px) clamp(22px,4vw,64px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px;position:relative;overflow:hidden}
+.cta-band{background:var(--selva);color:var(--tinta);border:1px solid var(--linea);border-radius:var(--r);padding:clamp(40px,6vw,80px) clamp(22px,4vw,64px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px;position:relative;overflow:hidden}
 .cta-band .marca{position:absolute;right:-8%;bottom:-40%;height:180%;opacity:.06;pointer-events:none}
-.cta-band h2{font-size:clamp(30px,4.6vw,54px);max-width:14em;position:relative;z-index:2}
+.cta-band h2{font-size:clamp(28px,3.6vw,46px);max-width:14em;position:relative;z-index:2}
 .cta-band h2 em{font-style:normal;color:var(--oro)}
 .cta-band .ctas{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
 @media (max-width:600px){.cta-band .ctas{width:100%}.cta-band .ctas .btn{width:100%}}
@@ -253,7 +256,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 
 <header class="topbar" id="topbar">
   <div class="topbar-inner">
-    <a href="index.html" class="logo" aria-label="Hera23 — Inicio"><img src="assets/logo-negro.png" alt="Hera23 — Inversiones &amp; Rentas"></a>
+    <a href="index.html" class="logo" aria-label="Hera23 — Inicio"><img src="assets/logo-trans.png" alt="Hera23 — Inversiones &amp; Rentas"></a>
     <div class="topbar-right">
       <nav class="topnav" aria-label="Principal">
         <a href="#propiedades" data-i18n="navProps">Nuestras propiedades</a>
@@ -292,7 +295,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
     </div>
     <div class="hero-copy rise" style="animation-delay:.2s">
       <h1 id="hero-title">Reserva <em>en minutos</em> tu propiedad en Medellín.</h1>
-      <p class="sub" data-i18n="heroSub">Reserva directa por WhatsApp. Verificación abierta en Airbnb.</p>
+      <p class="sub" data-i18n="heroSub">Una colección privada de villas en las montañas de Medellín.</p>
+      <p class="tagline" data-i18n="heroTag">Inspired by nature. Defined by hospitality.</p>
       <div class="hero-ctas">
         <a class="btn btn-dark" href="#propiedades" data-i18n="heroCta1">Ver propiedades</a>
         <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">
@@ -312,8 +316,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 <!-- PROPIEDADES -->
 <section id="propiedades" class="sec shell">
   <div class="sec-head reveal">
-    <span class="tag">Hera23 · Inversiones &amp; Rentas</span>
-    <h2 data-i18n="propsTitle">Nuestras propiedades</h2>
+    <span class="tag">HERA23 Reserve</span>
+    <h2 data-i18n="propsTitle">Nuestra colección</h2>
   </div>
   <div class="cards3" id="cards3"></div>
 </section>
@@ -376,7 +380,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 <footer class="pie shell">
   <div class="pie-grid">
     <div class="brand">
-      <img src="assets/logo-negro.png" alt="Hera23 — Inversiones &amp; Rentas">
+      <img src="assets/logo-trans.png" alt="Hera23 — Inversiones &amp; Rentas">
       <p data-i18n="footBrand">Operador Airbnb en Medellín y Santa Fe de Antioquia.</p>
     </div>
     <div class="pie-col" id="foot-props">
@@ -418,11 +422,13 @@ const I18N = {
     navProps: 'Nuestras propiedades', navContacto: 'Destinos', navVoces: 'Opiniones',
     verificado: 'Verificado en Airbnb',
     heroTitle: 'Reserva <em>en minutos</em> tu propiedad en Medellín.',
-    heroSub: 'Reserva directa por WhatsApp. Verificación abierta en Airbnb.',
+    heroSub: 'Una colección privada de villas en las montañas de Medellín.',
+    heroTag: 'Inspired by nature. Defined by hospitality.',
     heroCta1: 'Ver propiedades', heroCta2: 'WhatsApp directo',
     gfNum: '4,82', gfLbl: 'Favorito entre huéspedes', badgeTxt: 'Superanfitrión · 258 reseñas · 10 años como anfitrión',
     photosSoon: 'Fotos muy pronto',
-    propsTitle: 'Nuestras propiedades',
+    propsTitle: 'Nuestra colección',
+    colLine: 'Una colección privada de villas en las montañas de Medellín.',
     verFicha: 'Ver propiedad',
     testTag: 'Opiniones', testTitle: 'Huéspedes que ya confiaron',
     coberTag: 'Destinos',
@@ -447,11 +453,13 @@ const I18N = {
     navProps: 'Our properties', navContacto: 'Destinations', navVoces: 'Reviews',
     verificado: 'Verified on Airbnb',
     heroTitle: 'Book your Medellín property <em>in minutes.</em>',
-    heroSub: 'Book directly via WhatsApp. Verify us on Airbnb.',
+    heroSub: 'A private collection of villas in the mountains of Medellín.',
+    heroTag: 'Inspired by nature. Defined by hospitality.',
     heroCta1: 'View properties', heroCta2: 'Direct WhatsApp',
     gfNum: '4.82', gfLbl: 'Guest favourite', badgeTxt: 'Superhost · 258 reviews · 10 years hosting',
     photosSoon: 'Photos coming soon',
-    propsTitle: 'Our properties',
+    propsTitle: 'Our collection',
+    colLine: 'A private collection of villas in the mountains of Medellín.',
     verFicha: 'View property',
     testTag: 'Reviews', testTitle: 'Guests who already trusted us',
     coberTag: 'Destinations',
@@ -483,6 +491,7 @@ if (lang !== 'es' && lang !== 'en') lang = 'es';
 const $ = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);
 const waHref = msg => 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(msg);
+const nomVilla = p => p.villa || p.corto[lang];
 const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const WA_ICON = '<svg viewBox="0 0 24 24" width="19" height="19" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>';
 
@@ -495,9 +504,9 @@ function buildHeroCarousel() {
   if (heroTimer) { clearInterval(heroTimer); heroTimer = null; }
   card.innerHTML =
     slides.map((s, i) => `<img class="slide${i === 0 ? ' on' : ''}" src="${esc(s.src)}" alt="${esc(s.p.nombre)}" ${i > 1 ? 'loading="lazy"' : ''}>`).join('') +
-    `<a class="hero-chip" id="hero-chip" href="${esc(slides[0].p.id)}.html">${esc(slides[0].p.corto[lang])}</a>` +
+    `<a class="hero-chip" id="hero-chip" href="${esc(slides[0].p.id)}.html">${esc(nomVilla(slides[0].p))}</a>` +
     `<div class="hero-dots" role="tablist">${slides.map((s, i) =>
-      `<button data-i="${i}" aria-current="${i === 0}" aria-label="${esc(s.p.corto[lang])} ${i + 1}"></button>`).join('')}</div>`;
+      `<button data-i="${i}" aria-current="${i === 0}" aria-label="${esc(nomVilla(s.p))} ${i + 1}"></button>`).join('')}</div>`;
   let idx = 0;
   const imgs = card.querySelectorAll('.slide');
   const dots = card.querySelectorAll('.hero-dots button');
@@ -507,7 +516,7 @@ function buildHeroCarousel() {
     idx = (n + slides.length) % slides.length;
     imgs[idx].classList.add('on'); dots[idx].setAttribute('aria-current', 'true');
     chip.href = slides[idx].p.id + '.html';
-    chip.textContent = slides[idx].p.corto[lang];
+    chip.textContent = nomVilla(slides[idx].p);
   };
   dots.forEach(d => d.addEventListener('click', () => { ir(+d.dataset.i); reiniciar(); }));
   const auto = !matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -545,7 +554,8 @@ function render() {
       <a class="card-link" href="${esc(p.id)}.html" aria-label="${esc(t.verFicha)} — ${esc(p.nombre)}"></a>
       ${marca}
       <div class="num">${num}.</div>
-      <h3>${esc(p.corto[lang])}</h3>
+      <h3>${esc(nomVilla(p))}</h3>
+      ${p.tagline ? `<div class="vtag">${esc(p.tagline)}</div>` : ''}
       <div class="place">${esc(p.place[lang])}</div>
       <p class="amen">${p.chips[lang].slice(0, 3).map(esc).join(' · ')}</p>
       <div class="foot">
@@ -589,9 +599,9 @@ function render() {
   });
 
   // menú y footer: enlaces a fichas
-  $('#menu-props').innerHTML = PROPERTIES.map(p => `<a class="sub" href="${esc(p.id)}.html">${esc(p.corto[lang])} — ${esc(p.place[lang])}</a>`).join('');
+  $('#menu-props').innerHTML = PROPERTIES.map(p => `<a class="sub" href="${esc(p.id)}.html">${esc(nomVilla(p))} — ${esc(p.place[lang])}</a>`).join('');
   $('#foot-props').innerHTML = `<span class="tag">${esc(t.navProps)}</span>` +
-    PROPERTIES.map(p => `<a href="${esc(p.id)}.html">${esc(p.corto[lang])}</a>`).join('');
+    PROPERTIES.map(p => `<a href="${esc(p.id)}.html">${esc(nomVilla(p))}</a>`).join('');
 
   observeReveals();
 }

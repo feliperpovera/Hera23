@@ -7,17 +7,17 @@
 <meta name="description" content="Finca campestre con piscina cerca a Medellín. Reserva por WhatsApp o verifica en Airbnb. Hera23, operador directo en Antioquia.">
 <meta property="og:title" content="Finca campestre con piscina cerca a Medellín — Hera23">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#f3efe6">
+<meta name="theme-color" content="#1e251e">
 <link rel="icon" href="assets/isotipo-trans.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..900&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --crema:#f3efe6;--blanco:#fdfcf9;--verde:#202720;--selva:#1b211b;--tinta:#1d221d;
-  --tinta-suave:#6a6f63;--oro:#d5a447;--oro-hover:#c2913a;--salvia:#a8ac91;
-  --linea:rgba(29,34,29,.14);--wa:#25d366;--wa-dark:#128c44;--abnb:#ff385c;--abnb-dark:#d31d43;
-  --sans:'Jost',system-ui,sans-serif;--display:'Bodoni Moda',serif;--r:28px;
+  --crema:#1e251e;--blanco:#273027;--verde:#2a332a;--selva:#151b15;--tinta:#efe9da;
+  --tinta-suave:#a9b3a2;--oro:#d5a447;--oro-hover:#e3bc6b;--salvia:#a8ac91;
+  --linea:rgba(213,164,71,.30);--wa:#25d366;--wa-dark:#128c44;--abnb:#ff385c;--abnb-dark:#d31d43;
+  --sans:'Manrope',system-ui,sans-serif;--display:'Cormorant Garamond',serif;--r:28px;
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:var(--sans);font-weight:300;background:var(--crema);color:var(--tinta);-webkit-font-smoothing:antialiased;min-width:320px}
@@ -27,8 +27,8 @@ h1,h2{margin:0;font-family:var(--display);font-weight:600;letter-spacing:.005em;
 a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
 .tag{font-weight:400;font-size:11px;letter-spacing:.26em;text-transform:uppercase}
 .shell{max-width:1240px;margin:0 auto;padding-left:clamp(16px,3.5vw,40px);padding-right:clamp(16px,3.5vw,40px)}
-.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(243,239,230,.94);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
-.topbar.scrolled{border-bottom-color:var(--linea);box-shadow:0 8px 30px rgba(29,34,29,.06)}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(24,29,23,.92);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.topbar.scrolled{border-bottom-color:var(--linea);box-shadow:0 8px 30px rgba(0,0,0,.35)}
 .topbar-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px clamp(16px,3.5vw,40px)}
 .topbar .logo img{height:24px;display:block}
 .topbar-right{display:flex;align-items:center;gap:14px}
@@ -59,13 +59,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .gal-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:rgba(243,239,230,.92);color:var(--verde);font-size:22px;cursor:pointer;z-index:4;display:flex;align-items:center;justify-content:center;transition:background .25s}
 .gal-btn:hover{background:#fff}
 .gal-btn.prev{left:14px}.gal-btn.next{right:14px}
-.gal-count{position:absolute;bottom:14px;right:16px;z-index:4;background:rgba(27,33,27,.72);color:var(--crema);font-size:12px;letter-spacing:.08em;border-radius:999px;padding:6px 13px}
-.hero-copy{background:var(--blanco);border-radius:var(--r);padding:clamp(26px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:clamp(16px,2.2vw,22px)}
+.gal-count{position:absolute;bottom:14px;right:16px;z-index:4;background:rgba(21,27,21,.8);color:var(--tinta);font-size:12px;letter-spacing:.08em;border-radius:999px;padding:6px 13px}
+.hero-copy{background:var(--blanco);border:1px solid var(--linea);border-radius:var(--r);padding:clamp(26px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:clamp(16px,2.2vw,22px)}
 .hero-copy .num{font-size:12px;letter-spacing:.2em;color:var(--oro-hover)}
-.hero-copy h1{font-size:clamp(28px,3.8vw,46px)}
+.hero-copy h1{font-size:clamp(26px,3.4vw,48px);line-height:1.1}
 .hero-copy .place{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--tinta-suave)}
+.vtag{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:400}
+.v-desc{color:var(--tinta-suave);font-size:15px;line-height:1.75;margin:0;max-width:54ch;font-weight:300}
 .gf-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.gf-top{display:flex;align-items:center;gap:6px;color:var(--tinta)}
+.gf-top{display:flex;align-items:center;gap:6px;color:var(--oro)}
 .gf-top b{font-size:36px;font-weight:600;letter-spacing:-.02em;line-height:1}
 .gf-top svg{height:44px;width:auto}
 .gf-top svg.esp{transform:scaleX(-1)}
@@ -85,23 +87,23 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .ab-mini{width:15px;height:15px;vertical-align:-3px;margin-right:7px;border-radius:50%}
 .sec-res{padding:clamp(40px,6vw,80px) 0}
 .sec-res .head{display:flex;align-items:center;gap:16px;margin-bottom:clamp(26px,4vw,40px)}
-.sec-res .head .tag{color:var(--tinta-suave)}
+.sec-res .head .tag{color:var(--oro)}
 .sec-res .head::after{content:"";flex:1;height:1px;background:var(--linea)}
 .resenas{display:grid;grid-template-columns:1fr;gap:34px clamp(40px,5vw,72px)}
 @media (min-width:860px){.resenas{grid-template-columns:repeat(2,1fr)}}
 .resena{margin:0}
 .r-head{display:flex;align-items:center;gap:13px;margin-bottom:12px}
-.r-avatar{width:48px;height:48px;border-radius:50%;background:var(--verde);color:var(--crema);display:flex;align-items:center;justify-content:center;font-weight:500;font-size:19px;flex:0 0 auto;overflow:hidden}
+.r-avatar{width:48px;height:48px;border-radius:50%;background:var(--verde);color:var(--tinta);display:flex;align-items:center;justify-content:center;font-weight:500;font-size:19px;flex:0 0 auto;overflow:hidden}
 .r-avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .r-name{font-weight:500;font-size:15.5px;display:block;line-height:1.3}
 .r-sub{color:var(--tinta-suave);font-size:13.5px;display:block}
 .r-meta{display:flex;align-items:center;flex-wrap:wrap;gap:7px;font-size:13.5px;margin-bottom:9px;font-weight:400}
-.r-meta .stars{font-size:10px;letter-spacing:1.5px;color:var(--tinta)}
+.r-meta .stars{font-size:10px;letter-spacing:1.5px;color:var(--oro)}
 .r-meta .sep,.r-meta .lbl{color:var(--tinta-suave)}
 .r-text{font-size:15.5px;line-height:1.65;font-weight:300;margin:0}
-.cta-band{background:var(--selva);color:var(--crema);border-radius:var(--r);padding:clamp(36px,5vw,70px) clamp(22px,4vw,60px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden}
+.cta-band{background:var(--selva);color:var(--tinta);border:1px solid var(--linea);border-radius:var(--r);padding:clamp(36px,5vw,70px) clamp(22px,4vw,60px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden}
 .cta-band .marca{position:absolute;right:-8%;bottom:-40%;height:180%;opacity:.06;pointer-events:none}
-.cta-band h2{font-size:clamp(26px,4vw,46px);max-width:14em;position:relative;z-index:2}
+.cta-band h2{font-size:clamp(24px,3.2vw,40px);max-width:14em;position:relative;z-index:2}
 .cta-band h2 em{font-style:normal;color:var(--oro)}
 .cta-band .ctas{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
 @media (max-width:600px){.cta-band .ctas{width:100%}.cta-band .ctas .btn{width:100%}}
@@ -121,7 +123,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 <body>
 <header class="topbar" id="topbar">
   <div class="topbar-inner">
-    <a href="index.html" class="logo" aria-label="Hera23 — Inicio"><img src="assets/logo-negro.png" alt="Hera23 — Inversiones &amp; Rentas"></a>
+    <a href="index.html" class="logo" aria-label="Hera23 — Inicio"><img src="assets/logo-trans.png" alt="Hera23 — Inversiones &amp; Rentas"></a>
     <div class="topbar-right">
       <a class="back" href="index.html#propiedades" data-i18n="back">← Nuestras propiedades</a>
       <div class="lang" role="group" aria-label="Idioma / Language">
@@ -138,7 +140,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
     <div class="hero-copy">
       <span class="num">04.</span>
       <h1 id="p-nombre"></h1>
+      <span class="vtag" id="v-tag" hidden></span>
       <span class="place" id="p-place"></span>
+      <p class="v-desc" id="v-desc" hidden></p>
       <div class="gf-row" id="gf-row"></div>
       <div class="chips" id="chips"></div>
       <div class="hero-ctas">
@@ -225,8 +229,11 @@ function render() {
   const t = I18N[lang];
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if (t[k]) el.textContent = t[k]; });
-  $('#p-nombre').textContent = P.nombre;
+  $('#p-nombre').textContent = P.villa || P.nombre;
   $('#p-place').textContent = P.place[lang];
+  const vt = $('#v-tag'), vd = $('#v-desc');
+  if (P.villa && P.tagline) { vt.hidden = false; vt.textContent = P.tagline; } else vt.hidden = true;
+  if (P.villa && P.desc) { vd.hidden = false; vd.textContent = P.desc[lang]; } else vd.hidden = true;
   $('#chips').innerHTML = P.chips[lang].map(c => `<span>${esc(c)}</span>`).join('');
   $('#cierre-title').innerHTML = t.cierre;
   const ab = P.airbnbUrl || CONFIG.airbnbProfile;
@@ -274,7 +281,7 @@ function render() {
   ['#cta-ab-1','#cta-ab-2','#cta-ab-3','#fab-ab'].forEach(s => $(s).href = ab);
   $('#btn-es').setAttribute('aria-pressed', String(lang==='es'));
   $('#btn-en').setAttribute('aria-pressed', String(lang==='en'));
-  document.title = P.nombre + ' — Hera23';
+  document.title = (P.villa ? P.villa + ' · ' : '') + P.nombre + ' — Hera23';
 }
 $('#btn-es').addEventListener('click', () => { lang='es'; try{localStorage.setItem('hera23_lang','es')}catch(e){}; render(); });
 $('#btn-en').addEventListener('click', () => { lang='en'; try{localStorage.setItem('hera23_lang','en')}catch(e){}; render(); });

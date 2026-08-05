@@ -15,6 +15,9 @@ window.HERA23 = {
   properties: [
     {
       id: 'casa-grande-medellin',
+      villa: 'The Forest Villa',
+      tagline: 'Where Heritage Meets Nature',
+      desc: { es: 'Una villa que conserva el carácter de la arquitectura tradicional mientras ofrece el confort y la hospitalidad contemporánea.', en: 'A villa that preserves the character of traditional architecture while offering contemporary comfort and hospitality.' },
       heroImages: ['fotos/casa-grande-medellin/07.avif', 'fotos/casa-grande-medellin/12.webp'],
       rating: '5,0',
       reviewsCount: 27,
@@ -30,6 +33,9 @@ window.HERA23 = {
     },
     {
       id: 'villa-santa-fe',
+      villa: 'The Tropical Villa',
+      tagline: 'An Oasis Surrounded by Nature',
+      desc: { es: 'Rodeada de vegetación exuberante y diseñada para desconectarse del ritmo cotidiano. Un refugio donde el paisaje es protagonista.', en: 'Surrounded by lush vegetation and designed to disconnect from the daily pace. A retreat where the landscape takes the lead.' },
       heroImages: ['fotos/villa-santa-fe/04.avif', 'fotos/villa-santa-fe/12.avif'],
       rating: '4,89',
       reviewsCount: 63,
@@ -58,6 +64,9 @@ window.HERA23 = {
     },
     {
       id: 'villa-medellin',
+      villa: 'The Grand Villa',
+      tagline: 'The Signature Residence',
+      desc: { es: 'La villa insignia de HERA23 Reserve. Pensada para grandes celebraciones, reuniones familiares y experiencias exclusivas.', en: 'The flagship villa of HERA23 Reserve. Designed for grand celebrations, family gatherings and exclusive experiences.' },
       heroImages: ['fotos/villa-medellin/08.avif', 'fotos/villa-medellin/15.avif'],
       rating: '4,9',
       reviewsCount: 78,
