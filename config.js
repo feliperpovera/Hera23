@@ -8,7 +8,7 @@
    ============================================================ */
 window.HERA23 = {
   config: {
-    whatsappNumber: '573000000000',            // TODO: reemplazar por el número real
+    whatsappNumber: '573112059911',
     airbnbProfile: 'https://www.airbnb.com.co/users/profile/1467237529622528687',
     heroImage: ''
   },
