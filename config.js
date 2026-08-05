@@ -50,19 +50,6 @@ window.HERA23 = {
       airbnbUrl: 'https://www.airbnb.com.co/rooms/15900275'
     },
     {
-      id: 'finca-campestre',
-      heroImages: ['fotos/finca-campestre/06.avif'],
-      nombre: 'Finca campestre con piscina cerca a Medellín',
-      corto: { es: 'Finca Campestre', en: 'Finca Campestre' },
-      place: { es: 'Venecia, Antioquia · 1.350 m', en: 'Venecia, Antioquia · 1,350 m' },
-      chips: {
-        es: ['Piscina', 'Zonas verdes', 'Ideal para familias'],
-        en: ['Pool', 'Green areas', 'Great for families']
-      },
-      images: ['fotos/finca-campestre/06.avif', 'fotos/finca-campestre/01.avif', 'fotos/finca-campestre/04.avif', 'fotos/finca-campestre/02.avif', 'fotos/finca-campestre/07.avif', 'fotos/finca-campestre/03.avif', 'fotos/finca-campestre/05.avif'],
-      airbnbUrl: 'https://www.airbnb.com.co/rooms/1555468883631122623'
-    },
-    {
       id: 'villa-medellin',
       villa: 'The Grand Villa',
       tagline: 'The Signature Residence',
