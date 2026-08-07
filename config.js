@@ -34,13 +34,13 @@ window.HERA23 = {
     {
       id: 'villa-santa-fe',
       villa: 'The Tropical Villa',
-      tagline: 'An Oasis Surrounded by Nature',
-      desc: { es: 'Rodeada de vegetación exuberante y diseñada para desconectarse del ritmo cotidiano. Un refugio donde el paisaje es protagonista.', en: 'Surrounded by lush vegetation and designed to disconnect from the daily pace. A retreat where the landscape takes the lead.' },
+      tagline: 'Where Luxury Meets the Tropics',
+      desc: { es: 'Una villa rodeada de exuberante vegetación tropical, diseñada para desconectarse y disfrutar del clima cálido.', en: 'A villa surrounded by lush tropical vegetation, designed to disconnect and enjoy the warm weather.' },
       heroImages: ['fotos/villa-santa-fe/04.avif', 'fotos/villa-santa-fe/12.avif'],
       rating: '4,89',
       reviewsCount: 63,
       nombre: 'Villa de lujo + piscina + wifi + barbacoa + bar + TV + personal @Santa Fe',
-      corto: { es: 'La Juana', en: 'La Juana' },
+      corto: { es: 'Finca La Juana', en: 'Finca La Juana' },
       place: { es: 'Santa Fe de Antioquia · 550 m', en: 'Santa Fe de Antioquia · 550 m' },
       chips: {
         es: ['Piscina', 'WiFi', 'Barbacoa', 'Bar', 'TV', 'Personal de servicio'],
@@ -53,7 +53,7 @@ window.HERA23 = {
       id: 'villa-medellin',
       villa: 'The Grand Villa',
       tagline: 'The Signature Residence',
-      desc: { es: 'La villa insignia de HERA23 Reserve. Pensada para grandes celebraciones, reuniones familiares y experiencias exclusivas.', en: 'The flagship villa of HERA23 Reserve. Designed for grand celebrations, family gatherings and exclusive experiences.' },
+      desc: { es: 'La residencia insignia de la colección; amplitud, elegancia y privacidad.', en: 'The signature residence of the collection; space, elegance and privacy.' },
       heroImages: ['fotos/villa-medellin/08.avif', 'fotos/villa-medellin/15.avif'],
       rating: '4,9',
       reviewsCount: 78,
@@ -66,6 +66,38 @@ window.HERA23 = {
       },
       images: ['fotos/villa-medellin/08.avif', 'fotos/villa-medellin/07.avif', 'fotos/villa-medellin/03.avif', 'fotos/villa-medellin/15.avif', 'fotos/villa-medellin/05.avif', 'fotos/villa-medellin/13.avif', 'fotos/villa-medellin/04.avif', 'fotos/villa-medellin/09.avif', 'fotos/villa-medellin/10.avif', 'fotos/villa-medellin/06.avif', 'fotos/villa-medellin/11.avif', 'fotos/villa-medellin/12.avif', 'fotos/villa-medellin/02.avif', 'fotos/villa-medellin/01.avif', 'fotos/villa-medellin/17.avif', 'fotos/villa-medellin/16.avif', 'fotos/villa-medellin/14.avif'],
       airbnbUrl: 'https://www.airbnb.com.co/rooms/1281079213215674888'
+    },
+    {
+      id: 'finca-la-ema',
+      villa: 'The Sky Villa',
+      tagline: 'Where Mountains Meet the Sky',
+      desc: { es: 'Una villa suspendida sobre las montañas, con vistas panorámicas infinitas y una sensación única de libertad.', en: 'A villa suspended above the mountains, with endless panoramic views and a unique sense of freedom.' },
+      heroImages: [],
+      nombre: 'Finca La Ema',
+      corto: { es: 'Finca La Ema', en: 'Finca La Ema' },
+      place: { es: 'Antioquia, Colombia', en: 'Antioquia, Colombia' },   // TODO: confirmar municipio y altitud
+      chips: {
+        es: ['Vistas panorámicas', 'Montaña', 'Privacidad'],
+        en: ['Panoramic views', 'Mountain', 'Privacy']
+      },
+      images: [],            // TODO: copiar fotos a fotos/finca-la-ema/
+      airbnbUrl: ''          // vacío = usa el perfil oficial
+    },
+    {
+      id: 'finca-lourdes',
+      villa: 'The Riverside Villa',
+      tagline: 'Where Water Meets Wilderness',
+      desc: { es: 'Un refugio junto al río donde el sonido del agua acompaña cada momento.', en: 'A retreat by the river where the sound of water accompanies every moment.' },
+      heroImages: [],
+      nombre: 'Finca Lourdes',
+      corto: { es: 'Finca Lourdes', en: 'Finca Lourdes' },
+      place: { es: 'Antioquia, Colombia', en: 'Antioquia, Colombia' },   // TODO: confirmar municipio y altitud
+      chips: {
+        es: ['Río', 'Naturaleza', 'Refugio'],
+        en: ['River', 'Nature', 'Retreat']
+      },
+      images: [],            // TODO: copiar fotos a fotos/finca-lourdes/
+      airbnbUrl: ''
     }
   ],
   reviews: [
