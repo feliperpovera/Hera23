@@ -72,33 +72,18 @@ window.HERA23 = {
       villa: 'The Sky Villa',
       tagline: 'Where Mountains Meet the Sky',
       desc: { es: 'Una villa suspendida sobre las montañas, con vistas panorámicas infinitas y una sensación única de libertad.', en: 'A villa suspended above the mountains, with endless panoramic views and a unique sense of freedom.' },
-      heroImages: [],
+      heroImages: ['fotos/finca-la-ema/08.jpg', 'fotos/finca-la-ema/07.jpg'],
+      comingSoon: true,
       nombre: 'Finca La Ema',
       corto: { es: 'Finca La Ema', en: 'Finca La Ema' },
-      place: { es: 'Antioquia, Colombia', en: 'Antioquia, Colombia' },   // TODO: confirmar municipio y altitud
+      place: { es: 'Antioquia, Colombia', en: 'Antioquia, Colombia' },   // TODO: confirmar municipio
       chips: {
-        es: ['Vistas panorámicas', 'Montaña', 'Privacidad'],
-        en: ['Panoramic views', 'Mountain', 'Privacy']
+        es: ['Piscina infinita', 'Vistas panorámicas', 'Terraza y bar', 'Amplia capacidad'],
+        en: ['Infinity pool', 'Panoramic views', 'Terrace and bar', 'Large capacity']
       },
-      images: [],            // TODO: copiar fotos a fotos/finca-la-ema/
+      images: ['fotos/finca-la-ema/08.jpg', 'fotos/finca-la-ema/07.jpg', 'fotos/finca-la-ema/02.jpg', 'fotos/finca-la-ema/09.jpg', 'fotos/finca-la-ema/10.jpg', 'fotos/finca-la-ema/01.jpg', 'fotos/finca-la-ema/06.jpg', 'fotos/finca-la-ema/03.jpg', 'fotos/finca-la-ema/04.jpg', 'fotos/finca-la-ema/05.jpg', 'fotos/finca-la-ema/19.jpg', 'fotos/finca-la-ema/12.jpg', 'fotos/finca-la-ema/11.jpg', 'fotos/finca-la-ema/14.jpg', 'fotos/finca-la-ema/15.jpg', 'fotos/finca-la-ema/13.jpg', 'fotos/finca-la-ema/16.jpg', 'fotos/finca-la-ema/17.jpg', 'fotos/finca-la-ema/18.jpg'],
       airbnbUrl: ''          // vacío = usa el perfil oficial
     },
-    {
-      id: 'finca-lourdes',
-      villa: 'The Riverside Villa',
-      tagline: 'Where Water Meets Wilderness',
-      desc: { es: 'Un refugio junto al río donde el sonido del agua acompaña cada momento.', en: 'A retreat by the river where the sound of water accompanies every moment.' },
-      heroImages: [],
-      nombre: 'Finca Lourdes',
-      corto: { es: 'Finca Lourdes', en: 'Finca Lourdes' },
-      place: { es: 'Antioquia, Colombia', en: 'Antioquia, Colombia' },   // TODO: confirmar municipio y altitud
-      chips: {
-        es: ['Río', 'Naturaleza', 'Refugio'],
-        en: ['River', 'Nature', 'Retreat']
-      },
-      images: [],            // TODO: copiar fotos a fotos/finca-lourdes/
-      airbnbUrl: ''
-    }
   ],
   reviews: [
     {

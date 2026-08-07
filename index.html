@@ -142,6 +142,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .pcard{border-radius:var(--r);padding:clamp(22px,3vw,32px);min-height:380px;display:flex;flex-direction:column;position:relative;overflow:hidden}
 .pcard .num{font-size:12px;letter-spacing:.2em;padding-bottom:14px;margin-bottom:auto;border-bottom:1px solid}
 .pcard h3{font-size:clamp(24px,2.3vw,30px);margin:22px 0 4px;font-weight:600}
+.pcard .cs{position:absolute;top:16px;right:16px;z-index:5;background:var(--oro);color:#1e251e;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:8px 15px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.pcard.is-soon .minis{display:none}
 .pcard .vtag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin:6px 0 4px;font-weight:400}
 .pcard .place{font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:10px}
 .pcard .amen{font-size:14px;line-height:1.7;margin:0 0 20px}
@@ -431,6 +433,7 @@ const I18N = {
     propsTitle: 'Nuestras propiedades',
     colLine: 'Una colección privada de villas en las montañas de Medellín.',
     verFicha: 'Ver propiedad',
+    comingSoon: 'Próximamente',
     testTag: 'Opiniones', testTitle: 'Huéspedes que ya confiaron',
     coberTag: 'Destinos',
     coberTitle: 'De la montaña de Medellín, al sol de Santa Fe.',
@@ -463,6 +466,7 @@ const I18N = {
     propsTitle: 'Our properties',
     colLine: 'A private collection of villas in the mountains of Medellín.',
     verFicha: 'View property',
+    comingSoon: 'Coming Soon',
     testTag: 'Reviews', testTitle: 'Guests who already trusted us',
     coberTag: 'Destinations',
     coberTitle: 'From the mountains of Medellín to the sun of Santa Fe.',
@@ -553,7 +557,8 @@ function render() {
     const cls = hasFoto ? 'pc-dark pc-photo' : variants[i % variants.length];
     const style = hasFoto ? ` style="background-image:url('${esc(p.images[0])}')"` : '';
     const marca = i === 2 && !hasFoto ? `<img class="marca" src="assets/isotipo-trans.png" alt="">` : '';
-    return `<article class="pcard ${cls} reveal"${style}>
+    return `<article class="pcard ${cls}${p.comingSoon ? ' is-soon' : ''} reveal"${style}>
+      ${p.comingSoon ? `<span class="cs">${esc(t.comingSoon)}</span>` : ''}
       <a class="card-link" href="${esc(p.id)}.html" aria-label="${esc(t.verFicha)} — ${esc(p.nombre)}"></a>
       ${marca}
       <div class="num">${num}.</div>
