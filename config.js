@@ -76,7 +76,7 @@ window.HERA23 = {
       comingSoon: true,
       nombre: 'Finca La Ema',
       corto: { es: 'Finca La Ema', en: 'Finca La Ema' },
-      place: { es: 'Antioquia, Colombia', en: 'Antioquia, Colombia' },   // TODO: confirmar municipio
+      place: { es: 'Santa Fe de Antioquia · 550 m', en: 'Santa Fe de Antioquia · 550 m' },
       chips: {
         es: ['Piscina infinita', 'Vistas panorámicas', 'Terraza y bar', 'Amplia capacidad'],
         en: ['Infinity pool', 'Panoramic views', 'Terrace and bar', 'Large capacity']
