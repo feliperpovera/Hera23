@@ -290,11 +290,16 @@ function render() {
       <p class="r-text">${esc(r.text[lang])}</p>
     </article>`).join('');
   const wa = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent((P.comingSoon && t.waMsgSoon ? t.waMsgSoon : t.waMsg)(P.nombre));
+  const soon = !!P.comingSoon;
+  const csb = $('#cs-badge');
+  if (soon) { csb.hidden = false; csb.textContent = t.comingSoon; } else csb.hidden = true;
+  ['#cta-ab-1','#cta-ab-2','#cta-ab-3','#fab-ab'].forEach(s => { const el = $(s); if (el) el.style.display = soon ? 'none' : ''; });
+  $('#cierre-title').innerHTML = soon ? t.cierreSoon : t.cierre;
   ['#cta-wa-1','#cta-wa-2','#fab-wa'].forEach(s => $(s).href = wa);
   ['#cta-ab-1','#cta-ab-2','#cta-ab-3','#fab-ab'].forEach(s => $(s).href = ab);
   $('#btn-es').setAttribute('aria-pressed', String(lang==='es'));
   $('#btn-en').setAttribute('aria-pressed', String(lang==='en'));
-  document.title = (P.villa ? P.corto.es + ' · ' : '') + P.nombre + ' — Hera23';
+  document.title = (P.villa && P.corto.es !== P.nombre ? P.corto.es + ' · ' : '') + P.nombre + ' — Hera23';
 }
 $('#btn-es').addEventListener('click', () => { lang='es'; try{localStorage.setItem('hera23_lang','es')}catch(e){}; render(); });
 $('#btn-en').addEventListener('click', () => { lang='en'; try{localStorage.setItem('hera23_lang','en')}catch(e){}; render(); });
