@@ -14,6 +14,25 @@ window.HERA23 = {
   },
   properties: [
     {
+      id: 'villa-medellin',
+      villa: 'The Grand Villa',
+      tagline: 'The Signature Residence',
+      desc: { es: 'La residencia insignia de la colección; amplitud, elegancia y privacidad.', en: 'The signature residence of the collection; space, elegance and privacy.' },
+      heroImages: ['fotos/villa-medellin/08.avif', 'fotos/villa-medellin/15.avif'],
+      rating: '4,9',
+      reviewsCount: 78,
+      nombre: 'Villa de lujo en Medellín · Piscina y vistas a la ciudad',
+      corto: { es: 'Casa M', en: 'Casa M' },
+      place: { es: 'Medellín · 1.495 m', en: 'Medellín · 1,495 m' },
+      chips: {
+        es: ['Piscina', 'Vistas a la ciudad', 'Lujo'],
+        en: ['Pool', 'City views', 'Luxury']
+      },
+      images: ['fotos/villa-medellin/08.avif', 'fotos/villa-medellin/07.avif', 'fotos/villa-medellin/03.avif', 'fotos/villa-medellin/15.avif', 'fotos/villa-medellin/05.avif', 'fotos/villa-medellin/13.avif', 'fotos/villa-medellin/04.avif', 'fotos/villa-medellin/09.avif', 'fotos/villa-medellin/10.avif', 'fotos/villa-medellin/06.avif', 'fotos/villa-medellin/11.avif', 'fotos/villa-medellin/12.avif', 'fotos/villa-medellin/02.avif', 'fotos/villa-medellin/01.avif', 'fotos/villa-medellin/17.avif', 'fotos/villa-medellin/16.avif', 'fotos/villa-medellin/14.avif'],
+      airbnbUrl: 'https://www.airbnb.com.co/rooms/1281079213215674888'
+    },
+
+    {
       id: 'casa-grande-medellin',
       villa: 'The Forest Villa',
       tagline: 'Where Heritage Meets Nature',
@@ -50,24 +69,6 @@ window.HERA23 = {
       airbnbUrl: 'https://www.airbnb.com.co/rooms/15900275'
     },
     {
-      id: 'villa-medellin',
-      villa: 'The Grand Villa',
-      tagline: 'The Signature Residence',
-      desc: { es: 'La residencia insignia de la colección; amplitud, elegancia y privacidad.', en: 'The signature residence of the collection; space, elegance and privacy.' },
-      heroImages: ['fotos/villa-medellin/08.avif', 'fotos/villa-medellin/15.avif'],
-      rating: '4,9',
-      reviewsCount: 78,
-      nombre: 'Villa de lujo en Medellín · Piscina y vistas a la ciudad',
-      corto: { es: 'Casa M', en: 'Casa M' },
-      place: { es: 'Medellín · 1.495 m', en: 'Medellín · 1,495 m' },
-      chips: {
-        es: ['Piscina', 'Vistas a la ciudad', 'Lujo'],
-        en: ['Pool', 'City views', 'Luxury']
-      },
-      images: ['fotos/villa-medellin/08.avif', 'fotos/villa-medellin/07.avif', 'fotos/villa-medellin/03.avif', 'fotos/villa-medellin/15.avif', 'fotos/villa-medellin/05.avif', 'fotos/villa-medellin/13.avif', 'fotos/villa-medellin/04.avif', 'fotos/villa-medellin/09.avif', 'fotos/villa-medellin/10.avif', 'fotos/villa-medellin/06.avif', 'fotos/villa-medellin/11.avif', 'fotos/villa-medellin/12.avif', 'fotos/villa-medellin/02.avif', 'fotos/villa-medellin/01.avif', 'fotos/villa-medellin/17.avif', 'fotos/villa-medellin/16.avif', 'fotos/villa-medellin/14.avif'],
-      airbnbUrl: 'https://www.airbnb.com.co/rooms/1281079213215674888'
-    },
-    {
       id: 'finca-la-ema',
       villa: 'The Sky Villa',
       tagline: 'Where Mountains Meet the Sky',
@@ -83,7 +84,7 @@ window.HERA23 = {
       },
       images: ['fotos/finca-la-ema/08.jpg', 'fotos/finca-la-ema/07.jpg', 'fotos/finca-la-ema/02.jpg', 'fotos/finca-la-ema/09.jpg', 'fotos/finca-la-ema/10.jpg', 'fotos/finca-la-ema/01.jpg', 'fotos/finca-la-ema/06.jpg', 'fotos/finca-la-ema/03.jpg', 'fotos/finca-la-ema/04.jpg', 'fotos/finca-la-ema/05.jpg', 'fotos/finca-la-ema/19.jpg', 'fotos/finca-la-ema/12.jpg', 'fotos/finca-la-ema/11.jpg', 'fotos/finca-la-ema/14.jpg', 'fotos/finca-la-ema/15.jpg', 'fotos/finca-la-ema/13.jpg', 'fotos/finca-la-ema/16.jpg', 'fotos/finca-la-ema/17.jpg', 'fotos/finca-la-ema/18.jpg'],
       airbnbUrl: ''          // vacío = usa el perfil oficial
-    },
+    }
   ],
   reviews: [
     {
