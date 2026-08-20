@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hera23 — Inversiones &amp; Rentas | Propiedades en Medellín y Santa Fe de Antioquia</title>
-<meta name="description" content="Operador directo de propiedades Airbnb en Medellín y Santa Fe de Antioquia. Reserva en minutos por WhatsApp; verificación abierta en Airbnb.">
+<meta name="description" content="HERA23 Reserve: una colección privada de villas en las montañas de Antioquia. Estancias serenas en Medellín y Santa Fe de Antioquia.">
 <meta property="og:title" content="Hera23 — Inversiones &amp; Rentas">
-<meta property="og:description" content="Reserva en minutos tu propiedad en Medellín. Operador verificable en Airbnb.">
+<meta property="og:description" content="Una colección privada de villas en las montañas de Antioquia. Verificable en Airbnb.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/logo-trans.png">
 <meta name="theme-color" content="#1e251e">
@@ -130,6 +130,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .hero-meta a.verif{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--linea);border-radius:999px;padding:12px 20px}
 .hero-meta a.verif:hover{border-color:var(--abnb);color:var(--abnb)}
 .ab-mini{width:16px;height:16px;border-radius:50%;display:block}
+
+/* ---------- para propietarios ---------- */
+.own-wrap{padding-top:clamp(26px,4vw,44px)}
+.own{background:var(--blanco);border:2px solid var(--linea);border-radius:var(--r);padding:clamp(26px,4vw,52px);display:grid;grid-template-columns:1fr;gap:clamp(22px,3.4vw,48px)}
+@media (min-width:920px){.own{grid-template-columns:1.05fr .95fr;align-items:center}}
+.own .tag{color:var(--oro);display:block;margin-bottom:14px}
+.own h2{font-size:clamp(26px,3.4vw,42px);margin:0 0 14px}
+.own p{color:var(--tinta-suave);font-size:15.5px;line-height:1.8;margin:0;max-width:52ch}
+.own .cred{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-suave);margin-top:20px;line-height:2}
+.own ul{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:12px}
+.own li{display:flex;gap:12px;align-items:flex-start;font-size:15px;font-weight:300;line-height:1.6}
+.own li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--oro);margin-top:8px;flex:0 0 auto}
+.own .nota-own{color:var(--tinta-suave);font-size:12.5px;letter-spacing:.06em;margin-top:14px}
 
 /* ---------- sección propiedades ---------- */
 .sec{padding:clamp(50px,7vw,100px) 0}
@@ -263,6 +276,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
     <div class="topbar-right">
       <nav class="topnav" aria-label="Principal">
         <a href="#propiedades" data-i18n="navProps">Nuestras propiedades</a>
+        <a href="#administracion" data-i18n="navOwn">Propietarios</a>
         <a href="#destinos" data-i18n="navContacto">Destinos</a>
         <a href="#opiniones" data-i18n="navVoces">Opiniones</a>
       </nav>
@@ -281,6 +295,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 <div class="menu" id="menu">
   <button class="close" id="menu-close" aria-label="Cerrar menú">✕</button>
   <a class="item" href="#propiedades" data-menu-link data-i18n="navProps">Nuestras propiedades</a>
+  <a class="item" href="#administracion" data-menu-link data-i18n="navOwn">Propietarios</a>
   <a class="item" href="#destinos" data-menu-link data-i18n="navContacto">Destinos</a>
   <a class="item" href="#opiniones" data-menu-link data-i18n="navVoces">Opiniones</a>
   <div id="menu-props" style="margin-top:22px;display:flex;flex-direction:column"></div>
@@ -297,8 +312,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
       <div class="ph"><img src="assets/isotipo-trans.png" alt=""><span class="tag" data-i18n="photosSoon">Fotos muy pronto</span></div>
     </div>
     <div class="hero-copy rise" style="animation-delay:.2s">
-      <h1 id="hero-title">Reserva <em>en minutos</em> tu propiedad en Medellín.</h1>
-      <p class="sub" data-i18n="heroSub">Una colección privada de villas en las montañas de Medellín.</p>
+      <h1 id="hero-title">Una colección privada de villas <em>en las montañas.</em></h1>
+      <p class="sub" data-i18n="heroSub">Estancias serenas en Medellín y Santa Fe de Antioquia, administradas personalmente.</p>
       <p class="tagline" data-i18n="heroTag">Inspired by nature. Defined by hospitality.</p>
       <div class="hero-ctas">
         <a class="btn btn-dark" href="#propiedades" data-i18n="heroCta1">Ver propiedades</a>
@@ -312,6 +327,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
         <span class="meta-txt" data-i18n="badgeTxt">Superanfitrión · 258 reseñas · 10 años como anfitrión</span>
         <a class="verif" data-abnb href="#" target="_blank" rel="noopener"><img class="ab-mini" src="assets/airbnb.svg" alt=""><span data-i18n="verificado">Verificado en Airbnb</span> ↗</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA PROPIETARIOS -->
+<section id="administracion" class="shell own-wrap reveal">
+  <div class="own">
+    <div>
+      <span class="tag" data-i18n="ownersTag">Para propietarios</span>
+      <h2 data-i18n="ownersTitle">¿Quieres que administremos tu propiedad?</h2>
+      <p data-i18n="ownersP">HERA23 gestiona un portafolio selecto de villas en Antioquia con una operación directa y discreta. Nos encargamos de todo; tú recibes resultados y tranquilidad.</p>
+      <div class="cred" data-i18n="ownersCred">Superanfitrión · 258 reseñas · 4.82★ · 10 años como anfitrión</div>
+    </div>
+    <div>
+      <ul>
+        <li data-i18n="own1">Publicación y gestión profesional en Airbnb</li>
+        <li data-i18n="own2">Atención al huésped, limpieza y mantenimiento</li>
+        <li data-i18n="own3">Cuidado del inmueble como si fuera nuestro</li>
+        <li data-i18n="own4">Reportes claros y comunicación permanente</li>
+      </ul>
+      <a class="btn btn-wa" id="own-wa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        <span data-i18n="ownersCta">Agendar una reunión</span>
+      </a>
+      <p class="nota-own" data-i18n="ownersNote">Una conversación sin compromiso para conocer tu propiedad.</p>
     </div>
   </div>
 </section>
@@ -396,7 +436,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
     </div>
     <div class="pie-col">
       <span class="tag" data-i18n="footFollow">Síguenos</span>
-      <a href="#" rel="noopener">Instagram</a>
+      <a href="https://www.instagram.com/hera23.sas/" target="_blank" rel="noopener">Instagram</a>
       <a href="#" rel="noopener">Facebook</a>
       <a class="ab" data-abnb href="#" target="_blank" rel="noopener"><span data-i18n="footAbnb">Perfil oficial en Airbnb</span> ↗</a>
     </div>
@@ -425,12 +465,23 @@ const I18N = {
     skip: 'Ir a nuestras propiedades',
     navProps: 'Nuestras propiedades', navContacto: 'Destinos', navVoces: 'Opiniones',
     verificado: 'Verificado en Airbnb',
-    heroTitle: 'Reserva <em>en minutos</em> tu propiedad en Medellín.',
-    heroSub: 'Una colección privada de villas en las montañas de Medellín.',
+    heroTitle: 'Una colección privada de villas <em>en las montañas.</em>',
+    heroSub: 'Estancias serenas en Medellín y Santa Fe de Antioquia, administradas personalmente.',
     heroTag: 'Inspired by nature. Defined by hospitality.',
-    heroCta1: 'Ver propiedades', heroCta2: 'WhatsApp directo',
+    heroCta1: 'Conocer la colección', heroCta2: 'Escríbenos',
     gfNum: '4,82', gfLbl: 'Favorito entre huéspedes', badgeTxt: 'Superanfitrión · 258 reseñas · 10 años como anfitrión',
     photosSoon: 'Fotos muy pronto',
+    ownersTag: 'Para propietarios',
+    ownersTitle: '¿Quieres que administremos tu propiedad?',
+    ownersP: 'HERA23 gestiona un portafolio selecto de villas en Antioquia con una operación directa y discreta. Nos encargamos de todo; tú recibes resultados y tranquilidad.',
+    ownersCred: 'Superanfitrión · 258 reseñas · 4.82★ · 10 años como anfitrión',
+    own1: 'Publicación y gestión profesional en Airbnb',
+    own2: 'Atención al huésped, limpieza y mantenimiento',
+    own3: 'Cuidado del inmueble como si fuera nuestro',
+    own4: 'Reportes claros y comunicación permanente',
+    ownersCta: 'Agendar una reunión',
+    ownersNote: 'Una conversación sin compromiso para conocer tu propiedad.',
+    navOwn: 'Propietarios',
     propsTitle: 'Nuestras propiedades',
     colLine: 'Una colección privada de villas en las montañas de Medellín.',
     verFicha: 'Ver propiedad',
@@ -458,12 +509,23 @@ const I18N = {
     skip: 'Skip to our properties',
     navProps: 'Our properties', navContacto: 'Destinations', navVoces: 'Reviews',
     verificado: 'Verified on Airbnb',
-    heroTitle: 'Book your Medellín property <em>in minutes.</em>',
-    heroSub: 'A private collection of villas in the mountains of Medellín.',
+    heroTitle: 'A private collection of villas <em>in the mountains.</em>',
+    heroSub: 'Serene stays in Medellín and Santa Fe de Antioquia, personally managed.',
     heroTag: 'Inspired by nature. Defined by hospitality.',
-    heroCta1: 'View properties', heroCta2: 'Direct WhatsApp',
+    heroCta1: 'Explore the collection', heroCta2: 'Contact us',
     gfNum: '4.82', gfLbl: 'Guest favourite', badgeTxt: 'Superhost · 258 reviews · 10 years hosting',
     photosSoon: 'Photos coming soon',
+    ownersTag: 'For property owners',
+    ownersTitle: 'Want us to manage your property?',
+    ownersP: 'HERA23 manages a select portfolio of villas in Antioquia with a direct, discreet operation. We take care of everything; you receive results and peace of mind.',
+    ownersCred: 'Superhost · 258 reviews · 4.82★ · 10 years hosting',
+    own1: 'Professional listing and management on Airbnb',
+    own2: 'Guest care, cleaning and maintenance',
+    own3: 'We look after your home as if it were ours',
+    own4: 'Clear reporting and constant communication',
+    ownersCta: 'Schedule a meeting',
+    ownersNote: 'A no-obligation conversation to get to know your property.',
+    navOwn: 'Owners',
     propsTitle: 'Our properties',
     colLine: 'A private collection of villas in the mountains of Medellín.',
     verFicha: 'View property',
@@ -544,6 +606,8 @@ function render() {
   $('#cta-title').innerHTML = t.ctaTitle;
   $$('[data-wa]').forEach(el => { el.href = waHref(t.waMsg); });
   $$('[data-abnb]').forEach(el => { el.href = CONFIG.airbnbProfile; });
+  const ownWa = document.getElementById('own-wa');
+  if (ownWa) ownWa.href = waHref('Hi Hera23, I own a property and would like to schedule a meeting about your property management service.');
   $('#btn-es').setAttribute('aria-pressed', String(lang === 'es'));
   $('#btn-en').setAttribute('aria-pressed', String(lang === 'en'));
 
