@@ -19,7 +19,7 @@ window.HERA23 = {
       villa: 'The Grand Villa',
       tagline: 'The Signature Residence',
       desc: { es: 'La residencia insignia de la colección; amplitud, elegancia y privacidad.', en: 'The signature residence of the collection; space, elegance and privacy.' },
-      heroImages: ['fotos/villa-medellin/08.avif', 'fotos/villa-medellin/15.avif'],
+      heroImages: ['fotos/villa-medellin/07.avif', 'fotos/villa-medellin/15.avif'],
       rating: '4,9',
       reviewsCount: 78,
       nombre: 'Villa de lujo en Medellín · Piscina y vistas a la ciudad',
@@ -29,7 +29,7 @@ window.HERA23 = {
         es: ['Piscina', 'Vistas a la ciudad', 'Lujo'],
         en: ['Pool', 'City views', 'Luxury']
       },
-      images: ['fotos/villa-medellin/08.avif', 'fotos/villa-medellin/07.avif', 'fotos/villa-medellin/03.avif', 'fotos/villa-medellin/15.avif', 'fotos/villa-medellin/05.avif', 'fotos/villa-medellin/13.avif', 'fotos/villa-medellin/04.avif', 'fotos/villa-medellin/09.avif', 'fotos/villa-medellin/10.avif', 'fotos/villa-medellin/06.avif', 'fotos/villa-medellin/11.avif', 'fotos/villa-medellin/12.avif', 'fotos/villa-medellin/02.avif', 'fotos/villa-medellin/01.avif', 'fotos/villa-medellin/17.avif', 'fotos/villa-medellin/16.avif', 'fotos/villa-medellin/14.avif'],
+      images: ['fotos/villa-medellin/07.avif', 'fotos/villa-medellin/03.avif', 'fotos/villa-medellin/15.avif', 'fotos/villa-medellin/13.avif', 'fotos/villa-medellin/04.avif', 'fotos/villa-medellin/09.avif', 'fotos/villa-medellin/10.avif', 'fotos/villa-medellin/06.avif', 'fotos/villa-medellin/11.avif', 'fotos/villa-medellin/12.avif', 'fotos/villa-medellin/02.avif', 'fotos/villa-medellin/01.avif', 'fotos/villa-medellin/17.avif', 'fotos/villa-medellin/14.avif'],
       airbnbUrl: 'https://www.airbnb.com.co/rooms/1281079213215674888'
     },
     {
