@@ -29,7 +29,7 @@ window.HERA23 = {
         es: ['Piscina', 'Vistas a la ciudad', 'Lujo'],
         en: ['Pool', 'City views', 'Luxury']
       },
-      images: ['fotos/villa-medellin/07.avif', 'fotos/villa-medellin/03.avif', 'fotos/villa-medellin/15.avif', 'fotos/villa-medellin/13.avif', 'fotos/villa-medellin/04.avif', 'fotos/villa-medellin/09.avif', 'fotos/villa-medellin/10.avif', 'fotos/villa-medellin/06.avif', 'fotos/villa-medellin/11.avif', 'fotos/villa-medellin/12.avif', 'fotos/villa-medellin/02.avif', 'fotos/villa-medellin/01.avif', 'fotos/villa-medellin/17.avif', 'fotos/villa-medellin/14.avif'],
+      images: ['fotos/villa-medellin/07.avif', 'fotos/villa-medellin/19.jpg', 'fotos/villa-medellin/18.jpg', 'fotos/villa-medellin/03.avif', 'fotos/villa-medellin/15.avif', 'fotos/villa-medellin/13.avif', 'fotos/villa-medellin/04.avif', 'fotos/villa-medellin/09.avif', 'fotos/villa-medellin/10.avif', 'fotos/villa-medellin/06.avif', 'fotos/villa-medellin/11.avif', 'fotos/villa-medellin/12.avif', 'fotos/villa-medellin/02.avif', 'fotos/villa-medellin/01.avif', 'fotos/villa-medellin/17.avif', 'fotos/villa-medellin/14.avif'],
       airbnbUrl: 'https://www.airbnb.com.co/rooms/1281079213215674888'
     },
     {
@@ -87,6 +87,7 @@ window.HERA23 = {
       airbnbUrl: ''          // vacío = usa el perfil oficial
     }
   ],
+  eventPhotos: ['fotos/eventos/02.jpg', 'fotos/eventos/06.jpg', 'fotos/eventos/03.jpg', 'fotos/eventos/08.jpg', 'fotos/eventos/05.jpg', 'fotos/eventos/01.jpg', 'fotos/eventos/09.jpg', 'fotos/eventos/04.jpg', 'fotos/eventos/10.jpg', 'fotos/eventos/07.jpg'],
   reviews: [
     {
       name: 'Jose', img: 'assets/resenas/jose.jpg', ini: 'J',

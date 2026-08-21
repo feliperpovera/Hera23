@@ -143,6 +143,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .own li{display:flex;gap:12px;align-items:flex-start;font-size:15px;font-weight:300;line-height:1.6}
 .own li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--oro);margin-top:8px;flex:0 0 auto}
 .own .nota-own{color:var(--tinta-suave);font-size:12.5px;letter-spacing:.06em;margin-top:14px}
+.ev-fotos{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px 2px 4px;scrollbar-width:none;grid-column:1/-1}
+.ev-fotos::-webkit-scrollbar{display:none}
+.ev-fotos img{height:clamp(170px,24vw,250px);width:auto;border-radius:18px;border:1px solid var(--linea);scroll-snap-align:start;flex:0 0 auto}
 
 /* ---------- sección propiedades ---------- */
 .sec{padding:clamp(50px,7vw,100px) 0}
@@ -389,6 +392,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
       </a>
       <p class="nota-own" data-i18n="evNote">Cuéntanos qué imaginas y lo hacemos posible en la villa indicada.</p>
     </div>
+    <div class="ev-fotos" id="ev-fotos" aria-label="Eventos realizados en las villas"></div>
   </div>
 </section>
 
@@ -482,7 +486,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
   </a>
 </div>
 
-<script src="config.js?v=13"></script>
+<script src="config.js?v=14"></script>
 <script>
 const CONFIG = window.HERA23.config;
 const PROPERTIES = window.HERA23.properties;
@@ -655,6 +659,11 @@ function render() {
   $('#cta-title').innerHTML = t.ctaTitle;
   $$('[data-wa]').forEach(el => { el.href = waHref(t.waMsg); });
   $$('[data-abnb]').forEach(el => { el.href = CONFIG.airbnbProfile; });
+  const evFotos = document.getElementById('ev-fotos');
+  if (evFotos && window.HERA23.eventPhotos) {
+    evFotos.innerHTML = window.HERA23.eventPhotos.map((src, i) =>
+      `<img src="${esc(src)}" alt="${lang === 'es' ? 'Evento en una villa HERA23' : 'Event at a HERA23 villa'} ${i + 1}" loading="lazy">`).join('');
+  }
   const evWa = document.getElementById('ev-wa');
   if (evWa) evWa.href = waHref('Hi Hera23, I would like a quote for an event at one of your villas.');
   const ownWa = document.getElementById('own-wa');
